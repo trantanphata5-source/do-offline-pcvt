@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="D-Office PCVT - Hệ thống quản lý văn bản đến Công ty Điện lực Vũng Tàu">
+  <title>D-Office PCVT - Công ty Điện lực Vũng Tàu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="mainHeader">
+    <div class="header-left">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span class="material-icons-outlined">menu</span>
+      </button>
+      <div class="header-logo">
+        <div class="logo-icon">
+          <img src="logo.png" alt="EVN HCMC" width="36" height="36" style="border-radius:50%;background:#fff;padding:2px;">
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">Công ty Điện lực Vũng Tàu</span>
+          <span class="logo-sub">Digital Office Offline</span>
+        </div>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="search-box" id="searchBox">
+        <span class="material-icons-outlined search-icon">search</span>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm văn bản..." autocomplete="off">
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="header-btn" id="btnNotif" title="Thông báo">
+        <span class="material-icons-outlined">notifications</span>
+        <span class="notif-badge" id="notifBadge">3</span>
+      </button>
+      <div class="header-user" id="headerUser">
+        <div class="user-avatar">
+          <span class="material-icons-outlined">person</span>
+        </div>
+        <div class="user-info">
+          <span class="user-name">Nguyễn Ngọc Tuyền</span>
+          <span class="user-role">Phòng ban: GĐ</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MAIN LAYOUT ============ -->
+  <div class="main-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active" data-page="vanban" id="navVanBan">
+          <span class="material-icons-outlined">markunread_mailbox</span>
+          <span class="nav-label">Văn bản</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- CONTENT AREA -->
+    <main class="content-area" id="contentArea">
+      <!-- TOP TOOLBAR -->
+      <div class="content-toolbar">
+        <h1 class="page-title">Văn bản đến - Chờ xử lý</h1>
+        <div class="toolbar-actions" id="toolbarActions" style="display:none;">
+          <button class="action-btn primary" id="btnChiDao" title="Chỉ đạo">
+            <span class="material-icons-outlined">gavel</span>
+            <span>Chỉ đạo</span>
+          </button>
+          <button class="action-btn" id="btnChuyenChiDao" title="Chuyển chỉ đạo">
+            <span class="material-icons-outlined">forward</span>
+            <span>Chuyển chỉ đạo</span>
+          </button>
+          <button class="action-btn" id="btnThongTin" title="Thông tin">
+            <span class="material-icons-outlined">info</span>
+            <span>Thông tin</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TWO COLUMN LAYOUT -->
+      <div class="content-body">
+        <!-- LEFT: Document List -->
+        <div class="doc-list-panel" id="docListPanel">
+          <div class="doc-tabs">
+            <button class="doc-tab active" id="tabChuTri" data-tab="chutri">
+              Chủ trì (<span id="countChuTri">0</span>)
+            </button>
+            <button class="doc-tab" id="tabPhoiHop" data-tab="phoihop">
+              Phối hợp (<span id="countPhoiHop">0</span>)
+            </button>
+            <button class="doc-tab-filter" id="tabFilter" title="Lọc">
+              <span class="material-icons-outlined">filter_list</span>
+            </button>
+          </div>
+          <div class="doc-list" id="docList">
+            <!-- Documents will be rendered here -->
+            <div class="doc-list-loading" id="docListLoading">
+              <div class="spinner"></div>
+              <p>Đang tải văn bản...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Document Preview -->
+        <div class="doc-preview-panel" id="docPreviewPanel">
+          <div class="preview-placeholder" id="previewPlaceholder">
+            <span class="material-icons-outlined" style="font-size:64px;color:var(--gray-300)">description</span>
+            <p>Chọn một văn bản để xem</p>
+          </div>
+          <div class="preview-content" id="previewContent" style="display:none;">
+            <div class="preview-file-info" id="previewFileInfo">
+              <span class="file-label">File văn bản:</span>
+              <div class="file-links" id="previewFileLinks"></div>
+            </div>
+            <div class="preview-file-area" id="previewFileArea">
+              <p class="preview-msg">Chọn file để xem trước nội dung (PDF)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ============ MODAL: CHỈ ĐẠO ============ -->
+  <div class="modal-overlay" id="modalChiDao">
+    <div class="modal-container modal-large">
+      <div class="modal-header">
+        <h2 class="modal-doc-title">Văn bản đến: <span id="cdDocTitle" class="doc-title-link"></span></h2>
+        <button class="modal-close" id="closeChiDao"><span class="material-icons-outlined">close</span></button>
+      </div>
+      
+      <div class="modal-body-split">
+        <!-- Left: File preview -->
+        <div class="modal-file-preview" id="modalFilePreview">
+          <div class="modal-file-header" id="modalFileHeader">
+            <span class="file-label">File văn bản:</span>
+            <div class="file-links" id="modalFileLinks"></div>
+          </div>
+          <div class="modal-file-viewer" id="modalFileViewer">
+            <p class="preview-msg">Chọn file để xem</p>
+          </div>
+          <button class="preview-toggle-btn" id="previewToggleBtn" title="Thu gọn/Mở rộng">
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+        </div>
+        
+        <!-- Right: Chi đạo form -->
+        <div class="modal-form-area">
+          <!-- Tab switcher -->
+          <div class="modal-tabs">
+            <button class="modal-tab active" id="tabChiDaoForm" data-modal-tab="chidao">
+              <span class="material-icons-outlined">gavel</span> Chỉ đạo
+            </button>
+            <button class="modal-tab" id="tabThongTinVB" data-modal-tab="thongtin">
+              <span class="material-icons-outlined">info</span> Thông tin văn bản
+            </button>
+            <button class="modal-tab-more" title="Thêm">
+              <span class="material-icons-outlined">more_horiz</span>
+            </button>
+          </div>
+
+          <!-- Chỉ đạo Form Content -->
+          <div class="modal-tab-content active" id="contentChiDao">
+            <div class="form-group">
+              <textarea id="cdNoiDung" placeholder="Nhập nội dung chỉ đạo" rows="3" class="form-textarea"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="upload-label" id="cdUploadLabel">
+                <span>Tải file lên</span>
+                <span class="material-icons-outlined">cloud_upload</span>
+              </label>
+            </div>
+            
+            <!-- Phòng ban thực hiện -->
+            <div class="pb-section">
+              <div class="pb-header">
+                <span class="pb-title">Phòng ban thực hiện</span>
+                <div class="pb-cols">
+                  <span class="pb-col-label">Chủ trì</span>
+                  <span class="pb-col-label">Phối hợp</span>
+                  <span class="pb-col-label">Xem để biết</span>
+                </div>
+              </div>
+
+              <div class="pb-section-body">
+              <!-- Ban giám đốc -->
+              <div class="pb-group">
+                <div class="pb-group-header" data-toggle="bgd">
+                  <span class="material-icons-outlined pb-toggle-icon">expand_more</span>
+                  <span class="pb-group-title">Ban giám đốc</span>
+                  <div class="pb-cols">
+                    <span class="pb-radio-cell"><input type="radio" name="cd_chutri" value="Ban giám đốc"></span>
+                    <span class="pb-check-cell"><input type="checkbox" data-group="phoihop" value="Ban giám đốc"></span>
+                    <span class="pb-check-cell"><input type="checkbox" data-group="xemdebiet" value="Ban giám đốc"></span>
+                  </div>
+                </div>
+                <div class="pb-group-body" id="pb-bgd">
+                  <div class="pb-row">
+                    <span class="pb-name">PGĐ KT - Trần Thanh Hải</span>
+                    <div class="pb-cols">
+                      <span class="pb-radio-cell"><input type="radio" name="cd_chutri" value="PGĐ KT - Trần Thanh Hải"></span>
+                      <span class="pb-check-cell"><input type="checkbox" data-group="phoihop" value="PGĐ KT - Trần Thanh Hải"></span>
+                      <span class="pb-check-cell"><input type="checkbox" data-group="xemdebiet" value="PGĐ KT - Trần Thanh Hải"></span>
+                    </div>
+                  </div>
+                  <div class="pb-row alt">
+                    <span class="pb-name">PGĐ KD - Đặng Quang Trung</span>
+                    <div class="pb-cols">
+                      <span class="pb-radio-cell"><input type="radio" name="cd_chutri" value="PGĐ KD - Đặng Quang Trung"></span>
+                      <span class="pb-check-cell"><input type="checkbox" data-group="phoihop" value="PGĐ KD - Đặng Quang Trung"></span>
+                      <span class="pb-check-cell"><input type="checkbox" data-group="xemdebiet" value="PGĐ KD - Đặng Quang Trung"></span>
+                    </div>
+                  </div>
+                  <div class="pb-row">
+                    <span class="pb-name">PGĐ ĐTXD - Lại Xuân Phương</span>
+                    <div class="pb-cols">
+                      <span class="pb-radio-cell"><input type="radio" name="cd_chutri" value="PGĐ ĐTXD - Lại Xuân Phương"></span>
+                      <span class="pb-check-cell"><input type="checkbox" data-group="phoihop" value="PGĐ ĐTXD - Lại Xuân Phương"></span>
+                      <span class="pb-check-cell"><input type="checkbox" data-group="xemdebiet" value="PGĐ ĐTXD - Lại Xuân Phương"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phòng ban đơn vị -->
+              <div class="pb-group">
+                <div class="pb-group-header" data-toggle="pbdv">
+                  <span class="material-icons-outlined pb-toggle-icon">expand_more</span>
+                  <span class="pb-group-title">Phòng ban đơn vị</span>
+                  <div class="pb-cols">
+                    <span class="pb-radio-cell"><input type="radio" name="cd_chutri" value="Phòng ban đơn vị"></span>
+                    <span class="pb-check-cell"><input type="checkbox" data-group="phoihop" value="Phòng ban đơn vị"></span>
+                    <span class="pb-check-cell"><input type="checkbox" data-group="xemdebiet" value="Phòng ban đơn vị"></span>
+                  </div>
+                </div>
+                <div class="pb-group-body" id="pb-pbdv">
+                  <!-- Generated dynamically, but listed here for clarity -->
+                </div>
+              </div>
+
+              <!-- Đảng ủy & Đoàn thể -->
+              <div class="pb-group">
+                <div class="pb-group-header" data-toggle="dudt">
+                  <span class="material-icons-outlined pb-toggle-icon">expand_more</span>
+                  <span class="pb-group-title">Đảng ủy & Đoàn thể</span>
+                  <div class="pb-cols">
+                    <span class="pb-radio-cell"><input type="radio" name="cd_chutri" value="Đảng ủy & Đoàn thể"></span>
+                    <span class="pb-check-cell"><input type="checkbox" data-group="phoihop" value="Đảng ủy & Đoàn thể"></span>
+                    <span class="pb-check-cell"><input type="checkbox" data-group="xemdebiet" value="Đảng ủy & Đoàn thể"></span>
+                  </div>
+                </div>
+                <div class="pb-group-body" id="pb-dudt">
+                </div>
+              </div>
+
+              <!-- Tổ công tác -->
+              <div class="pb-group">
+                <div class="pb-group-header" data-toggle="tct">
+                  <span class="material-icons-outlined pb-toggle-icon">expand_more</span>
+                  <span class="pb-group-title">Tổ công tác</span>
+                  <div class="pb-cols">
+                    <span class="pb-radio-cell"><input type="radio" name="cd_chutri" value="Tổ công tác"></span>
+                    <span class="pb-check-cell"><input type="checkbox" data-group="phoihop" value="Tổ công tác"></span>
+                    <span class="pb-check-cell"><input type="checkbox" data-group="xemdebiet" value="Tổ công tác"></span>
+                  </div>
+                </div>
+                <div class="pb-group-body" id="pb-tct">
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <!-- Bottom controls -->
+            <div class="form-bottom">
+              <div class="form-row">
+                <div class="form-col">
+                  <label class="form-label">Hạn giải quyết *</label>
+                  <input type="date" id="cdHanGiaiQuyet" class="form-input">
+                </div>
+                <div class="form-col">
+                  <label class="form-label">Độ khẩn</label>
+                  <select id="cdDoKhan" class="form-select">
+                    <option value="Bình thường">Bình thường</option>
+                    <option value="Khẩn" selected>Khẩn</option>
+                    <option value="Thượng khẩn">Thượng khẩn</option>
+                    <option value="Hỏa tốc">Hỏa tốc</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row checkboxes">
+                <label class="form-check">
+                  <input type="checkbox" id="cdYeuCauTraLoi">
+                  <span>Yêu cầu văn bản trả lời</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" id="cdChuyenThuKy">
+                  <span>Chuyển thư ký</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" id="cdTheoDoiVB">
+                  <span>Theo dõi văn bản</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button class="btn btn-primary" id="btnSaveChiDao">
+                <span>Lưu</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Thông tin văn bản Content -->
+          <div class="modal-tab-content" id="contentThongTin">
+            <div class="info-table">
+              <div class="info-row">
+                <span class="info-label">Trích yếu</span>
+                <span class="info-value" id="infoTrichYeu"></span>
+              </div>
+              <div class="info-row alt">
+                <span class="info-label">Số văn bản</span>
+                <span class="info-value link" id="infoSoVB"></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Ngày văn bản</span>
+                <span class="info-value" id="infoNgayVB"></span>
+              </div>
+              <div class="info-row alt">
+                <span class="info-label">Hạn giải quyết</span>
+                <span class="info-value link" id="infoHanGQ"></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Cơ quan ban hành</span>
+                <span class="info-value" id="infoCQBH"></span>
+              </div>
+              <div class="info-row alt">
+                <span class="info-label">Độ khẩn</span>
+                <span class="info-value" id="infoDoKhan"></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Độ mật</span>
+                <span class="info-value" id="infoDoMat"></span>
+              </div>
+              <div class="info-row alt">
+                <span class="info-label">File văn bản</span>
+                <span class="info-value" id="infoFiles"></span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Phụ lục văn bản</span>
+                <span class="info-value" id="infoPhuLuc">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL: CHUYỂN CHỈ ĐẠO ============ -->
+  <div class="modal-overlay" id="modalChuyenChiDao">
+    <div class="modal-container modal-ccd">
+      <div class="modal-header-ccd">
+        <h2>Chuyển chỉ đạo</h2>
+        <button class="modal-close" id="closeChuyenChiDao"><span class="material-icons-outlined">close</span></button>
+      </div>
+      <div class="modal-body-ccd">
+        <div class="form-group">
+          <label class="form-label">Nội dung chuyển</label>
+          <textarea id="ccdNoiDung" placeholder="" rows="4" class="form-textarea"></textarea>
+        </div>
+        
+        <div class="ccd-section">
+          <div class="ccd-header">
+            <span class="ccd-title">Lãnh đạo thực hiện</span>
+            <div class="ccd-cols">
+              <span class="ccd-col-label">Chủ trì</span>
+              <span class="ccd-col-label">Xem để biết</span>
+            </div>
+          </div>
+
+          <!-- Ban giám đốc -->
+          <div class="ccd-group-title">Ban giám đốc</div>
+          <div id="ccd-bgd-body">
+            <!-- Populated by JS -->
+          </div>
+          
+          <!-- Đảng ủy & Đoàn thể -->
+          <div class="ccd-group-title">Đảng ủy & Đoàn thể</div>
+          <div id="ccd-dudt-body">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div class="form-actions-ccd">
+          <button class="btn btn-outline" id="btnCCDBack">Quay lại</button>
+          <button class="btn btn-primary" id="btnSaveChuyenChiDao">Lưu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TOAST NOTIFICATION ============ -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ============ FAB ============ -->
+  <button class="fab" id="fabBtn" title="Hành động nhanh">
+    <span class="material-icons-outlined">send</span>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>

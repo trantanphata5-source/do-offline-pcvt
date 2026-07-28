@@ -1,0 +1,18 @@
+# D-Office PCVT - Source Data (too large for GitHub)
+SOURCE D-O/
+extracted/
+
+# Reference screenshots
+*.png
+!app/logo.png
+
+# Utility scripts (not needed for web app)
+extract_source.py
+import_to_sheets.py
+verify.py
+inspect_zip.ps1
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
