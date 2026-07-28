@@ -247,11 +247,18 @@ async function loadDriveMapping() {
   if (!GAS_URL) return;
   
   try {
-    const resp = await fetch(`${GAS_URL}?action=getDriveMapping`);
-    const result = await resp.json();
-    if (result.success && result.data) {
-      driveFileMapping = result.data;
-      console.log(`Drive mapping loaded: ${Object.keys(driveFileMapping).length} files`);
+    const resp = await fetch(`${GAS_URL}?action=getDriveMapping`, {
+      redirect: 'follow',
+    });
+    const text = await resp.text();
+    try {
+      const result = JSON.parse(text);
+      if (result.success && result.data) {
+        driveFileMapping = result.data;
+        console.log(`Drive mapping loaded: ${Object.keys(driveFileMapping).length} files`);
+      }
+    } catch (parseErr) {
+      console.warn('Drive mapping response is not JSON:', text.substring(0, 200));
     }
   } catch (e) {
     console.warn('Failed to load drive mapping:', e);
