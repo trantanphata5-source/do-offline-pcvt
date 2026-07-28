@@ -71,6 +71,7 @@ let filteredDocuments = [];
 let selectedDoc = null;
 let chiDaoData = {};     // vanBanId -> array of chi dao
 let chuyenChiDaoData = {}; // vanBanId -> array
+let driveFileMapping = null; // folderName/fileName -> Google Drive preview URL
 
 // ============================================================
 // INITIALIZATION
@@ -79,6 +80,7 @@ let chuyenChiDaoData = {}; // vanBanId -> array
 document.addEventListener('DOMContentLoaded', () => {
   initUI();
   loadDocuments();
+  loadDriveMapping();
   populateDynamicForms();
 });
 
@@ -238,6 +240,40 @@ async function loadChiDaoFromSheets() {
 }
 
 // ============================================================
+// GOOGLE DRIVE FILE MAPPING
+// ============================================================
+
+async function loadDriveMapping() {
+  if (!GAS_URL) return;
+  
+  try {
+    const resp = await fetch(`${GAS_URL}?action=getDriveMapping`);
+    const result = await resp.json();
+    if (result.success && result.data) {
+      driveFileMapping = result.data;
+      console.log(`Drive mapping loaded: ${Object.keys(driveFileMapping).length} files`);
+    }
+  } catch (e) {
+    console.warn('Failed to load drive mapping:', e);
+  }
+}
+
+/**
+ * Get the URL to view a PDF file.
+ * Uses Google Drive preview URL if mapping exists, otherwise falls back to local path.
+ */
+function getPdfViewUrl(folderName, fileName) {
+  // Try Google Drive mapping first
+  if (driveFileMapping) {
+    const key = folderName + '/' + fileName;
+    if (driveFileMapping[key]) {
+      return driveFileMapping[key];
+    }
+  }
+  // Fallback to local path
+  return `${EXTRACTED_BASE}${folderName}/${encodeURIComponent(fileName)}#toolbar=0`;
+}
+// ============================================================
 // DOCUMENT LIST RENDERING
 // ============================================================
 
@@ -351,8 +387,8 @@ function renderPreview(doc) {
   const previewArea = document.getElementById('previewFileArea');
   const pdfFile = doc.files ? doc.files.find(f => f.toLowerCase().endsWith('.pdf')) : null;
   if (pdfFile) {
-    const pdfUrl = `${EXTRACTED_BASE}${doc.folderName}/${encodeURIComponent(pdfFile)}`;
-    previewArea.innerHTML = `<iframe src="${pdfUrl}#toolbar=0" title="PDF Preview"></iframe>`;
+    const pdfUrl = getPdfViewUrl(doc.folderName, pdfFile);
+    previewArea.innerHTML = `<iframe src="${pdfUrl}" title="PDF Preview"></iframe>`;
   } else {
     previewArea.innerHTML = '<p class="preview-msg">Không có file PDF để xem trước</p>';
   }
@@ -427,7 +463,7 @@ function openChiDaoModal() {
         // Load in modal viewer
         if (file.toLowerCase().endsWith('.pdf')) {
           const viewer = document.getElementById('modalFileViewer');
-          viewer.innerHTML = `<iframe src="${EXTRACTED_BASE}${selectedDoc.folderName}/${encodeURIComponent(file)}#toolbar=0" title="PDF"></iframe>`;
+          viewer.innerHTML = `<iframe src="${getPdfViewUrl(selectedDoc.folderName, file)}" title="PDF"></iframe>`;
         } else {
           window.open(link.href, '_blank');
         }
@@ -439,7 +475,7 @@ function openChiDaoModal() {
     const pdfFile = selectedDoc.files.find(f => f.toLowerCase().endsWith('.pdf'));
     if (pdfFile) {
       document.getElementById('modalFileViewer').innerHTML = 
-        `<iframe src="${EXTRACTED_BASE}${selectedDoc.folderName}/${encodeURIComponent(pdfFile)}#toolbar=0" title="PDF"></iframe>`;
+        `<iframe src="${getPdfViewUrl(selectedDoc.folderName, pdfFile)}" title="PDF"></iframe>`;
     }
   }
 

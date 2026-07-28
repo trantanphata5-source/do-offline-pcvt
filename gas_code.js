@@ -14,6 +14,7 @@
  */
 
 var SS_ID = '14GcrYlzTZ2CzwRFXcHmAGcqDWKVj4c551QmOORTkIN8';
+var DRIVE_FOLDER_ID = '1x9JJl4rIW8sJxYiXasvvGLLradzpQ0Bl';
 
 function getSpreadsheet() {
   return SpreadsheetApp.openById(SS_ID);
@@ -88,6 +89,9 @@ function doGet(e) {
       case 'getAllChuyenChiDao':
         result = getAllChuyenChiDao();
         break;
+      case 'getDriveMapping':
+        result = getDriveMapping();
+        break;
       default:
         result = { error: 'Unknown action: ' + action };
     }
@@ -123,6 +127,9 @@ function doPost(e) {
         break;
       case 'importDocuments':
         result = importDocuments(data.documents, data.clearFirst);
+        break;
+      case 'scanDriveFolder':
+        result = scanDriveFolder();
         break;
       default:
         result = { error: 'Unknown action: ' + action };
@@ -276,4 +283,72 @@ function saveChuyenChiDao(data) {
   
   sheet.appendRow(row);
   return { success: true, id: id, message: 'Đã lưu chuyển chỉ đạo' };
+}
+
+// ============================================================
+// GOOGLE DRIVE FILE MAPPING
+// ============================================================
+
+var DRIVE_HEADERS = ['folderName', 'fileName', 'fileId', 'mimeType', 'previewUrl'];
+
+function scanDriveFolder() {
+  var parentFolder = DriveApp.getFolderById(DRIVE_FOLDER_ID);
+  var sheet = getOrCreateSheet('DriveFiles', DRIVE_HEADERS);
+  
+  // Clear existing data
+  var lastRow = sheet.getLastRow();
+  if (lastRow > 1) {
+    sheet.getRange(2, 1, lastRow - 1, DRIVE_HEADERS.length).clear();
+  }
+  
+  var rows = [];
+  var subFolders = parentFolder.getFolders();
+  var folderCount = 0;
+  var fileCount = 0;
+  
+  while (subFolders.hasNext()) {
+    var folder = subFolders.next();
+    var folderName = folder.getName();
+    var files = folder.getFiles();
+    folderCount++;
+    
+    while (files.hasNext()) {
+      var file = files.next();
+      var fileName = file.getName();
+      var fileId = file.getId();
+      var mimeType = file.getMimeType();
+      var previewUrl = 'https://drive.google.com/file/d/' + fileId + '/preview';
+      
+      rows.push([folderName, fileName, fileId, mimeType, previewUrl]);
+      fileCount++;
+    }
+  }
+  
+  // Write all rows at once for performance
+  if (rows.length > 0) {
+    sheet.getRange(2, 1, rows.length, DRIVE_HEADERS.length).setValues(rows);
+  }
+  
+  return { success: true, folders: folderCount, files: fileCount };
+}
+
+function getDriveMapping() {
+  var sheet = getOrCreateSheet('DriveFiles', DRIVE_HEADERS);
+  var data = sheet.getDataRange().getValues();
+  
+  if (data.length <= 1) {
+    return { success: true, data: {} };
+  }
+  
+  // Build mapping: folderName/fileName -> previewUrl
+  var mapping = {};
+  for (var i = 1; i < data.length; i++) {
+    var folderName = data[i][0];
+    var fileName = data[i][1];
+    var previewUrl = data[i][4];
+    var key = folderName + '/' + fileName;
+    mapping[key] = previewUrl;
+  }
+  
+  return { success: true, data: mapping };
 }
