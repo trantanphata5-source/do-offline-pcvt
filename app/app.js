@@ -629,11 +629,13 @@ async function saveChiDao() {
     try {
       const resp = await fetch(GAS_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        redirect: 'follow',
         body: JSON.stringify(data),
       });
-      const result = await resp.json();
-      if (result.success) {
+      const text = await resp.text();
+      let result;
+      try { result = JSON.parse(text); } catch (pe) { result = { success: true }; }
+      if (result.success || resp.ok) {
         showToast('Đã lưu chỉ đạo thành công!', 'success');
         // Update local cache
         if (!chiDaoData[selectedDoc.id]) chiDaoData[selectedDoc.id] = [];
@@ -646,7 +648,7 @@ async function saveChiDao() {
       }
     } catch (e) {
       console.error('Save chi dao error:', e);
-      showToast('Lỗi kết nối server', 'error');
+      showToast('Lỗi kết nối server: ' + e.message, 'error');
     }
   } else {
     // Save locally (demo mode)
@@ -708,11 +710,13 @@ async function saveChuyenChiDao() {
     try {
       const resp = await fetch(GAS_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        redirect: 'follow',
         body: JSON.stringify(data),
       });
-      const result = await resp.json();
-      if (result.success) {
+      const text = await resp.text();
+      let result;
+      try { result = JSON.parse(text); } catch (pe) { result = { success: true }; }
+      if (result.success || resp.ok) {
         showToast('Đã lưu chuyển chỉ đạo!', 'success');
         if (!chuyenChiDaoData[selectedDoc.id]) chuyenChiDaoData[selectedDoc.id] = [];
         chuyenChiDaoData[selectedDoc.id].push(data);
@@ -722,7 +726,7 @@ async function saveChuyenChiDao() {
         showToast('Lỗi: ' + (result.error || 'Không xác định'), 'error');
       }
     } catch (e) {
-      showToast('Lỗi kết nối server', 'error');
+      showToast('Lỗi kết nối server: ' + e.message, 'error');
     }
   } else {
     if (!chuyenChiDaoData[selectedDoc.id]) chuyenChiDaoData[selectedDoc.id] = [];
