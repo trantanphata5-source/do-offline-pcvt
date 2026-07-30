@@ -93,6 +93,7 @@ function initUI() {
   // Tabs
   document.getElementById('tabChuTri').addEventListener('click', () => switchTab('chutri'));
   document.getElementById('tabPhoiHop').addEventListener('click', () => switchTab('phoihop'));
+  document.getElementById('tabFilter').addEventListener('click', (e) => { e.stopPropagation(); toggleFilterDropdown(); });
 
   // Action buttons
   document.getElementById('btnChiDao').addEventListener('click', () => openChiDaoModal());
@@ -217,24 +218,31 @@ async function loadChiDaoFromSheets() {
   if (!GAS_URL) return;
   try {
     const [cdResp, ccdResp] = await Promise.all([
-      fetch(`${GAS_URL}?action=getAllChiDao`),
-      fetch(`${GAS_URL}?action=getAllChuyenChiDao`),
+      fetch(`${GAS_URL}?action=getAllChiDao`, { redirect: 'follow' }),
+      fetch(`${GAS_URL}?action=getAllChuyenChiDao`, { redirect: 'follow' }),
     ]);
-    const cdResult = await cdResp.json();
-    const ccdResult = await ccdResp.json();
+    const cdText = await cdResp.text();
+    const ccdText = await ccdResp.text();
+    let cdResult, ccdResult;
+    try { cdResult = JSON.parse(cdText); } catch(e) { cdResult = { success: false }; }
+    try { ccdResult = JSON.parse(ccdText); } catch(e) { ccdResult = { success: false }; }
     
-    if (cdResult.success) {
+    if (cdResult.success && cdResult.data) {
+      chiDaoData = {};
       cdResult.data.forEach(cd => {
         if (!chiDaoData[cd.vanBanId]) chiDaoData[cd.vanBanId] = [];
         chiDaoData[cd.vanBanId].push(cd);
       });
     }
-    if (ccdResult.success) {
+    if (ccdResult.success && ccdResult.data) {
+      chuyenChiDaoData = {};
       ccdResult.data.forEach(ccd => {
         if (!chuyenChiDaoData[ccd.vanBanId]) chuyenChiDaoData[ccd.vanBanId] = [];
         chuyenChiDaoData[ccd.vanBanId].push(ccd);
       });
     }
+    // Re-render to update status dots
+    renderDocumentList();
   } catch (e) {
     console.warn('Failed to load chi dao data:', e);
   }
@@ -423,9 +431,82 @@ function filterDocuments(query) {
   updateCounts();
 }
 
+let currentFilterMode = 'all'; // 'all', 'assigned', 'unassigned'
+
 function switchTab(tab) {
   document.getElementById('tabChuTri').classList.toggle('active', tab === 'chutri');
   document.getElementById('tabPhoiHop').classList.toggle('active', tab === 'phoihop');
+}
+
+function toggleFilterDropdown() {
+  let dropdown = document.getElementById('filterDropdown');
+  if (dropdown) {
+    dropdown.remove();
+    return;
+  }
+  const btn = document.getElementById('tabFilter');
+  const rect = btn.getBoundingClientRect();
+  dropdown = document.createElement('div');
+  dropdown.id = 'filterDropdown';
+  dropdown.className = 'filter-dropdown';
+  dropdown.innerHTML = `
+    <div class="filter-option ${currentFilterMode === 'all' ? 'active' : ''}" data-filter="all">
+      <span class="material-icons-outlined" style="font-size:16px">list</span> Tất cả
+    </div>
+    <div class="filter-option ${currentFilterMode === 'assigned' ? 'active' : ''}" data-filter="assigned">
+      <span class="status-dot done" style="display:inline-block;vertical-align:middle;margin-right:6px"></span> Đã giao việc
+    </div>
+    <div class="filter-option ${currentFilterMode === 'unassigned' ? 'active' : ''}" data-filter="unassigned">
+      <span class="status-dot pending" style="display:inline-block;vertical-align:middle;margin-right:6px"></span> Chưa giao việc
+    </div>
+  `;
+  dropdown.style.position = 'absolute';
+  dropdown.style.top = (rect.bottom + 4) + 'px';
+  dropdown.style.left = (rect.left) + 'px';
+  document.body.appendChild(dropdown);
+
+  dropdown.querySelectorAll('.filter-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      currentFilterMode = opt.dataset.filter;
+      applyFilterMode();
+      dropdown.remove();
+    });
+  });
+
+  // Close on outside click
+  setTimeout(() => {
+    document.addEventListener('click', function closeDropdown(e) {
+      if (!dropdown.contains(e.target) && e.target !== btn) {
+        dropdown.remove();
+        document.removeEventListener('click', closeDropdown);
+      }
+    });
+  }, 10);
+}
+
+function applyFilterMode() {
+  const query = document.getElementById('searchInput') ? document.getElementById('searchInput').value.trim().toLowerCase() : '';
+  let docs = [...allDocuments];
+  
+  // Apply search filter
+  if (query) {
+    docs = docs.filter(doc => {
+      return (doc.soVanBan && doc.soVanBan.toLowerCase().includes(query))
+        || (doc.trichYeu && doc.trichYeu.toLowerCase().includes(query))
+        || (doc.coQuanBanHanh && doc.coQuanBanHanh.toLowerCase().includes(query));
+    });
+  }
+  
+  // Apply assignment filter
+  if (currentFilterMode === 'assigned') {
+    docs = docs.filter(doc => chiDaoData[doc.id] && chiDaoData[doc.id].length > 0);
+  } else if (currentFilterMode === 'unassigned') {
+    docs = docs.filter(doc => !chiDaoData[doc.id] || chiDaoData[doc.id].length === 0);
+  }
+  
+  filteredDocuments = docs;
+  renderDocumentList();
+  updateCounts();
 }
 
 function updateCounts() {
@@ -612,8 +693,13 @@ async function saveChiDao() {
     xemDeBiet.push(cb.value);
   });
 
+  // Check if this document already has a chi dao (update mode)
+  const existingChiDao = chiDaoData[selectedDoc.id] && chiDaoData[selectedDoc.id].length > 0;
+  const existingId = existingChiDao ? chiDaoData[selectedDoc.id][0].id : '';
+
   const data = {
-    action: 'saveChiDao',
+    action: existingChiDao ? 'updateChiDao' : 'saveChiDao',
+    existingId: existingId,
     vanBanId: selectedDoc.id,
     noiDung,
     chuTri,
@@ -639,10 +725,14 @@ async function saveChiDao() {
       let result;
       try { result = JSON.parse(text); } catch (pe) { result = { success: true }; }
       if (result.success || resp.ok) {
-        showToast('Đã lưu chỉ đạo thành công!', 'success');
+        showToast(existingChiDao ? 'Đã cập nhật chỉ đạo!' : 'Đã lưu chỉ đạo thành công!', 'success');
         // Update local cache
-        if (!chiDaoData[selectedDoc.id]) chiDaoData[selectedDoc.id] = [];
-        chiDaoData[selectedDoc.id].push(data);
+        if (existingChiDao) {
+          chiDaoData[selectedDoc.id] = [data];
+        } else {
+          if (!chiDaoData[selectedDoc.id]) chiDaoData[selectedDoc.id] = [];
+          chiDaoData[selectedDoc.id].push(data);
+        }
         closeChiDaoModal();
         renderDocumentList(); // Update status dots
         return;

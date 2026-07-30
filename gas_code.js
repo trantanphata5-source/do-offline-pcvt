@@ -122,6 +122,9 @@ function doPost(e) {
       case 'saveChiDao':
         result = saveChiDao(data);
         break;
+      case 'updateChiDao':
+        result = updateChiDao(data);
+        break;
       case 'saveChuyenChiDao':
         result = saveChuyenChiDao(data);
         break;
@@ -315,6 +318,46 @@ function saveChiDao(data) {
   
   sheet.appendRow(row);
   return { success: true, id: id, message: 'Đã lưu chỉ đạo' };
+}
+
+function updateChiDao(data) {
+  var sheet = getOrCreateSheet('ChiDao', CHIDAO_HEADERS);
+  var allData = sheet.getDataRange().getValues();
+  var timestamp = new Date().toISOString();
+  
+  // Find existing row by vanBanId
+  var foundRow = -1;
+  for (var i = 1; i < allData.length; i++) {
+    if (allData[i][1] === data.vanBanId) {
+      foundRow = i + 1; // 1-indexed for sheet
+      break;
+    }
+  }
+  
+  if (foundRow > 0) {
+    // Update existing row (keep original ID)
+    var existingId = allData[foundRow - 1][0];
+    var updatedRow = [
+      existingId,
+      data.vanBanId || '',
+      data.noiDung || '',
+      data.chuTri || '',
+      data.phoiHop || '',
+      data.xemDeBiet || '',
+      data.hanGiaiQuyet || '',
+      data.doKhan || 'Bình thường',
+      data.yeuCauTraLoi ? 'Có' : 'Không',
+      data.chuyenThuKy ? 'Có' : 'Không',
+      data.theoDoiVanBan ? 'Có' : 'Không',
+      timestamp,
+      data.nguoiChiDao || ''
+    ];
+    sheet.getRange(foundRow, 1, 1, CHIDAO_HEADERS.length).setValues([updatedRow]);
+    return { success: true, id: existingId, message: 'Đã cập nhật chỉ đạo' };
+  } else {
+    // Fallback: create new
+    return saveChiDao(data);
+  }
 }
 
 function saveChuyenChiDao(data) {
