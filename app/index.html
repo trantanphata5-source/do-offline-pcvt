@@ -64,6 +64,12 @@
       <!-- TOP TOOLBAR -->
       <div class="content-toolbar">
         <h1 class="page-title">Văn bản đến - Chờ xử lý</h1>
+        <div class="toolbar-actions-always">
+          <button class="action-btn overview-btn" id="btnOverview" title="Tổng quan giao việc">
+            <span class="material-icons-outlined">dashboard</span>
+            <span>Overview</span>
+          </button>
+        </div>
         <div class="toolbar-actions" id="toolbarActions" style="display:none;">
           <button class="action-btn primary" id="btnChiDao" title="Chỉ đạo">
             <span class="material-icons-outlined">gavel</span>
@@ -397,6 +403,35 @@
         <div class="form-actions-ccd">
           <button class="btn btn-outline" id="btnCCDBack">Quay lại</button>
           <button class="btn btn-primary" id="btnSaveChuyenChiDao">Lưu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ OVERVIEW MODAL ============ -->
+  <div class="modal-overlay" id="modalOverview" style="display:none">
+    <div class="modal-container overview-modal">
+      <div class="modal-header">
+        <h2>Tổng quan giao việc</h2>
+        <button class="modal-close" id="closeOverview">&times;</button>
+      </div>
+      <div class="overview-body" id="overviewBody">
+        <table class="overview-table" id="overviewTable">
+          <thead>
+            <tr>
+              <th style="width:40px">STT</th>
+              <th style="width:140px">Số văn bản</th>
+              <th>Trích yếu</th>
+              <th style="width:140px">Chuyển chỉ đạo</th>
+              <th style="width:120px">Chủ trì</th>
+              <th style="width:160px">Phối hợp</th>
+            </tr>
+          </thead>
+          <tbody id="overviewTableBody">
+          </tbody>
+        </table>
+        <div class="overview-empty" id="overviewEmpty" style="display:none">
+          <p>Chưa có văn bản nào được giao việc</p>
         </div>
       </div>
     </div>

@@ -123,12 +123,20 @@ function initUI() {
   document.getElementById('modalChuyenChiDao').addEventListener('click', (e) => {
     if (e.target === e.currentTarget) closeChuyenChiDaoModal();
   });
+  document.getElementById('modalOverview').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closeOverviewModal();
+  });
+
+  // Overview button
+  document.getElementById('btnOverview').addEventListener('click', openOverviewModal);
+  document.getElementById('closeOverview').addEventListener('click', closeOverviewModal);
 
   // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeChiDaoModal();
       closeChuyenChiDaoModal();
+      closeOverviewModal();
     }
   });
 
@@ -963,4 +971,71 @@ function formatDate(dateStr) {
   } catch (e) {}
   
   return String(dateStr);
+}
+
+// ============================================================
+// OVERVIEW MODAL
+// ============================================================
+
+function openOverviewModal() {
+  const modal = document.getElementById('modalOverview');
+  modal.style.display = 'flex';
+  populateOverviewTable();
+}
+
+function closeOverviewModal() {
+  document.getElementById('modalOverview').style.display = 'none';
+}
+
+function populateOverviewTable() {
+  const tbody = document.getElementById('overviewTableBody');
+  const emptyMsg = document.getElementById('overviewEmpty');
+  const table = document.getElementById('overviewTable');
+  tbody.innerHTML = '';
+
+  // Find all documents that have chi dao
+  const assignedDocs = allDocuments.filter(doc => 
+    chiDaoData[doc.id] && chiDaoData[doc.id].length > 0
+  );
+
+  if (assignedDocs.length === 0) {
+    table.style.display = 'none';
+    emptyMsg.style.display = 'block';
+    return;
+  }
+
+  table.style.display = 'table';
+  emptyMsg.style.display = 'none';
+
+  assignedDocs.forEach((doc, idx) => {
+    const cd = chiDaoData[doc.id][0]; // Get first (or only) chi dao
+    
+    // Get chuyen chi dao info
+    const ccdList = chuyenChiDaoData[doc.id] || [];
+    const chuyenCD = ccdList.map(c => c.nguoiChuyen || c.phoGiamDoc || '').filter(Boolean).join(', ');
+    
+    const tr = document.createElement('tr');
+    tr.dataset.docId = doc.id;
+    tr.innerHTML = `
+      <td>${idx + 1}</td>
+      <td><span class="overview-so-vb">${escapeHtml(doc.soVanBan)}</span></td>
+      <td><div class="overview-trich-yeu">${escapeHtml(doc.trichYeu || 'Không có trích yếu')}</div></td>
+      <td>${escapeHtml(chuyenCD || '—')}</td>
+      <td>${escapeHtml(cd.chuTri || '—')}</td>
+      <td>${escapeHtml(cd.phoiHop || '—')}</td>
+    `;
+    
+    tr.addEventListener('click', () => {
+      closeOverviewModal();
+      // Find and select the document
+      const targetDoc = allDocuments.find(d => d.id === doc.id);
+      if (targetDoc) {
+        selectDocument(targetDoc);
+        // Small delay to let document select, then open chi dao modal
+        setTimeout(() => openChiDaoModal(), 200);
+      }
+    });
+    
+    tbody.appendChild(tr);
+  });
 }
