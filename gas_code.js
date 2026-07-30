@@ -241,6 +241,57 @@ function importDocuments(docArray, clearFirst) {
   return { success: true, count: rows.length };
 }
 
+/**
+ * Re-import documents from Vercel deployment.
+ * Run this manually from Apps Script editor to update Google Sheets
+ * with the latest documents.json data.
+ */
+function reimportFromVercel() {
+  var url = 'https://do-offline-pcvt.vercel.app/documents.json';
+  var response = UrlFetchApp.fetch(url);
+  var docs = JSON.parse(response.getContentText());
+  
+  Logger.log('Fetched ' + docs.length + ' documents from Vercel');
+  
+  // Clear existing VanBan data
+  var sheet = getOrCreateSheet('VanBan', VANBAN_HEADERS);
+  var lastRow = sheet.getLastRow();
+  if (lastRow > 1) {
+    sheet.getRange(2, 1, lastRow - 1, VANBAN_HEADERS.length).clear();
+  }
+  
+  // Import in batches of 100
+  var batchSize = 100;
+  var totalImported = 0;
+  for (var i = 0; i < docs.length; i += batchSize) {
+    var batch = docs.slice(i, i + batchSize);
+    var rows = [];
+    for (var j = 0; j < batch.length; j++) {
+      var doc = batch[j];
+      rows.push([
+        doc.id || '',
+        doc.soVanBan || '',
+        doc.coQuanBanHanh || '',
+        doc.ngayVanBan || '',
+        doc.trichYeu || '',
+        doc.doKhan || 'Bình thường',
+        doc.doMat || 'Bình thường',
+        JSON.stringify(doc.files || []),
+        doc.zipName || '',
+        doc.folderName || ''
+      ]);
+    }
+    if (rows.length > 0) {
+      var startRow = sheet.getLastRow() + 1;
+      sheet.getRange(startRow, 1, rows.length, VANBAN_HEADERS.length).setValues(rows);
+      totalImported += rows.length;
+    }
+  }
+  
+  Logger.log('Imported ' + totalImported + ' documents to VanBan sheet');
+  return { success: true, count: totalImported };
+}
+
 function saveChiDao(data) {
   var sheet = getOrCreateSheet('ChiDao', CHIDAO_HEADERS);
   var id = 'CD_' + new Date().getTime();

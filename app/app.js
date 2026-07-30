@@ -176,12 +176,25 @@ async function loadDocuments() {
   loading.style.display = 'flex';
 
   try {
-    // Always load document list from documents.json (source of truth for metadata)
-    await loadFromJSON();
-    
-    // Load chi dao/chuyen chi dao data from Google Sheets
+    // Try Google Sheets first, fallback to local JSON
     if (GAS_URL) {
-      loadChiDaoFromSheets();
+      try {
+        const resp = await fetch(`${GAS_URL}?action=getDocuments`, { redirect: 'follow' });
+        const text = await resp.text();
+        const result = JSON.parse(text);
+        if (result.success && result.data && result.data.length > 0) {
+          allDocuments = result.data;
+          // Also try to load chi dao data
+          loadChiDaoFromSheets();
+        } else {
+          await loadFromJSON();
+        }
+      } catch (e) {
+        console.warn('GAS fetch failed, falling back to local JSON:', e);
+        await loadFromJSON();
+      }
+    } else {
+      await loadFromJSON();
     }
 
     filteredDocuments = [...allDocuments];
