@@ -2,9 +2,9 @@
   {
     "id": "1765_BQLDA-QLDA_27_07_2026",
     "soVanBan": "1765/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "27/07/2026",
-    "trichYeu": "27 7 2026 SỐ 1765",
+    "trichYeu": "SỐ 1765",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -16,9 +16,9 @@
   {
     "id": "23468_TB-SNNMT-BTTĐC_27_07_2026",
     "soVanBan": "23468/TB-SNNMT-BTTĐC",
-    "coQuanBanHanh": "Thông báo",
+    "coQuanBanHanh": "Sở Nông nghiệp & MT",
     "ngayVanBan": "27/07/2026",
-    "trichYeu": "23468 SNN KV3 TB kết luận cuộc họp ngày 23.7.26 DI DOI HTKT.signed.signed.signed.signed.signed.signed",
+    "trichYeu": "kết luận cuộc họp ngày 23.7.26 DI DOI HTKT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -64,7 +64,7 @@
     "soVanBan": "3764/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "24/07/2026",
-    "trichYeu": "22 7 2026 CV EVNHCMC Cau vuot QL51, ĐT 994C   PCVT, LDCT",
+    "trichYeu": "-CV-EVNHCMC-Cau vuot QL51, ĐT 994C - PCVT, LDCT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -80,7 +80,7 @@
     "soVanBan": "3792/EVNHCMC-KT+ĐT+KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "24/07/2026",
-    "trichYeu": "2026.07.23 VB   EVNHCMC KT   Gửi PCVT về việc di doi luoi dien dong bo giao thong đường Phú Mỹ Tóc Tiên",
+    "trichYeu": "2026.07.23 VB - EVNHCMC-KT - Gửi PCVT về việc di doi luoi dien dong bo giao thong đường Phú Mỹ Tóc Tiên",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -95,7 +95,7 @@
     "soVanBan": "3960/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "23/07/2026",
-    "trichYeu": "4 Ý kiến  về hố sơ thiết kế  di dời TBA 1250kVA VIAS",
+    "trichYeu": "kiến  về hố sơ thiết kế  di dời TBA 1250kVA VIAS",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -110,7 +110,7 @@
     "soVanBan": "3459/UBND-KTHTĐT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "22/07/2026",
-    "trichYeu": "UBND phường Rạch Dừa trả lời đơn Ông Phạm Minh Nguyên 2.signed.signed.signed.signed.signed",
+    "trichYeu": "004. 17.06.2026 - Văn bản 4053-Công ty Lưới điện cao thế trả lời",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -140,7 +140,7 @@
     "soVanBan": "3949/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "22/07/2026",
-    "trichYeu": "4 Ý kiến  về hố sơ thiết kế  ban ve thi cong di doi duong day KCN Phú Mỹ 3 (P)",
+    "trichYeu": "kiến  về hố sơ thiết kế  ban ve thi cong di doi duong day KCN Phú Mỹ 3 (P)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -155,9 +155,9 @@
   {
     "id": "278_GM-BQLDAPM_21_07_2026",
     "soVanBan": "278/GM-BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "21/07/2026",
-    "trichYeu": "278GM BQL 1",
+    "trichYeu": "278GM-BQL 1",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -184,9 +184,9 @@
   {
     "id": "118_GM-QLDA_20_07_2026",
     "soVanBan": "118/GM-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "20/07/2026",
-    "trichYeu": "GM lam viec di doi luoi dien. 2026.signed.signed",
+    "trichYeu": "lam viec di doi luoi dien. 2026",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -200,7 +200,7 @@
     "soVanBan": "3859/PCVT-QLLD",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "20/07/2026",
-    "trichYeu": "CV GUI NHA MANG VIEN THONG",
+    "trichYeu": "GUI NHA MANG VIEN THONG",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -215,7 +215,7 @@
     "soVanBan": "3873/PCVT-KHVT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "20/07/2026",
-    "trichYeu": "PCVT kiến nghị về khối lượng và dự toán chi phí bồi thường di dời lưới điện thuộc dự án Mở rộng đường Phú Mỹ   Tóc Tiên.",
+    "trichYeu": "PCVT kiến nghị về khối lượng và dự toán chi phí bồi thường di dời lưới điện thuộc dự án Mở rộng đường Phú Mỹ - Tóc Tiên.",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -230,9 +230,9 @@
   {
     "id": "320_BQLDA-QLDA.2_18_07_2026",
     "soVanBan": "320/BQLDA-QLDA.2",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "18/07/2026",
-    "trichYeu": "320 BQLDA ý kiến 2.5 Đống Đa",
+    "trichYeu": "ý kiến 2.5 Đống Đa",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -246,7 +246,7 @@
     "soVanBan": "2829/QĐ-UBND",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "17/07/2026",
-    "trichYeu": "2829QD.signed",
+    "trichYeu": "2829QD",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -258,9 +258,9 @@
   {
     "id": "309_BQLDA-QLDA_16_07_2026",
     "soVanBan": "309/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "16/07/2026",
-    "trichYeu": "309 BQLDA",
+    "trichYeu": "",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -274,7 +274,7 @@
     "soVanBan": "1092/KTHT&ĐT",
     "coQuanBanHanh": "KTHT&ĐT",
     "ngayVanBan": "15/07/2026",
-    "trichYeu": "Di dời lưới điện.signed.signed.signed",
+    "trichYeu": "Di dời lưới điện",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -289,7 +289,7 @@
     "soVanBan": "289/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "15/07/2026",
-    "trichYeu": "561 CV PKT 2.Thông báo thẩm định di doi duong dien PMTT.signed.signed",
+    "trichYeu": "561 CV PKT 2.Thông báo thẩm định di doi duong dien PMTT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -322,7 +322,7 @@
     "soVanBan": "3810/PA-PCVT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "15/07/2026",
-    "trichYeu": "Khái toán đầu tư  MV TB   TH   PM   MXB1 l2",
+    "trichYeu": "Khái toán đầu tư  MV TB - TH - PM - MXB1 l2",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -338,9 +338,9 @@
   {
     "id": "842_BQLDAPM_15_07_2026",
     "soVanBan": "842/BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "15/07/2026",
-    "trichYeu": "Van ban gửi Công ty Điện lực Vũng tàu hỗ trợ trong suốt quá trình thi công 2026 07 14.signed.signed.signed",
+    "trichYeu": "Van ban gửi Công ty Điện lực Vũng tàu hỗ trợ trong suốt quá trình thi công 2026-07-14",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -354,7 +354,7 @@
     "soVanBan": "1092/TB-UBND",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "14/07/2026",
-    "trichYeu": "1092tb.signed",
+    "trichYeu": "1092tb",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -403,7 +403,7 @@
     "soVanBan": "3769/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "14/07/2026",
-    "trichYeu": "14.7.2026  Phúc đáp phương án di dời hệ thống điện phục vụ thi công Dự án đường Hàng Điều",
+    "trichYeu": "- Phúc đáp phương án di dời hệ thống điện phục vụ thi công Dự án đường Hàng Điều",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -418,7 +418,7 @@
     "soVanBan": "284/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "13/07/2026",
-    "trichYeu": "CV QLDT Ý kiến dự toán Sân vận động Châu Pha (lần 2)",
+    "trichYeu": "CV-QLDT-Ý kiến dự toán Sân vận động Châu Pha (lần 2)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -433,7 +433,7 @@
     "soVanBan": "3522/EVNHCMC-ĐT",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "10/07/2026",
-    "trichYeu": "4008 UBND KTHTĐT",
+    "trichYeu": "NGUYEN DINH CONG",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -450,7 +450,7 @@
     "soVanBan": "3703/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "10/07/2026",
-    "trichYeu": "10.07.2026  Phúc đáp về ý kiến dự ttoán đường Láng Cát Long Sơn   Phường Tân Hải gửi Ban Tải",
+    "trichYeu": "- Phúc đáp về ý kiến dự ttoán đường Láng Cát Long Sơn - Phường Tân Hải gửi Ban Tải",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -465,7 +465,7 @@
     "soVanBan": "3704/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "10/07/2026",
-    "trichYeu": "10.07.2026  Phúc đáp về ý kiến dự ttoán đường Láng Cát Long Sơn   Phường Tân Hải gửi Ban Tải",
+    "trichYeu": "- Phúc đáp về ý kiến dự ttoán đường Láng Cát Long Sơn - Phường Tân Hải gửi Ban Tải",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -478,9 +478,9 @@
   {
     "id": "4331_TTGTHTKT-QLDA_10_07_2026",
     "soVanBan": "4331/TTGTHTKT-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "10/07/2026",
-    "trichYeu": "2. CV PH HTKT QL51.signed.signed.signed.signed.signed",
+    "trichYeu": "2. CV PH HTKT QL51",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -506,9 +506,9 @@
   {
     "id": "1474_BQLDA-QLDA_09_07_2026",
     "soVanBan": "1474/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "09/07/2026",
-    "trichYeu": "CV   Có ý kiến và Thống nhất phương án di dời điện.signed.signed.signed",
+    "trichYeu": "- Có ý kiến và Thống nhất phương án di dời điện",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -520,9 +520,9 @@
   {
     "id": "216_GM-KTHT&ĐT_09_07_2026",
     "soVanBan": "216/GM-KTHT&ĐT",
-    "coQuanBanHanh": "Giấy mời",
+    "coQuanBanHanh": "GM-KTHT&ĐT",
     "ngayVanBan": "09/07/2026",
-    "trichYeu": "Thu moi Thong nhat cac noi dung bien ban ve chi phi di doi luoi dien duong noi cao toc.signed.signed",
+    "trichYeu": "Thu moi Thong nhat cac noi dung bien ban ve chi phi di doi luoi dien duong noi cao toc",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -553,9 +553,9 @@
   {
     "id": "42_GM-BQLDA_09_07_2026",
     "soVanBan": "42/GM-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "09/07/2026",
-    "trichYeu": "42 GM.BQLDA trao đổi di dời điện Đống Đa",
+    "trichYeu": "trao đổi di dời điện Đống Đa",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -569,7 +569,7 @@
     "soVanBan": "279/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "08/07/2026",
-    "trichYeu": "CV QLDT Ý kiến dự toán Láng Cát Long Sơn đoạn qua phường Tân Hải",
+    "trichYeu": "CV-QLDT-Ý kiến dự toán Láng Cát Long Sơn đoạn qua phường Tân Hải",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -584,7 +584,7 @@
     "soVanBan": "280/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "08/07/2026",
-    "trichYeu": "CV QLDT Ý kiến dự toán Láng Cát Long Sơn đoạn qua xã Long Sơn",
+    "trichYeu": "CV-QLDT-Ý kiến dự toán Láng Cát Long Sơn đoạn qua xã Long Sơn",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -599,7 +599,7 @@
     "soVanBan": "3600/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "08/07/2026",
-    "trichYeu": "5.7.2026  Phúc đáp phương án di dời hệ thống điện phục vụ thi công Dự án đường Nguyễn Chí Thanh",
+    "trichYeu": "- Phúc đáp phương án di dời hệ thống điện phục vụ thi công Dự án đường Nguyễn Chí Thanh",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -628,7 +628,7 @@
   {
     "id": "196_BQLDA-BT&PTQĐ_07_07_2026",
     "soVanBan": "196/BQLDA-BT&PTQĐ",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "07/07/2026",
     "trichYeu": "196.BQLDA",
     "doKhan": "Bình thường",
@@ -644,7 +644,7 @@
     "soVanBan": "3425/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "07/07/2026",
-    "trichYeu": "06 7 2026 CV EVNHCMC di doi luoi dien  PCVT, PCDD,",
+    "trichYeu": "-CV-EVNHCMC-di doi luoi dien -PCVT, PCDD,",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -659,7 +659,7 @@
     "soVanBan": "3553/PCVT-KHVT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "07/07/2026",
-    "trichYeu": "Thư mời họp về triển khai di dời lưới điện pvi dự án Phú Mỹ   Tóc Tiên",
+    "trichYeu": "Thư mời họp về triển khai di dời lưới điện pvi dự án Phú Mỹ - Tóc Tiên",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -674,7 +674,7 @@
     "soVanBan": "3557/PCVT-KHVT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "07/07/2026",
-    "trichYeu": "Thư mời họp về triển khai di dời lưới điện pvi dự án Phú Mỹ   Tóc Tiên",
+    "trichYeu": "Thư mời họp về triển khai di dời lưới điện pvi dự án Phú Mỹ - Tóc Tiên",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -689,7 +689,7 @@
     "soVanBan": "3591/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "07/07/2026",
-    "trichYeu": "PCVT T7.2026 PHUC DAP DI DOI LD DUONG DONG DA (271 QLDA RD) PGD",
+    "trichYeu": "PCVT T7.2026 PHUC DAP DI DOI LD DUONG DONG DA (271-QLDA RD) PGD",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -704,7 +704,7 @@
     "soVanBan": "900/QLLD",
     "coQuanBanHanh": "Phòng Quản lý Lưới điện",
     "ngayVanBan": "07/07/2026",
-    "trichYeu": "BC chuyển công tơ",
+    "trichYeu": "chuyển công tơ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -717,9 +717,9 @@
   {
     "id": "271_BQLDA-QLDA_03_07_2026",
     "soVanBan": "271/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "03/07/2026",
-    "trichYeu": "271 BQLDA phới hợp thi công 2.5 Đống Đa",
+    "trichYeu": "phới hợp thi công 2.5 Đống Đa",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -733,7 +733,7 @@
     "soVanBan": "2810/UBND-KTHTĐT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "03/07/2026",
-    "trichYeu": "UBND phường Rạch Dừa trả lời đơn Ông Vương Đình Thường .signed.signed.signed.signed.signed",
+    "trichYeu": "UBND phường Rạch Dừa trả lời đơn Ông Vương Đình Thường",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -748,7 +748,7 @@
     "soVanBan": "3513/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "03/07/2026",
-    "trichYeu": "02.07.2026 Phối hợp triển khai cam kết bồi thường thực hiện di dời đường nối Cao",
+    "trichYeu": "-Phối hợp triển khai cam kết bồi thường thực hiện di dời đường nối Cao",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -761,9 +761,9 @@
   {
     "id": "6305_GM-BQLDAGT-BĐHDA12_03_07_2026",
     "soVanBan": "6305/GM-BQLDAGT-BĐHDA12",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Giao thông",
     "ngayVanBan": "03/07/2026",
-    "trichYeu": "giấy mời.signed.signed.signed",
+    "trichYeu": "giấy mời",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -775,9 +775,9 @@
   {
     "id": "1368_BQLDA-QLDA_02_07_2026",
     "soVanBan": "1368/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "02/07/2026",
-    "trichYeu": "02 7 2026 SỐ 1368",
+    "trichYeu": "SỐ 1368",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -789,9 +789,9 @@
   {
     "id": "24_BQLDA-TNV_02_07_2026",
     "soVanBan": "24/BQLDA-TNV",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "02/07/2026",
-    "trichYeu": "CV gui Cong ty Dien luc Vung Tau",
+    "trichYeu": "gui Cong ty Dien luc Vung Tau",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -803,9 +803,9 @@
   {
     "id": "202_GM-KTHT&ĐT_01_07_2026",
     "soVanBan": "202/GM-KTHT&ĐT",
-    "coQuanBanHanh": "Giấy mời",
+    "coQuanBanHanh": "GM-KTHT&ĐT",
     "ngayVanBan": "01/07/2026",
-    "trichYeu": "Thu moi Thong nhat gia tri luoi dien duong noi cao toc.signed.signed",
+    "trichYeu": "Thu moi Thong nhat gia tri luoi dien duong noi cao toc",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -817,7 +817,7 @@
   {
     "id": "03_2026_CV_GPAG-ST9_30_06_2026",
     "soVanBan": "03/2026_CV_GPAG-ST9",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "2026_CV_GPAG-ST9",
     "ngayVanBan": "30/06/2026",
     "trichYeu": "03.2026.CV GPAG",
     "doKhan": "Bình thường",
@@ -831,9 +831,9 @@
   {
     "id": "1330_BQLDA-BTPTQĐ_30_06_2026",
     "soVanBan": "1330/BQLDA-BTPTQĐ",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "30/06/2026",
-    "trichYeu": "1330. cv gửi điện lực lần 2.signed.signed",
+    "trichYeu": "1660.CV gửi điện lực phương án",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -849,7 +849,7 @@
     "soVanBan": "1874/QĐ-UBND",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "30/06/2026",
-    "trichYeu": "1874 QD.UBND 0001.signed",
+    "trichYeu": "0001",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -863,7 +863,7 @@
     "soVanBan": "475/GM-UBND",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "30/06/2026",
-    "trichYeu": "30.6. Hop di doi dien duong noi cao toc.signed.signed",
+    "trichYeu": "30.6. Hop di doi dien duong noi cao toc",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -875,9 +875,9 @@
   {
     "id": "102_GM-BQLDA_26_06_2026",
     "soVanBan": "102/GM-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "26/06/2026",
-    "trichYeu": "26.6.2026. GM 102",
+    "trichYeu": ". GM 102",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -891,7 +891,7 @@
     "soVanBan": "3687/TTGTHTKT-CXCS3",
     "coQuanBanHanh": "TTGTHTKT-CXCS3",
     "ngayVanBan": "26/06/2026",
-    "trichYeu": "260626 VV đề nghị Công ty Nam Phường khẩn trương tháo dỡJ di dời tòan bộ gian hàng ra khỏi khu vực tổ chức sự kiện.signed.signed.signed.signed",
+    "trichYeu": "260626 VV đề nghị Công ty Nam Phường khẩn trương tháo dỡJ di dời tòan bộ gian hàng ra khỏi khu vực tổ chức sự kiện",
     "doKhan": "Khẩn",
     "doMat": "Bình thường",
     "files": [
@@ -909,9 +909,9 @@
   {
     "id": "5872_BQLDAGT-BĐHDA8_26_06_2026",
     "soVanBan": "5872/BQLDAGT-BĐHDA8",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Giao thông",
     "ngayVanBan": "26/06/2026",
-    "trichYeu": "2026 06 24 GỬI ĐIỆN LỰC VŨNG TÀU VỀ VIỆC XỬ LÝ ĐƯỜNG DÂY ĐIỆN SAU ĐỒNG HỒ DỰ ÁN ĐƯỜNG 991B.signed.signed.signed",
+    "trichYeu": "2026 06 24 GỬI ĐIỆN LỰC VŨNG TÀU VỀ VIỆC XỬ LÝ ĐƯỜNG DÂY ĐIỆN SAU ĐỒNG HỒ DỰ ÁN ĐƯỜNG 991B",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -925,7 +925,7 @@
     "soVanBan": "267/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "25/06/2026",
-    "trichYeu": "CV QLDT góp ý nội dung hồ sơ thiết kế dự toán di dời điện",
+    "trichYeu": "CV-QLDT-góp ý nội dung hồ sơ thiết kế dự toán di dời điện",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -940,7 +940,7 @@
     "soVanBan": "1169",
     "coQuanBanHanh": "",
     "ngayVanBan": "24/06/2026",
-    "trichYeu": "Đơn xin di dời trụ Điện  Nguyễn Thị Bình",
+    "trichYeu": "Đơn xin di dời trụ Điện- Nguyễn Thị Bình",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -952,7 +952,7 @@
   {
     "id": "154_26_CV-TGEC_24_06_2026",
     "soVanBan": "154/26_CV-TGEC",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "26_CV-TGEC",
     "ngayVanBan": "24/06/2026",
     "trichYeu": "15.26.CV TGEC",
     "doKhan": "Bình thường",
@@ -997,7 +997,7 @@
     "soVanBan": "3278/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "23/06/2026",
-    "trichYeu": "4 Ý kiến  về hố sơ thiết kế di dời TBA 160kVA Lữ đoàn 171",
+    "trichYeu": "kiến  về hố sơ thiết kế di dời TBA 160kVA Lữ đoàn 171",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1047,7 +1047,7 @@
     "soVanBan": "3080/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "22/06/2026",
-    "trichYeu": "19 6 2026 CV EVNHCMC DA phuong Tam Thang PCVT",
+    "trichYeu": "-CV-EVNHCMC-DA phuong Tam Thang-PCVT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1079,7 +1079,7 @@
     "soVanBan": "3204/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "20/06/2026",
-    "trichYeu": "18.06.2026 PCVT. Phuc Dap VB 1144 Ban P Tam Thang",
+    "trichYeu": "PCVT. Phuc Dap VB 1144 Ban P Tam Thang",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1094,7 +1094,7 @@
     "soVanBan": "3073/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "19/06/2026",
-    "trichYeu": "19 6 2026 CV EVNHCMC Hoi Bai   Phuoc Tan PCVT",
+    "trichYeu": "-CV-EVNHCMC-Hoi Bai - Phuoc Tan-PCVT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1109,7 +1109,7 @@
     "soVanBan": "3170/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "19/06/2026",
-    "trichYeu": "15 6 2026  EVNHCMC KH   De nghi cac don vi bao cao phap ly   tien do di doi tai lap cac tram dien",
+    "trichYeu": "15 6 2026 -EVNHCMC-KH - De nghi cac don vi bao cao phap ly - tien do di doi tai lap cac tram dien",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1125,7 +1125,7 @@
     "soVanBan": "9004/SCT-QLNL",
     "coQuanBanHanh": "Sở Công Thương",
     "ngayVanBan": "19/06/2026",
-    "trichYeu": "2026 06 18 CV Kien nghi di doi phuc vu GPMB",
+    "trichYeu": "CV Kien nghi di doi phuc vu GPMB",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1154,9 +1154,9 @@
   {
     "id": "1173_TTr-BQLDA_17_06_2026",
     "soVanBan": "1173/TTr-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "17/06/2026",
-    "trichYeu": "TRINH PHONG KINH TE HA TANG THAM DINH DI DOI DIEN NGUYEN CHI THANH 16.6.2026.signed.signed.signed",
+    "trichYeu": "TRINH PHONG KINH TE HA TANG THAM DINH DI DOI DIEN NGUYEN CHI THANH 16.6.2026",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1174,7 +1174,7 @@
     "soVanBan": "3013/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "17/06/2026",
-    "trichYeu": "15 6 2026  EVNHCMC KH   De nghi cac don vi bao cao phap ly   tien do di doi tai lap cac tram dien",
+    "trichYeu": "15 6 2026 -EVNHCMC-KH - De nghi cac don vi bao cao phap ly - tien do di doi tai lap cac tram dien",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1189,9 +1189,9 @@
   {
     "id": "5418_GM-BQLDAGT-BĐHDA8_17_06_2026",
     "soVanBan": "5418/GM-BQLDAGT-BĐHDA8",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Giao thông",
     "ngayVanBan": "17/06/2026",
-    "trichYeu": "2026 04 15 GM Di dời hạ tầng điện sau đồng hồ dự án đường 991B 12.signed.signed.signed",
+    "trichYeu": "2026 04 15 GM Di dời hạ tầng điện sau đồng hồ dự án đường 991B-12",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1203,9 +1203,9 @@
   {
     "id": "5419_GM-BQLDAGT-BĐHDA8_17_06_2026",
     "soVanBan": "5419/GM-BQLDAGT-BĐHDA8",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Giao thông",
     "ngayVanBan": "17/06/2026",
-    "trichYeu": "2026 06 16 KHẢO SÁT HIỆN TRẠNG HẠ TẦNG KỸ THUẬT DI DỜI PHỤC VỤ THI CÔNG TỈNH LỘ 991 ND.signed.signed.signed",
+    "trichYeu": "2026 06 16 KHẢO SÁT HIỆN TRẠNG HẠ TẦNG KỸ THUẬT DI DỜI PHỤC VỤ THI CÔNG TỈNH LỘ 991 ND",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1231,7 +1231,7 @@
   {
     "id": "1144_BQLDA-QLDA_16_06_2026",
     "soVanBan": "1144/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "16/06/2026",
     "trichYeu": "CONG VAN GUI CONG TY DIEN LUC TPHCM",
     "doKhan": "Bình thường",
@@ -1247,7 +1247,7 @@
   {
     "id": "1160_BQLDA-BTPTQĐ_16_06_2026",
     "soVanBan": "1160/BQLDA-BTPTQĐ",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "16/06/2026",
     "trichYeu": "2032.TP chi dao trien khai 6081 cua So Tai  nguyen",
     "doKhan": "Bình thường",
@@ -1264,7 +1264,7 @@
   {
     "id": "1163_BQLDA-QLDA_16_06_2026",
     "soVanBan": "1163/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "16/06/2026",
     "trichYeu": "Công văn gửi điện lực đề nghị thu hồi trụ điện",
     "doKhan": "Bình thường",
@@ -1297,7 +1297,7 @@
     "soVanBan": "255/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "15/06/2026",
-    "trichYeu": "CV QLDT gop y pa boi thuong D13",
+    "trichYeu": "CV-QLDT-gop y pa boi thuong D13",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1364,7 +1364,7 @@
     "soVanBan": "2982/PCVT-KHVT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "12/06/2026",
-    "trichYeu": "PCVT báo cáo TCT   Ban Bà Rịa",
+    "trichYeu": "PCVT báo cáo TCT - Ban Bà Rịa",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1379,7 +1379,7 @@
     "soVanBan": "2983/PCVT-KHVT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "12/06/2026",
-    "trichYeu": "CV QLDT góp ý nội dung hồ sơ thiết kế dự toán di dời điện",
+    "trichYeu": "CV-QLDT-góp ý nội dung hồ sơ thiết kế dự toán di dời điện",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1393,9 +1393,9 @@
   {
     "id": "169_TM-BQLDA_11_06_2026",
     "soVanBan": "169/TM-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "11/06/2026",
-    "trichYeu": "TM 169",
+    "trichYeu": "169",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1409,7 +1409,7 @@
     "soVanBan": "247/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "11/06/2026",
-    "trichYeu": "CV QLDT góp ý nội dung hồ sơ thiết kế dự toán di dời điện",
+    "trichYeu": "CV-QLDT-góp ý nội dung hồ sơ thiết kế dự toán di dời điện",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1436,9 +1436,9 @@
   {
     "id": "14_GM-QLDA_10_06_2026",
     "soVanBan": "14/GM-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "10/06/2026",
-    "trichYeu": "Giay moi hop KIểm đếm hạ tầng điện   thu hai 15.6. 2026.signed.signed",
+    "trichYeu": "Giay moi hop KIểm đếm hạ tầng điện - thu hai 15.6. 2026",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1452,7 +1452,7 @@
     "soVanBan": "2253/UBND-KT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "10/06/2026",
-    "trichYeu": "Văn bản qua mạng 2253 UBND KT",
+    "trichYeu": "Văn bản qua mạng 2253 UBND-KT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1465,9 +1465,9 @@
   {
     "id": "57_GM-KTHTDT_10_06_2026",
     "soVanBan": "57/GM-KTHTDT",
-    "coQuanBanHanh": "Giấy mời",
+    "coQuanBanHanh": "GM-KTHTDT",
     "ngayVanBan": "10/06/2026",
-    "trichYeu": "01. GIẤY MỜI LÀM VIỆC (lần 3).signed.signed",
+    "trichYeu": "01. GIẤY MỜI LÀM VIỆC (lần 3)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1479,9 +1479,9 @@
   {
     "id": "54_GM-KTHTDT_09_06_2026",
     "soVanBan": "54/GM-KTHTDT",
-    "coQuanBanHanh": "Giấy mời",
+    "coQuanBanHanh": "GM-KTHTDT",
     "ngayVanBan": "09/06/2026",
-    "trichYeu": "01. GIẤY MỜI LÀM VIỆC (lần 2).signed.signed",
+    "trichYeu": "01. GIẤY MỜI LÀM VIỆC (lần 2)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1493,7 +1493,7 @@
   {
     "id": "16_CV-HL_26_08_06_2026",
     "soVanBan": "16/CV-HL_26",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-HL_26",
     "ngayVanBan": "08/06/2026",
     "trichYeu": "Y kien TK Cty Hoang Le",
     "doKhan": "Bình thường",
@@ -1509,7 +1509,7 @@
     "soVanBan": "2834/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "08/06/2026",
-    "trichYeu": "4 Ý kiến  về hố sơ thiết kế  di dời 02 TBA 250kVA + 400kVA Hoàng Lê",
+    "trichYeu": "kiến  về hố sơ thiết kế  di dời 02 TBA 250kVA + 400kVA Hoàng Lê",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1522,9 +1522,9 @@
   {
     "id": "560_BQLDAPM_08_06_2026",
     "soVanBan": "560/BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "08/06/2026",
-    "trichYeu": "494 BQL 1",
+    "trichYeu": "1",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1552,9 +1552,9 @@
   {
     "id": "189_BQLDA-QLDA_05_06_2026",
     "soVanBan": "189/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "05/06/2026",
-    "trichYeu": "189 BQLDA QLDA",
+    "trichYeu": "",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1566,9 +1566,9 @@
   {
     "id": "74_GM-QLDA_05_06_2026",
     "soVanBan": "74/GM-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "05/06/2026",
-    "trichYeu": "GM khao sat thong nhat PA nang cao luoi dien cao theo 110KV  Ke 2 bo song dinh. 2026.signed.signed",
+    "trichYeu": "khao sat thong nhat PA nang cao luoi dien cao theo 110KV- Ke 2 bo song dinh. 2026",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1580,7 +1580,7 @@
   {
     "id": "1083_LĐ-HCKT_03_06_2026",
     "soVanBan": "1083/LĐ-HCKT",
-    "coQuanBanHanh": "LĐ-HCKT",
+    "coQuanBanHanh": "Phòng Hành chính Kế toán",
     "ngayVanBan": "03/06/2026",
     "trichYeu": "1083.LĐ",
     "doKhan": "Bình thường",
@@ -1594,7 +1594,7 @@
   {
     "id": "1084_LĐ-HCKT_03_06_2026",
     "soVanBan": "1084/LĐ-HCKT",
-    "coQuanBanHanh": "LĐ-HCKT",
+    "coQuanBanHanh": "Phòng Hành chính Kế toán",
     "ngayVanBan": "03/06/2026",
     "trichYeu": "1084.LĐ",
     "doKhan": "Bình thường",
@@ -1608,9 +1608,9 @@
   {
     "id": "173_BQLDA-QLDA_02_06_2026",
     "soVanBan": "173/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "02/06/2026",
-    "trichYeu": "173 BQLDA phối hợp triển khai  Điện lực",
+    "trichYeu": "LAP DAT THOAT NUOC NGUYEN HUU CANH",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1628,7 +1628,7 @@
     "soVanBan": "2652/PCVT-QLDT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "02/06/2026",
-    "trichYeu": "GP.5413 SGTVT.BRVT.cap.phep.tc (8.11.2023) LD.2022+lora.AnNgai",
+    "trichYeu": "GP.5413-SGTVT.BRVT.cap.phep.tc (8.11.2023)-LD.2022+lora.AnNgai",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1646,7 +1646,7 @@
     "soVanBan": "2678/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "02/06/2026",
-    "trichYeu": "29.05.2026 Báo cáo TCT về dự án đường nối vào Cao tốc Biên Hòa Vũng Tàu",
+    "trichYeu": "-Báo cáo TCT về dự án đường nối vào Cao tốc Biên Hòa Vũng Tàu",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1660,7 +1660,7 @@
   {
     "id": "4863_GM-BQLDAGT-DA12_02_06_2026",
     "soVanBan": "4863/GM-BQLDAGT-DA12",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Giao thông",
     "ngayVanBan": "02/06/2026",
     "trichYeu": "ThuMoi hop di doi dien ngay 01.06.2026",
     "doKhan": "Bình thường",
@@ -1675,9 +1675,9 @@
   {
     "id": "951_BQLDA-QLDA_02_06_2026",
     "soVanBan": "951/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "02/06/2026",
-    "trichYeu": "02 6 2026 SỐ 951",
+    "trichYeu": "SỐ 951",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1689,9 +1689,9 @@
   {
     "id": "954_BQLDA-QLDA_02_06_2026",
     "soVanBan": "954/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "02/06/2026",
-    "trichYeu": "02 6 2026 SỐ 954",
+    "trichYeu": "SỐ 954",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1703,7 +1703,7 @@
   {
     "id": "44_BQLDA_28_05_2026",
     "soVanBan": "44/BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "28/05/2026",
     "trichYeu": "44.BQLDA",
     "doKhan": "Bình thường",
@@ -1717,7 +1717,7 @@
   {
     "id": "10_CV-HL-26_27_05_2026",
     "soVanBan": "10/CV-HL-26",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-HL-26",
     "ngayVanBan": "27/05/2026",
     "trichYeu": "10.CV HL",
     "doKhan": "Bình thường",
@@ -1747,9 +1747,9 @@
   {
     "id": "163_QLDA_26_05_2026",
     "soVanBan": "163/QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "26/05/2026",
-    "trichYeu": "Văn bản qua mạng 163 CV QLDA",
+    "trichYeu": "Văn bản qua mạng 163 CV-QLDA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1777,9 +1777,9 @@
   {
     "id": "148_QLDA_21_05_2026",
     "soVanBan": "148/QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "21/05/2026",
-    "trichYeu": "CV de nghi tiep nhan vat tu thu hoi (CTy ĐLVT).signed.signed",
+    "trichYeu": "de nghi tiep nhan vat tu thu hoi (CTy ĐLVT)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1793,7 +1793,7 @@
     "soVanBan": "2120/UBND-VP",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "21/05/2026",
-    "trichYeu": "Ve viec de nghi di doi dien ke va lap dat cong to dien.signed.signed.signed",
+    "trichYeu": "Ve viec de nghi di doi dien ke va lap dat cong to dien",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1836,7 +1836,7 @@
     "soVanBan": "1607/UBND-KT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "18/05/2026",
-    "trichYeu": "ý kiến di dời trụ điện và kéo cáp.signed.signed.signed",
+    "trichYeu": "ý kiến di dời trụ điện và kéo cáp",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1855,7 +1855,7 @@
     "soVanBan": "201/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "18/05/2026",
-    "trichYeu": "CV QLDT gop y pa boi thuong D22",
+    "trichYeu": "CV-QLDT-gop y pa boi thuong D22",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1885,9 +1885,9 @@
   {
     "id": "448_BQLDAPM_18_05_2026",
     "soVanBan": "448/BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "18/05/2026",
-    "trichYeu": "Dự thảo đính kèm Văn bản 448 BQLDAPM",
+    "trichYeu": "Dự thảo đính kèm Văn bản 448-BQLDAPM",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1902,7 +1902,7 @@
     "soVanBan": "192/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "14/05/2026",
-    "trichYeu": "CV QLDT gop y pa boi thuong DA 105ha Tai dinh cu",
+    "trichYeu": "CV-QLDT-gop y pa boi thuong DA 105ha Tai dinh cu",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1932,9 +1932,9 @@
   {
     "id": "425_BQLDAPM_14_05_2026",
     "soVanBan": "425/BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "14/05/2026",
-    "trichYeu": "425 BQL 1",
+    "trichYeu": "1",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1966,7 +1966,7 @@
     "soVanBan": "240/VHLD",
     "coQuanBanHanh": "Đội Vận hành Lưới điện",
     "ngayVanBan": "11/05/2026",
-    "trichYeu": "Tờ trình đăng ký công tác Di dời đường dây trung thế phục vụ Công trình Điều chỉnh dải phân cách phụ Đường 3 2",
+    "trichYeu": "Tờ trình đăng ký công tác Di dời đường dây trung thế phục vụ Công trình Điều chỉnh dải phân cách phụ Đường 3-2",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -1980,7 +1980,7 @@
   {
     "id": "380_BQLDAPM_08_05_2026",
     "soVanBan": "380/BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "08/05/2026",
     "trichYeu": "380.BQLDAPM",
     "doKhan": "Bình thường",
@@ -1994,9 +1994,9 @@
   {
     "id": "381_BQLDAPM_08_05_2026",
     "soVanBan": "381/BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "08/05/2026",
-    "trichYeu": "284   Phúc đáp về ý kiến dự thảo chi phí đường D22 của điện lực",
+    "trichYeu": "- Phúc đáp về ý kiến dự thảo chi phí đường D22 của điện lực",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2013,7 +2013,7 @@
     "soVanBan": "1936/PCVT-QLLD",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "07/05/2026",
-    "trichYeu": "CV phản hồi di dời trụ điện (Đặng Thị Thanh Tuyền)",
+    "trichYeu": "phản hồi di dời trụ điện (Đặng Thị Thanh Tuyền)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2034,7 +2034,7 @@
     "soVanBan": "1871/PCVT-KHVT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "04/05/2026",
-    "trichYeu": "CV gửi UBND X Chau Pha về triển khai di dời lưới điện pvi dự án Nâng cấp mở rộng đường PM Toc Tien",
+    "trichYeu": "gửi UBND X Chau Pha về triển khai di dời lưới điện pvi dự án Nâng cấp mở rộng đường PM-Toc Tien",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2050,7 +2050,7 @@
     "soVanBan": "2139/TB-EVNHCMC",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "01/05/2026",
-    "trichYeu": "TB hop ve ctac DDLD dong bo GT 05 PC 28,29 04 2026",
+    "trichYeu": "hop ve ctac DDLD dong bo GT 05 PC 28,29-04-2026",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2080,7 +2080,7 @@
     "soVanBan": "2050/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "28/04/2026",
-    "trichYeu": "28 4 2026 CV EVNHCMC du an cua Ban 12 PCVT, PCDD",
+    "trichYeu": "-CV-EVNHCMC-du an cua Ban 12-PCVT, PCDD",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2108,9 +2108,9 @@
   {
     "id": "11_TM-BQLDA_24_04_2026",
     "soVanBan": "11/TM-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "24/04/2026",
-    "trichYeu": "11 TM.BQLDA KS đèn chiếu sáng thoát nước NHCanh",
+    "trichYeu": "KS đèn chiếu sáng thoát nước NHCanh",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2122,9 +2122,9 @@
   {
     "id": "120_2026_VB-TBPM_24_04_2026",
     "soVanBan": "120/2026_VB-TBPM",
-    "coQuanBanHanh": "Thông báo",
+    "coQuanBanHanh": "2026_VB-TBPM",
     "ngayVanBan": "24/04/2026",
-    "trichYeu": "CV 120 2026 VB TBPM Vv Di dời tuyến đường đây 22kV đi trong KCN CS PM3",
+    "trichYeu": "Vv Di dời tuyến đường đây 22kV đi trong KCN CS PM3",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2138,7 +2138,7 @@
     "soVanBan": "166/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "24/04/2026",
-    "trichYeu": "CV QLDT Góp ý HSTK Đường quy hoạch D13 khu dân cư số 9 (Đường S nhánh Tây), thị xã Phú Mỹ, Tỉnh Bà Rịa – Vũng Tàu   lần 2",
+    "trichYeu": "CV-QLDT-Góp ý HSTK Đường quy hoạch D13 khu dân cư số 9 (Đường S nhánh Tây), thị xã Phú Mỹ, Tỉnh Bà Rịa – Vũng Tàu - lần 2",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2169,7 +2169,7 @@
     "soVanBan": "1765/PCVT-KHVT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "24/04/2026",
-    "trichYeu": "Thư mời họp về triển khai di dời lưới điện pvi dự án Nâng cấp mở rộng đường Hội Bài   Phước Tân",
+    "trichYeu": "Thư mời họp về triển khai di dời lưới điện pvi dự án Nâng cấp mở rộng đường Hội Bài - Phước Tân",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2185,7 +2185,7 @@
     "soVanBan": "1768/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "24/04/2026",
-    "trichYeu": "24.04.2026  Phúc đáp về ý kiến dự thảo chi phí đường quy hoạch D13 khu dân cư số 9 (Đường S nhánh Tây), thị xã Phú gửi Ban QLDA (gop y lan 2)",
+    "trichYeu": "- Phúc đáp về ý kiến dự thảo chi phí đường quy hoạch D13 khu dân cư số 9 (Đường S nhánh Tây), thị xã Phú gửi Ban QLDA (gop y lan 2)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2228,9 +2228,9 @@
   {
     "id": "519_BQLDA_23_04_2026",
     "soVanBan": "519/BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "23/04/2026",
-    "trichYeu": "23 4 2026 SỐ 519",
+    "trichYeu": "SỐ 519",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2244,7 +2244,7 @@
     "soVanBan": "1940/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "22/04/2026",
-    "trichYeu": "21 4 2026 CV EVNHCMC  Hoi Bai   Phuoc Tan   PCVT",
+    "trichYeu": "-CV-EVNHCMC- Hoi Bai - Phuoc Tan - PCVT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2259,7 +2259,7 @@
     "soVanBan": "254/DVKH",
     "coQuanBanHanh": "Đội Dịch vụ Khách hàng",
     "ngayVanBan": "22/04/2026",
-    "trichYeu": "CV  cung cấp đơn giá lập chiet tính di dời công tơ",
+    "trichYeu": "-cung cấp đơn giá lập chiet tính di dời công tơ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2274,7 +2274,7 @@
     "soVanBan": "293/KTAT",
     "coQuanBanHanh": "Phòng Kỹ thuật & An Toàn",
     "ngayVanBan": "22/04/2026",
-    "trichYeu": "22.4.2026  Ý kiến dự thảo chi phí đường S nhánh Tây Phú Mỹ (góp ý lần 2)",
+    "trichYeu": "- Ý kiến dự thảo chi phí đường S nhánh Tây Phú Mỹ (góp ý lần 2)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2288,9 +2288,9 @@
   {
     "id": "3333__BQLDAGT-DA12_22_04_2026",
     "soVanBan": "3333/_BQLDAGT-DA12",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "_BQLDAGT-DA12",
     "ngayVanBan": "22/04/2026",
-    "trichYeu": "3333 BQLDAGT DA12.signed",
+    "trichYeu": "DANH MUC DU AN",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2305,7 +2305,7 @@
     "soVanBan": "445/QLLD",
     "coQuanBanHanh": "Phòng Quản lý Lưới điện",
     "ngayVanBan": "22/04/2026",
-    "trichYeu": "08.09.2025 khảo sát lập phương án xử lý cấp điện cho các hộ dân tại nhánh Quang Quân tóc tiên (4)",
+    "trichYeu": "-khảo sát lập phương án xử lý cấp điện cho các hộ dân tại nhánh Quang Quân tóc tiên (4)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2339,7 +2339,7 @@
   {
     "id": "239_BQLDAPM_16_04_2026",
     "soVanBan": "239/BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "16/04/2026",
     "trichYeu": "239.BQLDAPM",
     "doKhan": "Bình thường",
@@ -2403,7 +2403,7 @@
     "soVanBan": "1771/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "14/04/2026",
-    "trichYeu": "14 4 2026 CV EVNHCMC  di dời lưới điện   các PC, LĐCT",
+    "trichYeu": "-CV-EVNHCMC- di dời lưới điện - các PC, LĐCT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2420,7 +2420,7 @@
     "soVanBan": "1836/UBND-KTHTĐT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "14/04/2026",
-    "trichYeu": "02 UBND KTHTDT phương án xử lý trụ bê tông nằm dưới lòng đường tại địa chỉ 1488 đuong 30 4.signed.signed.signed",
+    "trichYeu": "án xử lý trụ bê tông nằm dưới lòng đường tại địa chỉ 1488 đuong 30-4",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2448,7 +2448,7 @@
     "soVanBan": "594",
     "coQuanBanHanh": "",
     "ngayVanBan": "14/04/2026",
-    "trichYeu": "2026 04 17 10 11",
+    "trichYeu": "10-11",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2462,7 +2462,7 @@
     "soVanBan": "1561/PCVT-QLLD",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "13/04/2026",
-    "trichYeu": "1  VB gửi CQĐP trụ đường S  lần 2",
+    "trichYeu": "1- VB gửi CQĐP trụ đường S- lần 2",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2477,7 +2477,7 @@
     "soVanBan": "346/CONDAO",
     "coQuanBanHanh": "Điện lực Đặc khu Côn Đảo",
     "ngayVanBan": "12/04/2026",
-    "trichYeu": "HC CONDAO Xin chu truong di doi TBA (1)",
+    "trichYeu": "HC-CONDAO-Xin chu truong di doi TBA (1)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2523,7 +2523,7 @@
     "soVanBan": "1454/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "07/04/2026",
-    "trichYeu": "07.04.2026  Phúc đáp ý kiến dự toán chi phí di dời đường D22",
+    "trichYeu": "- Phúc đáp ý kiến dự toán chi phí di dời đường D22",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2556,7 +2556,7 @@
     "soVanBan": "323/CONDAO",
     "coQuanBanHanh": "Điện lực Đặc khu Côn Đảo",
     "ngayVanBan": "06/04/2026",
-    "trichYeu": "NA CONDAO  PA SCTX  DI DOI TBA 250KVA HTK 3",
+    "trichYeu": "NA-CONDAO -PA SCTX  DI DOI TBA 250KVA HTK 3",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2588,7 +2588,7 @@
     "soVanBan": "129/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "03/04/2026",
-    "trichYeu": "CV QLDT góp ý nội dung hồ sơ thiết kế di dời điện",
+    "trichYeu": "CV-QLDT-góp ý nội dung hồ sơ thiết kế di dời điện",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2603,7 +2603,7 @@
     "soVanBan": "1409/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "03/04/2026",
-    "trichYeu": "2026.04.02   PCVT   Báo cáo kết quả xử lý kiến nghị di dời trụ điện hạ thế trên địa bàn xã Châu Pha",
+    "trichYeu": "2026.04.02 - PCVT - Báo cáo kết quả xử lý kiến nghị di dời trụ điện hạ thế trên địa bàn xã Châu Pha",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2619,9 +2619,9 @@
   {
     "id": "320_BQLDA-QLDA_03_04_2026",
     "soVanBan": "320/BQLDA-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "03/04/2026",
-    "trichYeu": "03 4 2026 SỐ 320",
+    "trichYeu": "SỐ 320",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2665,7 +2665,7 @@
     "soVanBan": "312/CONDAO",
     "coQuanBanHanh": "Điện lực Đặc khu Côn Đảo",
     "ngayVanBan": "01/04/2026",
-    "trichYeu": "HC CONDAO Xin chu truong di doi TBA",
+    "trichYeu": "HC-CONDAO-Xin chu truong di doi TBA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2694,7 +2694,7 @@
     "soVanBan": "225/KTAT",
     "coQuanBanHanh": "Phòng Kỹ thuật & An Toàn",
     "ngayVanBan": "30/03/2026",
-    "trichYeu": "PCVT KTAT T3.2026 TTR PHAN CONG DI DOI PHONG TRUC VH CS1 (2)",
+    "trichYeu": "PCVT-KTAT T3.2026 TTR PHAN CONG DI DOI PHONG TRUC VH CS1 (2)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2710,7 +2710,7 @@
     "soVanBan": "1309/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "27/03/2026",
-    "trichYeu": "27.03.2026 thống nhất phương án di dời trụ điện tại Hải đội Long Sơn   lần 2",
+    "trichYeu": "-thống nhất phương án di dời trụ điện tại Hải đội Long Sơn - lần 2",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2729,7 +2729,7 @@
     "soVanBan": "3218/SCT-QLNL",
     "coQuanBanHanh": "Sở Công Thương",
     "ngayVanBan": "27/03/2026",
-    "trichYeu": "Văn bản qua mạng 3218 SCT QLNL",
+    "trichYeu": "Văn bản qua mạng 3218 SCT-QLNL",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2744,7 +2744,7 @@
     "soVanBan": "1300/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "26/03/2026",
-    "trichYeu": "17.03.2026  Phúc đáp về ý kiến di doi duong day trung the 22kV tại KCN chuyen sau 3 Phu My",
+    "trichYeu": "- Phúc đáp về ý kiến di doi duong day trung the 22kV tại KCN chuyen sau 3 Phu My",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2759,7 +2759,7 @@
     "soVanBan": "1352/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "26/03/2026",
-    "trichYeu": "5334 LDCT gui Ban Giao thong y kien ve phuong an xu ly giao cat cua luoi dien cao the anh huong trong du an Vanh Dai 4 ngay 29 9 2025",
+    "trichYeu": "LDCT gui Ban Giao thong-y kien ve phuong an xu ly giao cat cua luoi dien cao the anh huong trong du an Vanh Dai 4 ngay 29-9-2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2787,9 +2787,9 @@
   {
     "id": "2166_BQLDAGT-DA12_25_03_2026",
     "soVanBan": "2166/BQLDAGT-DA12",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Giao thông",
     "ngayVanBan": "25/03/2026",
-    "trichYeu": "2166 BQLDAGT DA12.signed",
+    "trichYeu": "",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2803,7 +2803,7 @@
     "soVanBan": "153/VHLD",
     "coQuanBanHanh": "Đội Vận hành Lưới điện",
     "ngayVanBan": "24/03/2026",
-    "trichYeu": "Tờ trình đăng ký công tác thi công di dời đường dây lưới điện phục vụ công trình đường cao tốc Biên Hòa   Vũng Tàu (475CĐ.101.97.10 12)",
+    "trichYeu": "Tờ trình đăng ký công tác thi công di dời đường dây lưới điện phục vụ công trình đường cao tốc Biên Hòa - Vũng Tàu (475CĐ.101.97.10-12)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2820,7 +2820,7 @@
     "soVanBan": "154/VHLD",
     "coQuanBanHanh": "Đội Vận hành Lưới điện",
     "ngayVanBan": "24/03/2026",
-    "trichYeu": "Tờ trình đăng ký công tác thi công di dời đường dây lưới điện phục vụ công trình đường cao tốc Biên Hòa   Vũng Tàu (477CĐ.171.12 15)",
+    "trichYeu": "Tờ trình đăng ký công tác thi công di dời đường dây lưới điện phục vụ công trình đường cao tốc Biên Hòa - Vũng Tàu (477CĐ.171.12-15)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2837,7 +2837,7 @@
     "soVanBan": "155/VHLD",
     "coQuanBanHanh": "Đội Vận hành Lưới điện",
     "ngayVanBan": "24/03/2026",
-    "trichYeu": "Tờ trình đăng ký công tác thi công di dời đường dây lưới điện phục vụ công trình đường cao tốc Biên Hòa   Vũng Tàu (478BR.54)",
+    "trichYeu": "Tờ trình đăng ký công tác thi công di dời đường dây lưới điện phục vụ công trình đường cao tốc Biên Hòa - Vũng Tàu (478BR.54)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2856,7 +2856,7 @@
     "soVanBan": "1108/UBND-KT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "23/03/2026",
-    "trichYeu": "CV 1108 UBND KT ngày 23 03 2026 đề nghị kiểm tra, thay thế, di dời trụ điện hạ thế gây nguy hiểm cho người dân (lần 2)",
+    "trichYeu": "ngày 23-03-2026 đề nghị kiểm tra, thay thế, di dời trụ điện hạ thế gây nguy hiểm cho người dân (lần 2)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2906,7 +2906,7 @@
     "soVanBan": "1209/PCVT-QLDT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "21/03/2026",
-    "trichYeu": "CV gửi NT phối hợp di dời công tơ, hệ thống đo đếm CT DTXD2025 (20 3 2026)",
+    "trichYeu": "gửi NT phối hợp di dời công tơ, hệ thống đo đếm CT DTXD2025 (20-3-2026)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2921,7 +2921,7 @@
     "soVanBan": "1157/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "19/03/2026",
-    "trichYeu": "19.03.2026 thống nhất phương án di dời trụ điện tại Hải đội Long Sơn",
+    "trichYeu": "-thống nhất phương án di dời trụ điện tại Hải đội Long Sơn",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -2935,9 +2935,9 @@
   {
     "id": "34_BQLDAPM_19_03_2026",
     "soVanBan": "34/BQLDAPM",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA thị xã Phú Mỹ",
     "ngayVanBan": "19/03/2026",
-    "trichYeu": "VB 58 TTPTQĐ CNPM ngày 21112025 về việc góp ý nội dung hồ sơ thiết kế di dời điện",
+    "trichYeu": "ngày 21112025 về việc góp ý nội dung hồ sơ thiết kế di dời điện",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3004,9 +3004,9 @@
   {
     "id": "01_3_ĐD-CV_09_03_2026",
     "soVanBan": "01/3_ĐD-CV",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "3_ĐD-CV",
     "ngayVanBan": "09/03/2026",
-    "trichYeu": "CV DiDoi Tru DaiDuong 260309",
+    "trichYeu": "BV MatBang DDuong DinhKem",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3019,7 +3019,7 @@
   {
     "id": "532_ETC-VP_06_03_2026",
     "soVanBan": "532/ETC-VP",
-    "coQuanBanHanh": "Công ty ETC",
+    "coQuanBanHanh": "ETC-VP",
     "ngayVanBan": "06/03/2026",
     "trichYeu": "Cong van Di dời xe chuyên dụng tại Đội TH2",
     "doKhan": "Bình thường",
@@ -3036,7 +3036,7 @@
     "soVanBan": "115/QLHTDD",
     "coQuanBanHanh": "Đội Quản lý Hệ thống Đo đếm",
     "ngayVanBan": "05/03/2026",
-    "trichYeu": "06 PA di dời hệ thống đo đếm trên tuyến 480 (Vũng Tàu)",
+    "trichYeu": "25.2.26- TBKL cuoc hop QLKT tuần (25-2-2026).pdf 1",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3085,7 +3085,7 @@
     "soVanBan": "1011/LĐCT-VH8",
     "coQuanBanHanh": "LĐCT-VH8",
     "ngayVanBan": "02/03/2026",
-    "trichYeu": "LĐCT VH8 De nghi thu hoi TB TC C41 TBA 110kV Vung Tau 27.2.2026",
+    "trichYeu": "LĐCT-VH8 De nghi thu hoi TB TC C41 TBA 110kV Vung Tau 27.2.2026",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3100,7 +3100,7 @@
     "soVanBan": "09/DVĐT",
     "coQuanBanHanh": "DVĐT",
     "ngayVanBan": "27/02/2026",
-    "trichYeu": "CV 09 DVĐT Vv đề nghị di dời công tơ điện trong khuôn viên Trung tâm Hoả táng Long Hương",
+    "trichYeu": "09 DVĐT Vv đề nghị di dời công tơ điện trong khuôn viên Trung tâm Hoả táng Long Hương",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3128,7 +3128,7 @@
     "soVanBan": "820/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "27/02/2026",
-    "trichYeu": "25.02.2026  Phúc đáp về ý kiến dự thảo chi phí đường quy hoạch D13 khu dân cư số 9 (Đường S nhánh Tây), thị xã Phú gửi Ban QLDA",
+    "trichYeu": "- Phúc đáp về ý kiến dự thảo chi phí đường quy hoạch D13 khu dân cư số 9 (Đường S nhánh Tây), thị xã Phú gửi Ban QLDA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3144,7 +3144,7 @@
     "soVanBan": "830/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "27/02/2026",
-    "trichYeu": "12.02.2026  Phúc đáp ý kiến đường 81  chỉnh sửa ký",
+    "trichYeu": "- Phúc đáp ý kiến đường 81- chỉnh sửa ký",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3157,7 +3157,7 @@
   {
     "id": "238_TTPTQĐ-CNPM_25_02_2026",
     "soVanBan": "238/TTPTQĐ-CNPM",
-    "coQuanBanHanh": "TTPTQĐ-CNPM",
+    "coQuanBanHanh": "Chi nhánh Phú Mỹ",
     "ngayVanBan": "25/02/2026",
     "trichYeu": "lấy ý kiến 1",
     "doKhan": "Bình thường",
@@ -3174,7 +3174,7 @@
     "soVanBan": "66/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "24/02/2026",
-    "trichYeu": "CV QLDT Góp ý HSTK Đường quy hoạch D13 khu dân cư số 9 (Đường S nhánh Tây), thị xã Phú Mỹ, Tỉnh Bà Rịa – Vũng Tàu",
+    "trichYeu": "CV-QLDT-Góp ý HSTK Đường quy hoạch D13 khu dân cư số 9 (Đường S nhánh Tây), thị xã Phú Mỹ, Tỉnh Bà Rịa – Vũng Tàu",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3189,7 +3189,7 @@
     "soVanBan": "110/KTAT",
     "coQuanBanHanh": "Phòng Kỹ thuật & An Toàn",
     "ngayVanBan": "12/02/2026",
-    "trichYeu": "13.2.2026  Ý kiến dự thảo chi phí đường S nhánh Tây Phú Mỹ",
+    "trichYeu": "- Ý kiến dự thảo chi phí đường S nhánh Tây Phú Mỹ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3220,7 +3220,7 @@
     "soVanBan": "572/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "06/02/2026",
-    "trichYeu": "PCVT Vb gửi UBND Phường Vung tau phan hoi VB 448",
+    "trichYeu": "PCVT-Vb gửi UBND Phường Vung tau phan hoi VB 448",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3266,7 +3266,7 @@
     "soVanBan": "448/CV-UBND",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "02/02/2026",
-    "trichYeu": "CV 448  VB đề nghị di dời hoặc hạ ngầm dây diện khu vực Tháp Tam Thắng.signed.signed.signed.signed.signed",
+    "trichYeu": "448- VB đề nghị di dời hoặc hạ ngầm dây diện khu vực Tháp Tam Thắng",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3278,7 +3278,7 @@
   {
     "id": "87_DA_30_01_2026",
     "soVanBan": "87/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "30/01/2026",
     "trichYeu": "87 DA",
     "doKhan": "Bình thường",
@@ -3294,7 +3294,7 @@
     "soVanBan": "444/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "29/01/2026",
-    "trichYeu": "29.01.2026  Phúc đáp đường D13 S nhánh Tây",
+    "trichYeu": "- Phúc đáp đường D13 S nhánh Tây",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3372,7 +3372,7 @@
     "soVanBan": "366/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "23/01/2026",
-    "trichYeu": "22.01.2026  Ý kiến dự toán di dời đường 992   gửi Ban",
+    "trichYeu": "- Ý kiến dự toán di dời đường 992 - gửi Ban",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3387,7 +3387,7 @@
     "soVanBan": "118",
     "coQuanBanHanh": "",
     "ngayVanBan": "22/01/2026",
-    "trichYeu": "CamScanner 22 01 2026 07.34",
+    "trichYeu": "CamScanner 22-01-2026 07.34",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3401,7 +3401,7 @@
     "soVanBan": "21/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "20/01/2026",
-    "trichYeu": "CV QLDT  Ý kiến dự toán di dời đường 992",
+    "trichYeu": "CV-QLDT- Ý kiến dự toán di dời đường 992",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3416,7 +3416,7 @@
     "soVanBan": "284/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "20/01/2026",
-    "trichYeu": "14.01.2026  Phúc đáp về ý kiến dự thảo chi phí đường D22 gửi Ban QLDA",
+    "trichYeu": "- Phúc đáp về ý kiến dự thảo chi phí đường D22 gửi Ban QLDA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3447,7 +3447,7 @@
     "soVanBan": "64/KHVT",
     "coQuanBanHanh": "Phòng Kế hoạch & Vật tư",
     "ngayVanBan": "20/01/2026",
-    "trichYeu": "14.01.2026  Ý kiến dự toán di dời đường 992",
+    "trichYeu": "- Ý kiến dự toán di dời đường 992",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3461,9 +3461,9 @@
   {
     "id": "77_BQLDA-QLDA1_20_01_2026",
     "soVanBan": "77/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "20/01/2026",
-    "trichYeu": "20 01 2026 SỐ 77",
+    "trichYeu": "SỐ 77",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3477,7 +3477,7 @@
     "soVanBan": "268/PCVT-QLLD",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "19/01/2026",
-    "trichYeu": "BVMB.deal.tuyen THT.TanThanh (2)",
+    "trichYeu": "BVMB.deal.tuyen-THT.TanThanh (2)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3492,9 +3492,9 @@
   {
     "id": "31_BQL_19_01_2026",
     "soVanBan": "31/BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "19/01/2026",
-    "trichYeu": "CV ho tro lich cat dien.2026 (Cty ĐLVT).signed.signed",
+    "trichYeu": "ho tro lich cat dien.2026 (Cty ĐLVT)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3508,7 +3508,7 @@
     "soVanBan": "238/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "16/01/2026",
-    "trichYeu": "14.01.2026 PCVT phuc đáp về hồ sơ thiết kế di dời trạm 1000kVA Công ty Hải Châu",
+    "trichYeu": "-PCVT phuc đáp về hồ sơ thiết kế di dời trạm 1000kVA Công ty Hải Châu",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3524,7 +3524,7 @@
     "soVanBan": "33/TB-UBND",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "16/01/2026",
-    "trichYeu": "TB 33",
+    "trichYeu": "33",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3553,7 +3553,7 @@
     "soVanBan": "205/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "14/01/2026",
-    "trichYeu": "14.01.2026  Ý kiến dự toán di dời đường 992",
+    "trichYeu": "- Ý kiến dự toán di dời đường 992",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3570,7 +3570,7 @@
     "soVanBan": "08/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "13/01/2026",
-    "trichYeu": "CV QLDT  Ý kiến dự thảo chi phí đường D22",
+    "trichYeu": "CV-QLDT- Ý kiến dự thảo chi phí đường D22",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3585,7 +3585,7 @@
     "soVanBan": "123/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "10/01/2026",
-    "trichYeu": "06 01 2025 CV EVNHCMC tiep nhan ban giao tai san di doi luoi dien   PCDD",
+    "trichYeu": "-CV-EVNHCMC-tiep nhan ban giao tai san di doi luoi dien - PCDD",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3598,7 +3598,7 @@
   {
     "id": "15_TM-BQLDA_09_01_2026",
     "soVanBan": "15/TM-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "09/01/2026",
     "trichYeu": "THƯ MỜI 15",
     "doKhan": "Bình thường",
@@ -3612,9 +3612,9 @@
   {
     "id": "28_BQLDA-QLDA1_09_01_2026",
     "soVanBan": "28/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "09/01/2026",
-    "trichYeu": "09 01 2026 SỐ 28",
+    "trichYeu": "SỐ 28",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3626,9 +3626,9 @@
   {
     "id": "29_BQLDA-QLDA1_09_01_2026",
     "soVanBan": "29/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "09/01/2026",
-    "trichYeu": "09 01 2026 SỐ 29",
+    "trichYeu": "SỐ 29",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3668,9 +3668,9 @@
   {
     "id": "14_BQLDA-QLDA1_07_01_2026",
     "soVanBan": "14/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "07/01/2026",
-    "trichYeu": "07 01 2026 SỐ 14",
+    "trichYeu": "SỐ 14",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3682,9 +3682,9 @@
   {
     "id": "24_BQLDA-KHTH_07_01_2026",
     "soVanBan": "24/BQLDA-KHTH",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "07/01/2026",
-    "trichYeu": "24 BQLDA KHTH",
+    "trichYeu": "24 BQLDA-KHTH",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3710,9 +3710,9 @@
   {
     "id": "03_DA_05_01_2026",
     "soVanBan": "03/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "05/01/2026",
-    "trichYeu": "THUYẾT MINH   BẢN VẼ",
+    "trichYeu": "THUYẾT MINH - BẢN VẼ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3785,7 +3785,7 @@
     "soVanBan": "2940/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "25/12/2025",
-    "trichYeu": "25.12.2025 PCVT Gửi ông Trần Đình Công   Phường Tân Thành",
+    "trichYeu": "-PCVT Gửi ông Trần Đình Công - Phường Tân Thành",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3801,7 +3801,7 @@
     "soVanBan": "1230",
     "coQuanBanHanh": "",
     "ngayVanBan": "18/12/2025",
-    "trichYeu": "CamScanner 18 12 2025 08.32",
+    "trichYeu": "CamScanner 18-12-2025 08.32",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3844,7 +3844,7 @@
   {
     "id": "17.12B_TT_CV_17_12_2025",
     "soVanBan": "17.12B/TT_CV",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "TT_CV",
     "ngayVanBan": "17/12/2025",
     "trichYeu": "17.12B TT CV",
     "doKhan": "Bình thường",
@@ -3858,9 +3858,9 @@
   {
     "id": "17_CV_17_12_2025",
     "soVanBan": "17/CV",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV",
     "ngayVanBan": "17/12/2025",
-    "trichYeu": "CamScanner 17 12 25 06.40",
+    "trichYeu": "CamScanner 17-12-25 06.40",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3874,7 +3874,7 @@
     "soVanBan": "2617/UBND-KTHTĐT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "17/12/2025",
-    "trichYeu": "2617 Về việc tạm dừng phương án cưỡng chế",
+    "trichYeu": "Về việc tạm dừng phương án cưỡng chế",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3916,9 +3916,9 @@
   {
     "id": "07_2025_CV-CĐ_15_12_2025",
     "soVanBan": "07/2025_CV-CĐ",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "2025_CV-CĐ",
     "ngayVanBan": "15/12/2025",
-    "trichYeu": "CV de nghi cat dien",
+    "trichYeu": "de nghi cat dien",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3945,7 +3945,7 @@
   {
     "id": "42_CV-VH_15_12_2025",
     "soVanBan": "42/CV-VH",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-VH",
     "ngayVanBan": "15/12/2025",
     "trichYeu": "Xin cắt điện",
     "doKhan": "Bình thường",
@@ -3961,7 +3961,7 @@
     "soVanBan": "1204",
     "coQuanBanHanh": "",
     "ngayVanBan": "12/12/2025",
-    "trichYeu": "CamScanner 14 12 2025 20.16",
+    "trichYeu": "CamScanner 14-12-2025 20.16",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3975,7 +3975,7 @@
     "soVanBan": "1205",
     "coQuanBanHanh": "",
     "ngayVanBan": "12/12/2025",
-    "trichYeu": "CamScanner 14 12 2025 20.19",
+    "trichYeu": "CamScanner 14-12-2025 20.19",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -3989,7 +3989,7 @@
     "soVanBan": "422/CONDAO",
     "coQuanBanHanh": "Điện lực Đặc khu Côn Đảo",
     "ngayVanBan": "12/12/2025",
-    "trichYeu": "CONDAO  PA SCTX  DI DOI , DOI NOI LBS TRỤ 250 BĐ",
+    "trichYeu": "CONDAO -PA SCTX  DI DOI , DOI NOI LBS TRỤ 250-BĐ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4004,7 +4004,7 @@
     "soVanBan": "264/QLDT",
     "coQuanBanHanh": "Phòng Quản lý Đầu tư",
     "ngayVanBan": "10/12/2025",
-    "trichYeu": "1. BCTD DTPS   Đường N16 Phú Mỹ",
+    "trichYeu": "1. BCTD DTPS - Đường N16 Phú Mỹ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4020,7 +4020,7 @@
     "soVanBan": "2652/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "10/12/2025",
-    "trichYeu": "2.TTĐN 1500kVA   Công ty TNHH sản xuất bao bì Hiệp Thành",
+    "trichYeu": "2.TTĐN 1500kVA - Công ty TNHH sản xuất bao bì Hiệp Thành",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4036,7 +4036,7 @@
     "soVanBan": "283/QLHTDD",
     "coQuanBanHanh": "Đội Quản lý Hệ thống Đo đếm",
     "ngayVanBan": "10/12/2025",
-    "trichYeu": "37 PA gắn mới TBĐĐ khách hàng trạm chuyên dùng (10.12.2025)",
+    "trichYeu": "2.TTĐN 1500kVA - Công ty TNHH sản xuất bao bì Hiệp Thành",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4065,9 +4065,9 @@
   {
     "id": "05_TM-NTĐĐ_09_12_2025",
     "soVanBan": "05/TM-NTĐĐ",
-    "coQuanBanHanh": "Thuyết minh",
+    "coQuanBanHanh": "TM-NTĐĐ",
     "ngayVanBan": "09/12/2025",
-    "trichYeu": "05 TM NTĐĐ",
+    "trichYeu": "05 TM-NTĐĐ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4093,9 +4093,9 @@
   {
     "id": "1176_BQLDA-QLDA1_09_12_2025",
     "soVanBan": "1176/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "09/12/2025",
-    "trichYeu": "09 12 2025 SỐ 1176",
+    "trichYeu": "SỐ 1176",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4124,7 +4124,7 @@
     "soVanBan": "471/QLLD",
     "coQuanBanHanh": "Phòng Quản lý Lưới điện",
     "ngayVanBan": "09/12/2025",
-    "trichYeu": "TTr  xin vật tư  di doi tru dien ha the theo ĐNghi Bà Thạch T Phương Lan .4",
+    "trichYeu": "TTr- xin vật tư  di doi tru dien ha the theo ĐNghi Bà Thạch T Phương Lan .4",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4140,7 +4140,7 @@
     "soVanBan": "2561/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "05/12/2025",
-    "trichYeu": "02.12.2025 PCVT GUI BAN QLDA Di dời tạm đường dây trung hạ thế phục vụ thi công trụ cầu T31",
+    "trichYeu": "-PCVT GUI BAN QLDA Di dời tạm đường dây trung hạ thế phục vụ thi công trụ cầu T31",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4155,7 +4155,7 @@
     "soVanBan": "2567/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "05/12/2025",
-    "trichYeu": "01.12.2025 Ý kiến về hồ sơ thiết kế công trình di dời TBA 750kVA   KS Mỹ Lệ",
+    "trichYeu": "-Ý kiến về hồ sơ thiết kế công trình di dời TBA 750kVA - KS Mỹ Lệ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4184,9 +4184,9 @@
   {
     "id": "334_BQL_05_12_2025",
     "soVanBan": "334/BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "05/12/2025",
-    "trichYeu": "CV ho tro lich cat dien.2025 (Cty ĐLVT).signed.signed",
+    "trichYeu": "ho tro lich cat dien.2025 (Cty ĐLVT)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4216,7 +4216,7 @@
     "soVanBan": "2500/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "02/12/2025",
-    "trichYeu": "02.12.2025 Báo cáo đề xuất các trở ngại khó khăn trong quá trình phối hợp với chủ đàu tư dụ án giao thông gửi Tổng Công ty",
+    "trichYeu": "-Báo cáo đề xuất các trở ngại khó khăn trong quá trình phối hợp với chủ đàu tư dụ án giao thông gửi Tổng Công ty",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4229,9 +4229,9 @@
   {
     "id": "326_BQL_02_12_2025",
     "soVanBan": "326/BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "02/12/2025",
-    "trichYeu": "CV thong nhat PA thiet ke di doi trung ha the.2025.signed.signed",
+    "trichYeu": "thong nhat PA thiet ke di doi trung ha the.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4248,7 +4248,7 @@
     "soVanBan": "2298/UBND-KTHTĐT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "01/12/2025",
-    "trichYeu": "CV 2298",
+    "trichYeu": "2298",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4275,9 +4275,9 @@
   {
     "id": "109_TTPTQĐ-CNPM_28_11_2025",
     "soVanBan": "109/TTPTQĐ-CNPM",
-    "coQuanBanHanh": "TTPTQĐ-CNPM",
+    "coQuanBanHanh": "Chi nhánh Phú Mỹ",
     "ngayVanBan": "28/11/2025",
-    "trichYeu": "VB 109 TTPTQĐPM   Góp ý thiết kế di dời TBA 3P Công ty Hải Châu (Đường PM TT)",
+    "trichYeu": "109 TTPTQĐPM - Góp ý thiết kế di dời TBA 3P Công ty Hải Châu (Đường PM-TT)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4291,7 +4291,7 @@
     "soVanBan": "2408/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "27/11/2025",
-    "trichYeu": "28.11.2025 PCVT phuc đáp về hồ sơ thiết kế di dời đường 81",
+    "trichYeu": "-PCVT phuc đáp về hồ sơ thiết kế di dời đường 81",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4310,7 +4310,7 @@
     "soVanBan": "6209/TB-EVNHCMC",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "27/11/2025",
-    "trichYeu": "TB hop ve cong tac di doi luoi dien dong bo giai thong 20 11 2025",
+    "trichYeu": "hop ve cong tac di doi luoi dien dong bo giai thong 20-11-2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4325,7 +4325,7 @@
     "soVanBan": "2393/PCVT-QLLD",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "26/11/2025",
-    "trichYeu": "1  VB gửi CQĐP trụ đường S",
+    "trichYeu": "1- VB gửi CQĐP trụ đường S",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4340,7 +4340,7 @@
     "soVanBan": "253/KTAT",
     "coQuanBanHanh": "Phòng Kỹ thuật & An Toàn",
     "ngayVanBan": "26/11/2025",
-    "trichYeu": "26.11.2025  Phối hợp xử lý đơn xin di dời trụ của khách hàng Lã Hữu Thạo",
+    "trichYeu": "- Phối hợp xử lý đơn xin di dời trụ của khách hàng Lã Hữu Thạo",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4357,7 +4357,7 @@
     "soVanBan": "2359/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "25/11/2025",
-    "trichYeu": "25.11.2025 PCVT GUI BAN QLDA đường D22 Phường Phú Mỹ",
+    "trichYeu": "-PCVT GUI BAN QLDA đường D22 Phường Phú Mỹ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4372,9 +4372,9 @@
   {
     "id": "20_CV-NNVN_24_11_2025",
     "soVanBan": "20/CV-NNVN",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-NNVN",
     "ngayVanBan": "24/11/2025",
-    "trichYeu": "20.CV NNVN 24112025 Góp ý hồ sơ thiết kế di dời đường dây trung hạ thế",
+    "trichYeu": "20.CV-NNVN 24112025 Góp ý hồ sơ thiết kế di dời đường dây trung hạ thế",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4388,7 +4388,7 @@
     "soVanBan": "2293/PCVT-CONDAO",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "22/11/2025",
-    "trichYeu": "CV GỬI PHÒNG KT",
+    "trichYeu": "GỬI PHÒNG KT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4416,9 +4416,9 @@
   {
     "id": "56 57_TTPTQĐ-CNPM_21_11_2025",
     "soVanBan": "56 57/TTPTQĐ-CNPM",
-    "coQuanBanHanh": "TTPTQĐ-CNPM",
+    "coQuanBanHanh": "Chi nhánh Phú Mỹ",
     "ngayVanBan": "21/11/2025",
-    "trichYeu": "56 57 TTPTQĐ CNPM",
+    "trichYeu": "56 57 TTPTQĐ-CNPM",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4430,9 +4430,9 @@
   {
     "id": "57_TTPTQĐ-CNPM_21_11_2025",
     "soVanBan": "57/TTPTQĐ-CNPM",
-    "coQuanBanHanh": "TTPTQĐ-CNPM",
+    "coQuanBanHanh": "Chi nhánh Phú Mỹ",
     "ngayVanBan": "21/11/2025",
-    "trichYeu": "57 lấy ý kiến di dời điẹn D22",
+    "trichYeu": "ý kiến di dời điẹn D22",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4446,7 +4446,7 @@
     "soVanBan": "2224/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "18/11/2025",
-    "trichYeu": "19.11.2025 Phúc đáp văn bản đề nghị khảo sát di dời tủ RMU",
+    "trichYeu": "-Phúc đáp văn bản đề nghị khảo sát di dời tủ RMU",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4459,9 +4459,9 @@
   {
     "id": "944_BQLDA-VPĐH_18_11_2025",
     "soVanBan": "944/BQLDA-VPĐH",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "18/11/2025",
-    "trichYeu": "944   BQLDA VPĐH ho tro cat dien DA cao toc ngay 18.11.2025",
+    "trichYeu": "- BQLDA-VPĐH ho tro cat dien DA cao toc ngay 18.11.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4491,7 +4491,7 @@
     "soVanBan": "2117/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "13/11/2025",
-    "trichYeu": "16 10 2025 CV EVNHCMC Bao cao So NNMT ve di doi luoi dien",
+    "trichYeu": "Tra loi  VB 779 BQLDA Ctr Giao Thong ( trinh ký)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4520,9 +4520,9 @@
   {
     "id": "946_BQLDA-QLDA2_13_11_2025",
     "soVanBan": "946/BQLDA-QLDA2",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "13/11/2025",
-    "trichYeu": "13 11 2025 SỐ 946",
+    "trichYeu": "SỐ 946",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4564,9 +4564,9 @@
   {
     "id": "423_DA_12_11_2025",
     "soVanBan": "423/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "12/11/2025",
-    "trichYeu": "VB 423 DA 0001",
+    "trichYeu": "423 DA 0001",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4596,7 +4596,7 @@
     "soVanBan": "209/KTAT",
     "coQuanBanHanh": "Phòng Kỹ thuật & An Toàn",
     "ngayVanBan": "07/11/2025",
-    "trichYeu": "07.11.2025  Phối hợp xử lý đơn xin di dời trụ của khách hàng Lâm Minh Trung (1)",
+    "trichYeu": "- Phối hợp xử lý đơn xin di dời trụ của khách hàng Lâm Minh Trung (1)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4612,7 +4612,7 @@
     "soVanBan": "351/QLLD",
     "coQuanBanHanh": "Phòng Quản lý Lưới điện",
     "ngayVanBan": "05/11/2025",
-    "trichYeu": "CV 2032 UBTP huong dan thuc hien di doi cong trinh ha tang ky thuat cac du an dau tu cong",
+    "trichYeu": "2032 UBTP huong dan thuc hien di doi cong trinh ha tang ky thuat cac du an dau tu cong",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4646,9 +4646,9 @@
   {
     "id": "779_TB-BQLDA_04_11_2025",
     "soVanBan": "779/TB-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "04/11/2025",
-    "trichYeu": "779   TB BQLDA KL cuoc hop di doi HTKT DA ĐT 992 ngay 04.11.2025",
+    "trichYeu": "- TB-BQLDA KL cuoc hop di doi HTKT DA ĐT 992 ngay 04.11.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4660,9 +4660,9 @@
   {
     "id": "1307_CTCSCC-AT_03_11_2025",
     "soVanBan": "1307/CTCSCC-AT",
-    "coQuanBanHanh": "CTCSCC-AT",
+    "coQuanBanHanh": "Công ty Chiếu sáng Công cộng",
     "ngayVanBan": "03/11/2025",
-    "trichYeu": "1307.P.AT  Về việc đề nghị liên hệ trước khi thi công di dời, thu hồi HTCSCC",
+    "trichYeu": "1307.P.AT- Về việc đề nghị liên hệ trước khi thi công di dời, thu hồi HTCSCC",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4689,9 +4689,9 @@
   {
     "id": "385_DA_31_10_2025",
     "soVanBan": "385/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "31/10/2025",
-    "trichYeu": "VB 385 DA 0001",
+    "trichYeu": "385 DA 0001",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4705,7 +4705,7 @@
     "soVanBan": "5429/EVNHCMC-KD",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "28/10/2025",
-    "trichYeu": "2025 10 28 EVNHCMC Gui PC Vung Tau ve di doi DMTMN",
+    "trichYeu": "EVNHCMC Gui PC Vung Tau ve di doi DMTMN",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4718,9 +4718,9 @@
   {
     "id": "72_GM-BQL_27_10_2025",
     "soVanBan": "72/GM-BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "27/10/2025",
-    "trichYeu": "Giay moi xac dinh hien truong.signed.signed",
+    "trichYeu": "Giay moi xac dinh hien truong",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4734,7 +4734,7 @@
     "soVanBan": "1811/PCVT-KD",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "24/10/2025",
-    "trichYeu": "CV gui TCT   xin HD ve viec di doi he thong DMTMN HC",
+    "trichYeu": "gui TCT - xin HD ve viec di doi he thong DMTMN HC",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4750,7 +4750,7 @@
     "soVanBan": "200/TB-UBND",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "24/10/2025",
-    "trichYeu": "200 TB UBND",
+    "trichYeu": "TB-UBND",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4797,7 +4797,7 @@
     "soVanBan": "1722/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "20/10/2025",
-    "trichYeu": "13.10.2025 PCVT GUI BAN QLDA đường 82, 84 Xã Long Phước, TP Bà Rịa",
+    "trichYeu": "-PCVT GUI BAN QLDA đường 82, 84 Xã Long Phước, TP Bà Rịa",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4810,9 +4810,9 @@
   {
     "id": "626_TTr-BQLDA_17_10_2025",
     "soVanBan": "626/TTr-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "17/10/2025",
-    "trichYeu": "626   TTr BQLDA ngay 17.10.2025",
+    "trichYeu": "- TTr-BQLDA ngay 17.10.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4824,9 +4824,9 @@
   {
     "id": "706_CV-QLDA_16_10_2025",
     "soVanBan": "706/CV-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "16/10/2025",
-    "trichYeu": "706CV QLDA",
+    "trichYeu": "706CV-QLDA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4840,7 +4840,7 @@
     "soVanBan": "159/GM-UBND",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "15/10/2025",
-    "trichYeu": "159 GM UBND",
+    "trichYeu": "GM-UBND",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4852,7 +4852,7 @@
   {
     "id": "39_CV-CĐ_14_10_2025",
     "soVanBan": "39/CV-CĐ",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-CĐ",
     "ngayVanBan": "14/10/2025",
     "trichYeu": "Cat dien VTau",
     "doKhan": "Bình thường",
@@ -4885,7 +4885,7 @@
     "soVanBan": "1555/PCVT-QLLD",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "09/10/2025",
-    "trichYeu": "CV  32 HAN THUYEN",
+    "trichYeu": "-32-HAN THUYEN",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4898,9 +4898,9 @@
   {
     "id": "15_CV-2025_09_10_2025",
     "soVanBan": "15/CV-2025",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-2025",
     "ngayVanBan": "09/10/2025",
-    "trichYeu": "15 CV 2025",
+    "trichYeu": "15 CV-2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4912,9 +4912,9 @@
   {
     "id": "16_CV-2025_09_10_2025",
     "soVanBan": "16/CV-2025",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-2025",
     "ngayVanBan": "09/10/2025",
-    "trichYeu": "16 CV 2025",
+    "trichYeu": "16 CV-2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4942,9 +4942,9 @@
   {
     "id": "35_CV-T&T_09_10_2025",
     "soVanBan": "35/CV-T&T",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-T&T",
     "ngayVanBan": "09/10/2025",
-    "trichYeu": "CV xin cat dien Cao Toc 09.10.2025",
+    "trichYeu": "xin cat dien Cao Toc 09.10.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -4956,9 +4956,9 @@
   {
     "id": "575_BQLDA-VPĐH_09_10_2025",
     "soVanBan": "575/BQLDA-VPĐH",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "09/10/2025",
-    "trichYeu": "575   BQLDA VPĐH ngay 09.10.2025",
+    "trichYeu": "- BQLDA-VPĐH ngay 09.10.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5000,7 +5000,7 @@
   {
     "id": "120_TM-BQLDA_02_10_2025",
     "soVanBan": "120/TM-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "02/10/2025",
     "trichYeu": "Thư Mời số 120",
     "doKhan": "Bình thường",
@@ -5014,9 +5014,9 @@
   {
     "id": "144_BQL_02_10_2025",
     "soVanBan": "144/BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "02/10/2025",
-    "trichYeu": "7703 QD UBND phe duyet Du an.27122022 signed",
+    "trichYeu": "7703 QD-UBND phe duyet Du an.27122022-signed",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5032,7 +5032,7 @@
     "soVanBan": "1337/PCVT-QLDT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "30/09/2025",
-    "trichYeu": "CV PCVT gop y hd thuc hien boi thuong",
+    "trichYeu": "CV-PCVT-gop y hd thuc hien boi thuong",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5045,9 +5045,9 @@
   {
     "id": "233_DA_30_09_2025",
     "soVanBan": "233/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "30/09/2025",
-    "trichYeu": "233 DA",
+    "trichYeu": "DA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5059,9 +5059,9 @@
   {
     "id": "234_DA_30_09_2025",
     "soVanBan": "234/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "30/09/2025",
-    "trichYeu": "VB 234 DA   Hỗ trợ cắt điện để di dời các trụ trung, hạ thế (Cầu vượt)   Lần 2",
+    "trichYeu": "234 DA - Hỗ trợ cắt điện để di dời các trụ trung, hạ thế (Cầu vượt) - Lần 2",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5075,7 +5075,7 @@
     "soVanBan": "273/DICERA",
     "coQuanBanHanh": "DICERA",
     "ngayVanBan": "30/09/2025",
-    "trichYeu": "273 DICERA",
+    "trichYeu": "DICERA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5087,9 +5087,9 @@
   {
     "id": "495_TTr-BQLDA_30_09_2025",
     "soVanBan": "495/TTr-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "30/09/2025",
-    "trichYeu": "495   TTr BQLDA ngay 30.09.2025",
+    "trichYeu": "- TTr-BQLDA ngay 30.09.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5101,9 +5101,9 @@
   {
     "id": "50_GM-BQL_30_09_2025",
     "soVanBan": "50/GM-BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "30/09/2025",
-    "trichYeu": "GM so 50 0001",
+    "trichYeu": "so 50 0001",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5115,9 +5115,9 @@
   {
     "id": "589_CV-QLDA_29_09_2025",
     "soVanBan": "589/CV-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "29/09/2025",
-    "trichYeu": "589CV QLDA",
+    "trichYeu": "589CV-QLDA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5131,7 +5131,7 @@
     "soVanBan": "4752/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "24/09/2025",
-    "trichYeu": "23 9 2025 CV EVNHCMC gui cac don vi gop y hd di doi luoi dien",
+    "trichYeu": "-CV-EVNHCMC-gui cac don vi gop y hd di doi luoi dien",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5164,7 +5164,7 @@
     "soVanBan": "1223/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "22/09/2025",
-    "trichYeu": "Ý kiến về hồ sơ TKKT, ban ve thi cong di dời tru trung the 482MXB1 134 22 cua ba Vu Thi Thu Thao Suoi Nhum",
+    "trichYeu": "Ý kiến về hồ sơ TKKT, ban ve thi cong di dời tru trung the 482MXB1-134-22 cua ba Vu Thi Thu Thao-Suoi Nhum",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5178,9 +5178,9 @@
   {
     "id": "792_GM-KTHTĐT_22_09_2025",
     "soVanBan": "792/GM-KTHTĐT",
-    "coQuanBanHanh": "Giấy mời",
+    "coQuanBanHanh": "GM-KTHTĐT",
     "ngayVanBan": "22/09/2025",
-    "trichYeu": "792 GM KTHTĐT",
+    "trichYeu": "GM-KTHTĐT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5240,9 +5240,9 @@
   {
     "id": "199_DA_17_09_2025",
     "soVanBan": "199/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "17/09/2025",
-    "trichYeu": "199 DA",
+    "trichYeu": "DA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5256,7 +5256,7 @@
     "soVanBan": "123/CONDAO",
     "coQuanBanHanh": "Điện lực Đặc khu Côn Đảo",
     "ngayVanBan": "16/09/2025",
-    "trichYeu": "TO TRINH SO 47   Phê duyệt PA di dời TBA 560kVA CĐ",
+    "trichYeu": "TO TRINH SO 47 - Phê duyệt PA di dời TBA 560kVA CĐ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5271,7 +5271,7 @@
   {
     "id": "42_GM-KTHT&ĐT_15_09_2025",
     "soVanBan": "42/GM-KTHT&ĐT",
-    "coQuanBanHanh": "Giấy mời",
+    "coQuanBanHanh": "GM-KTHT&ĐT",
     "ngayVanBan": "15/09/2025",
     "trichYeu": "42GM",
     "doKhan": "Bình thường",
@@ -5287,7 +5287,7 @@
     "soVanBan": "438/UBND-KTHTĐT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "15/09/2025",
-    "trichYeu": "VB UBND đề nghị di dời điện Phuong Tan Phuoc (Duong S nhanh Tay).signed.signed.signed.signed",
+    "trichYeu": "UBND đề nghị di dời điện Phuong Tan Phuoc (Duong S nhanh Tay)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5315,9 +5315,9 @@
   {
     "id": "036_DMTDA25_12_09_2025",
     "soVanBan": "036/DMTDA25",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DMTDA25",
     "ngayVanBan": "12/09/2025",
-    "trichYeu": "036 DMTDA",
+    "trichYeu": "",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5347,9 +5347,9 @@
   {
     "id": "411_BQLDA-QLDA1_12_09_2025",
     "soVanBan": "411/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "12/09/2025",
-    "trichYeu": "12 9 2025 số 411",
+    "trichYeu": "số 411",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5361,9 +5361,9 @@
   {
     "id": "03_TM-NTĐĐ_11_09_2025",
     "soVanBan": "03/TM-NTĐĐ",
-    "coQuanBanHanh": "Thuyết minh",
+    "coQuanBanHanh": "TM-NTĐĐ",
     "ngayVanBan": "11/09/2025",
-    "trichYeu": "03 TM NTĐĐ",
+    "trichYeu": "03 TM-NTĐĐ",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5377,7 +5377,7 @@
     "soVanBan": "1060/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "11/09/2025",
-    "trichYeu": "PCVT   P KTAT QLL lap du toan di doi theo yeu cau khach hang",
+    "trichYeu": "PCVT - P KTAT-QLL lap du toan di doi theo yeu cau khach hang",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5407,7 +5407,7 @@
     "soVanBan": "478",
     "coQuanBanHanh": "",
     "ngayVanBan": "10/09/2025",
-    "trichYeu": "CamScanner 10 09 2025 14.56",
+    "trichYeu": "CamScanner 10-09-2025 14.56",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5452,7 +5452,7 @@
     "soVanBan": "67/UBND-KTHTĐT",
     "coQuanBanHanh": "Ủy ban Nhân dân",
     "ngayVanBan": "08/09/2025",
-    "trichYeu": "67 UBND KTHTĐT",
+    "trichYeu": "67 UBND-KTHTĐT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5464,9 +5464,9 @@
   {
     "id": "19_GM-BQL_05_09_2025",
     "soVanBan": "19/GM-BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "05/09/2025",
-    "trichYeu": "GM so 19 0001",
+    "trichYeu": "so 19 0001",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5478,7 +5478,7 @@
   {
     "id": "355_BQLDA-QLDA1_05_09_2025",
     "soVanBan": "355/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "05/09/2025",
     "trichYeu": "Bản vẽ điều chỉnh",
     "doKhan": "Bình thường",
@@ -5493,9 +5493,9 @@
   {
     "id": "417_CV-QLDA_05_09_2025",
     "soVanBan": "417/CV-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "05/09/2025",
-    "trichYeu": "417CV QLDA",
+    "trichYeu": "417CV-QLDA",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5521,9 +5521,9 @@
   {
     "id": "318_BQLDA-QLDA1_03_09_2025",
     "soVanBan": "318/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "03/09/2025",
-    "trichYeu": "03 9 2025 số 318",
+    "trichYeu": "số 318",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5537,7 +5537,7 @@
     "soVanBan": "3646/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "03/09/2025",
-    "trichYeu": "26 8 2025 CV EVNHCMC Bao cao UBND TP ve di doi luoi dien",
+    "trichYeu": "08.14.25 trach nhiem di doi voi cac du an duong cao toc",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5555,7 +5555,7 @@
   {
     "id": "66_TM-BQLDA_03_09_2025",
     "soVanBan": "66/TM-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "03/09/2025",
     "trichYeu": "Thư Mời số 66",
     "doKhan": "Bình thường",
@@ -5569,9 +5569,9 @@
   {
     "id": "291_BQLDA-QLDA1_29_08_2025",
     "soVanBan": "291/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "29/08/2025",
-    "trichYeu": "29 8 2025 số 291",
+    "trichYeu": "số 291",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5585,7 +5585,7 @@
     "soVanBan": "116/QLLD",
     "coQuanBanHanh": "Phòng Quản lý Lưới điện",
     "ngayVanBan": "28/08/2025",
-    "trichYeu": "TTr Di doi tru HT  so nha 130 Co Giang",
+    "trichYeu": "TTr-Di doi tru HT  so nha 130 Co Giang",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5615,7 +5615,7 @@
     "soVanBan": "889/PCVT-CONDAO",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "28/08/2025",
-    "trichYeu": "VB gửi BCH quân sự, viễn thông, Vietel",
+    "trichYeu": "gửi BCH quân sự, viễn thông, Vietel",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5648,7 +5648,7 @@
     "soVanBan": "831/PCVT-QLLD",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "27/08/2025",
-    "trichYeu": "THONGBAO DIDOITRU",
+    "trichYeu": "THONGBAO-DIDOITRU",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5663,7 +5663,7 @@
     "soVanBan": "57/QLHTDD",
     "coQuanBanHanh": "Đội Quản lý Hệ thống Đo đếm",
     "ngayVanBan": "26/08/2025",
-    "trichYeu": "PA SCTX bảo trì 3P hệ thống đo đếm tháng 08.2025",
+    "trichYeu": "PA-SCTX bảo trì 3P hệ thống đo đếm tháng 08.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5678,7 +5678,7 @@
     "soVanBan": "3560/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "25/08/2025",
-    "trichYeu": "21 8 2025 CV EVNHCMC cau Kenh Ngang So 3",
+    "trichYeu": "-CV-EVNHCMC-cau Kenh Ngang So 3",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5693,7 +5693,7 @@
     "soVanBan": "47/KTAT",
     "coQuanBanHanh": "Phòng Kỹ thuật & An Toàn",
     "ngayVanBan": "25/08/2025",
-    "trichYeu": "2025.08.25   Phê duyệt PA di dời TBA 560kVA Công Đảo   Copy",
+    "trichYeu": "2025.08.25 - Phê duyệt PA di dời TBA 560kVA Công Đảo - Copy",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5708,7 +5708,7 @@
     "soVanBan": "52/QLHTDD",
     "coQuanBanHanh": "Đội Quản lý Hệ thống Đo đếm",
     "ngayVanBan": "25/08/2025",
-    "trichYeu": "PA SCTX bảo trì 1P hệ thống đo đếm tháng 08.2025",
+    "trichYeu": "PA-SCTX bảo trì 1P hệ thống đo đếm tháng 08.2025 -",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5737,7 +5737,7 @@
   {
     "id": "2208_CV-TGX_22_08_2025",
     "soVanBan": "2208/CV-TGX",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-TGX",
     "ngayVanBan": "22/08/2025",
     "trichYeu": "CV2207",
     "doKhan": "Bình thường",
@@ -5753,7 +5753,7 @@
     "soVanBan": "45/KTAT",
     "coQuanBanHanh": "Phòng Kỹ thuật & An Toàn",
     "ngayVanBan": "22/08/2025",
-    "trichYeu": "2025.08.22   Phê duyệt PA di dời TBA 560kVA Công Đảo",
+    "trichYeu": "2025.08.22 - Phê duyệt PA di dời TBA 560kVA Công Đảo",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5769,7 +5769,7 @@
     "soVanBan": "45/CONDAO",
     "coQuanBanHanh": "Điện lực Đặc khu Côn Đảo",
     "ngayVanBan": "21/08/2025",
-    "trichYeu": "HC CONDAO  PA SCTX DIDOI TBA 560KVA  PVĐ T8 2025",
+    "trichYeu": "HC-CONDAO -PA SCTX DIDOI TBA 560KVA -PVĐ T8-2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5782,9 +5782,9 @@
   {
     "id": "949_BTL-HCKT_21_08_2025",
     "soVanBan": "949/BTL-HCKT",
-    "coQuanBanHanh": "BTL-HCKT",
+    "coQuanBanHanh": "Phòng Hành chính Kế toán",
     "ngayVanBan": "21/08/2025",
-    "trichYeu": "949 BTL HCKT",
+    "trichYeu": "BTL-HCKT",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5811,9 +5811,9 @@
   {
     "id": "187_BQLDA-QLDA1_18_08_2025",
     "soVanBan": "187/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "18/08/2025",
-    "trichYeu": "18 8 2025 số 187",
+    "trichYeu": "số 187",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5825,9 +5825,9 @@
   {
     "id": "189_BQLDA-QLDA1_18_08_2025",
     "soVanBan": "189/BQLDA-QLDA1",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "18/08/2025",
-    "trichYeu": "18 8 2025 số 189",
+    "trichYeu": "số 189",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5839,7 +5839,7 @@
   {
     "id": "1908_CV-TGX_18_08_2025",
     "soVanBan": "1908/CV-TGX",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-TGX",
     "ngayVanBan": "18/08/2025",
     "trichYeu": "CV1908 xin góp ý thiết kế",
     "doKhan": "Bình thường",
@@ -5853,9 +5853,9 @@
   {
     "id": "85_DA_18_08_2025",
     "soVanBan": "85/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "18/08/2025",
-    "trichYeu": "VB 85 DA   Hỗ trợ cắt điện để di dời các trụ trung, hạ thế (Cầu vượt)",
+    "trichYeu": "85 DA - Hỗ trợ cắt điện để di dời các trụ trung, hạ thế (Cầu vượt)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5867,9 +5867,9 @@
   {
     "id": "13.08_CV_LT-QV_13_08_2025",
     "soVanBan": "13.08/CV_LT-QV",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV_LT-QV",
     "ngayVanBan": "13/08/2025",
-    "trichYeu": "1. Công văn hỗ trỡ di dời cáp viễn thông Ctrinh NC1 3 pha VT PM BR",
+    "trichYeu": "1. Công văn hỗ trỡ di dời cáp viễn thông Ctrinh NC1-3 pha VT-PM-BR",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5881,9 +5881,9 @@
   {
     "id": "287_CV-QLDA_13_08_2025",
     "soVanBan": "287/CV-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "13/08/2025",
-    "trichYeu": "2742 QĐ UBND 27102023 (QĐ điều chỉnh DA tăng TMĐT)",
+    "trichYeu": "2742 QĐ-UBND 27102023 (QĐ điều chỉnh DA tăng TMĐT)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5912,9 +5912,9 @@
   {
     "id": "58_DA_13_08_2025",
     "soVanBan": "58/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "13/08/2025",
-    "trichYeu": "VB 58 DA   Góp ý về hồ sơ thiết kế bản vẽ di dời điện (Cầu vượt)",
+    "trichYeu": "58 DA - Góp ý về hồ sơ thiết kế bản vẽ di dời điện (Cầu vượt)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5926,7 +5926,7 @@
   {
     "id": "56_DA_12_08_2025",
     "soVanBan": "56/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "12/08/2025",
     "trichYeu": "56 DA",
     "doKhan": "Bình thường",
@@ -5940,9 +5940,9 @@
   {
     "id": "1108_CV-ĐMP_11_08_2025",
     "soVanBan": "1108/CV-ĐMP",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-ĐMP",
     "ngayVanBan": "11/08/2025",
-    "trichYeu": "1108 CV ĐMP",
+    "trichYeu": "CV-ĐMP",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5970,7 +5970,7 @@
     "soVanBan": "48/QLLD",
     "coQuanBanHanh": "Phòng Quản lý Lưới điện",
     "ngayVanBan": "07/08/2025",
-    "trichYeu": "TTr Di doi tru",
+    "trichYeu": "TTr-Di doi tru",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -5983,9 +5983,9 @@
   {
     "id": "03_GM-BQL_06_08_2025",
     "soVanBan": "03/GM-BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "06/08/2025",
-    "trichYeu": "GM 0001",
+    "trichYeu": "0001",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6013,7 +6013,7 @@
     "soVanBan": "3190/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "05/08/2025",
-    "trichYeu": "04 8 2024 CV EVNHCMC gửi các So ve di doi luoi dien",
+    "trichYeu": "-CV-EVNHCMC-gửi các So ve di doi luoi dien",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6026,7 +6026,7 @@
   {
     "id": "10_DA_04_08_2025",
     "soVanBan": "10/DA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "DA",
     "ngayVanBan": "04/08/2025",
     "trichYeu": "10 DA",
     "doKhan": "Bình thường",
@@ -6040,9 +6040,9 @@
   {
     "id": "166_BQLDA-VPĐH_04_08_2025",
     "soVanBan": "166/BQLDA-VPĐH",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "04/08/2025",
-    "trichYeu": "166   BQLDA VPĐH ngay 04.08.2025",
+    "trichYeu": "- BQLDA-VPĐH ngay 04.08.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6054,7 +6054,7 @@
   {
     "id": "20_TM-BQLDA_04_08_2025",
     "soVanBan": "20/TM-BQLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "04/08/2025",
     "trichYeu": "THƯ MÒI 20",
     "doKhan": "Bình thường",
@@ -6068,7 +6068,7 @@
   {
     "id": "124_CVTG.2_01_08_2025",
     "soVanBan": "124/CVTG.2",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CVTG.2",
     "ngayVanBan": "01/08/2025",
     "trichYeu": "124.CV TG",
     "doKhan": "Bình thường",
@@ -6082,7 +6082,7 @@
   {
     "id": "08_QLDA_31_07_2025",
     "soVanBan": "08/QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "31/07/2025",
     "trichYeu": "216.Thong Bao khoi cong di doi dien duong HL3 ngay 27.6.2025",
     "doKhan": "Bình thường",
@@ -6097,9 +6097,9 @@
   {
     "id": "124_CVTG_30_07_2025",
     "soVanBan": "124/CVTG",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CVTG",
     "ngayVanBan": "30/07/2025",
-    "trichYeu": "124 CVTG",
+    "trichYeu": "CVTG",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6127,7 +6127,7 @@
   {
     "id": "36_CV-2025_25_07_2025",
     "soVanBan": "36/CV-2025",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-2025",
     "ngayVanBan": "25/07/2025",
     "trichYeu": "XIN BỐ TRÍ CB GSCT",
     "doKhan": "Bình thường",
@@ -6141,9 +6141,9 @@
   {
     "id": "04_1_BQL_24_07_2025",
     "soVanBan": "04/1_BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "1_BQL",
     "ngayVanBan": "24/07/2025",
-    "trichYeu": "VB gửi Điện lực VT hỗ trợ công tác di dời điện Cầu vượt",
+    "trichYeu": "gửi Điện lực VT hỗ trợ công tác di dời điện Cầu vượt",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6157,7 +6157,7 @@
     "soVanBan": "206/PCVT-KTAT",
     "coQuanBanHanh": "Công ty Điện lực Vũng Tàu",
     "ngayVanBan": "23/07/2025",
-    "trichYeu": "PCVT  Khao sat di doi tru dien theo kien nghi cua khach hang",
+    "trichYeu": "PCVT- Khao sat di doi tru dien theo kien nghi cua khach hang",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6175,7 +6175,7 @@
     "soVanBan": "2930/EVNHCMC-KH",
     "coQuanBanHanh": "Tổng công ty Điện lực TP.HCM",
     "ngayVanBan": "22/07/2025",
-    "trichYeu": "18 7 2025 CV EVNHCMC cac don vi   di doi luoi dien",
+    "trichYeu": "-CV-EVNHCMC-cac don vi - di doi luoi dien",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6216,9 +6216,9 @@
   {
     "id": "79_BQLDA-BĐH_21_07_2025",
     "soVanBan": "79/BQLDA-BĐH",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban QLDA Đầu tư Xây dựng",
     "ngayVanBan": "21/07/2025",
-    "trichYeu": "79   BQLDA BĐH ngay 21.07.2025",
+    "trichYeu": "79 - BQLDA-BĐH ngay 21.07.2025",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6230,9 +6230,9 @@
   {
     "id": "134_CVTG_18_07_2025",
     "soVanBan": "134/CVTG",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CVTG",
     "ngayVanBan": "18/07/2025",
-    "trichYeu": "CV phê duyệt phát sinh khi di dời ống HDPE D710",
+    "trichYeu": "phê duyệt phát sinh khi di dời ống HDPE D710",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6244,9 +6244,9 @@
   {
     "id": "17_CV-TD_18_07_2025",
     "soVanBan": "17/CV-TD",
-    "coQuanBanHanh": "Công văn",
+    "coQuanBanHanh": "CV-TD",
     "ngayVanBan": "18/07/2025",
-    "trichYeu": "17 CV TD",
+    "trichYeu": "17 CV-TD",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6258,7 +6258,7 @@
   {
     "id": "1201_CV-QLDA_30_06_2025",
     "soVanBan": "1201/CV-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "30/06/2025",
     "trichYeu": "1201.CV",
     "doKhan": "Bình thường",
@@ -6272,9 +6272,9 @@
   {
     "id": "1851_BQL_30_06_2025",
     "soVanBan": "1851/BQL",
-    "coQuanBanHanh": "Ban Quản lý",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "30/06/2025",
-    "trichYeu": "19. VB 1851 BQL   Phối hợp hỗ trợ di dời hệ thống HTKT ngầm trong quá trình thi công (1)",
+    "trichYeu": "19. VB 1851 BQL - Phối hợp hỗ trợ di dời hệ thống HTKT ngầm trong quá trình thi công (1)",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [
@@ -6286,9 +6286,9 @@
   {
     "id": "2976_BQLDA&PTQĐ-QLDA_30_06_2025",
     "soVanBan": "2976/BQLDA&PTQĐ-QLDA",
-    "coQuanBanHanh": "Phòng Dự án",
+    "coQuanBanHanh": "Ban Quản lý Dự án",
     "ngayVanBan": "30/06/2025",
-    "trichYeu": "30 6 2025 SỐ 2976",
+    "trichYeu": "SỐ 2976",
     "doKhan": "Bình thường",
     "doMat": "Bình thường",
     "files": [

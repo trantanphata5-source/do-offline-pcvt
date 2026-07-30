@@ -337,13 +337,15 @@ function createDocCard(doc, index) {
         <span class="doc-card-so">${escapeHtml(doc.soVanBan)}</span>
         ${khanHtml}
       </div>
-      <span class="doc-card-date">${formatDate(doc.ngayVanBan)}</span>
+      <div class="doc-card-date-status">
+        <span class="doc-card-date">${formatDate(doc.ngayVanBan)}</span>
+        ${statusDot}
+      </div>
     </div>
     <div class="doc-card-org">
       <span>${escapeHtml(doc.coQuanBanHanh || '—')}</span>
     </div>
     <div class="doc-card-summary">${escapeHtml(doc.trichYeu || 'Không có trích yếu')}</div>
-    <div class="doc-card-status">${statusDot}</div>
   `;
 
   card.addEventListener('click', () => selectDocument(doc));

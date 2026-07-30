@@ -486,18 +486,20 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   overflow: hidden;
 }
 
-.doc-card-status {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+.doc-card-date-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
+
 .status-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
   display: inline-block;
 }
-.status-dot.pending { background: var(--warning); }
-.status-dot.done { background: var(--success); }
+.status-dot.pending { background: #ff9800; }
+.status-dot.done { background: #4caf50; }
 
 /* Right: Preview */
 .doc-preview-panel {
