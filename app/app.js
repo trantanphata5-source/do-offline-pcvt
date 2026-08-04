@@ -55,7 +55,7 @@ const ORG_STRUCTURE = {
     'Tổ Chuyên gia',
   ],
   banGiamDocCCD: [
-    'GĐ - Nguyễn Ngọc Tuyền',
+    'GĐ - Nguyễn Ngọc Tuyến',
     'PGĐ KT - Trần Thanh Hải',
     'PGĐ KD - Đặng Quang Trung',
     'PGĐ ĐTXD - Lại Xuân Phương',
@@ -718,7 +718,7 @@ async function saveChiDao() {
     yeuCauTraLoi,
     chuyenThuKy,
     theoDoiVanBan,
-    nguoiChiDao: 'Nguyễn Ngọc Tuyền',
+    nguoiChiDao: 'Nguyễn Ngọc Tuyến',
   };
 
   // Save to Google Sheets
@@ -804,7 +804,7 @@ async function saveChuyenChiDao() {
     noiDungChuyen,
     chuTri,
     xemDeBiet: xemDeBiet.join(', '),
-    nguoiChuyen: 'Nguyễn Ngọc Tuyền',
+    nguoiChuyen: 'Nguyễn Ngọc Tuyến',
   };
 
   if (GAS_URL) {
