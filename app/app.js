@@ -287,22 +287,39 @@ async function loadDriveMapping() {
  * Uses Google Drive preview URL if mapping exists, otherwise falls back to local path.
  */
 function getPdfViewUrl(folderName, fileName) {
-  // Try Google Drive mapping with multiple keys
   if (driveFileMapping) {
     // Key 1: folderName/fileName (subfolder structure)
     const key1 = folderName + '/' + fileName;
     if (driveFileMapping[key1]) return driveFileMapping[key1];
     
-    // Key 2: fileName directly (flat upload)
+    // Key 2: fileName directly
     if (driveFileMapping[fileName]) return driveFileMapping[fileName];
     
-    // Key 3: Try matching by file basename (without extension)
-    const baseName = fileName.replace(/\.[^.]+$/, '');
-    if (driveFileMapping[baseName]) return driveFileMapping[baseName];
+    // Key 3: baseName (without .pdf)
+    const baseName = fileName.replace(/\.pdf$/i, '');
+    const baseKey = baseName + '/' + fileName;
+    if (driveFileMapping[baseKey]) return driveFileMapping[baseKey];
     
-    // Key 4: Search all keys for partial filename match
+    // Key 4: Search all mapping keys for exact fileName match
     for (const [mapKey, url] of Object.entries(driveFileMapping)) {
       if (mapKey.endsWith('/' + fileName) || mapKey === fileName) {
+        return url;
+      }
+    }
+    
+    // Key 5: Fuzzy match - strip .signed suffixes and compare core name
+    const coreFileName = fileName.replace(/\.pdf$/i, '').replace(/\.signed/g, '').toLowerCase().trim();
+    for (const [mapKey, url] of Object.entries(driveFileMapping)) {
+      const mapFile = mapKey.split('/').pop() || mapKey;
+      const coreMapFile = mapFile.replace(/\.pdf$/i, '').replace(/\.signed/g, '').toLowerCase().trim();
+      if (coreFileName === coreMapFile) {
+        return url;
+      }
+    }
+    
+    // Key 6: Contains match - if core part of filename appears in mapping key
+    for (const [mapKey, url] of Object.entries(driveFileMapping)) {
+      if (mapKey.toLowerCase().includes(coreFileName) || coreFileName.includes(mapKey.split('/').pop().replace(/\.pdf$/i, '').replace(/\.signed/g, '').toLowerCase().trim())) {
         return url;
       }
     }
