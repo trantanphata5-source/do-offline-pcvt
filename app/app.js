@@ -72,6 +72,101 @@ let selectedDoc = null;
 let chiDaoData = {};     // vanBanId -> array of chi dao
 let chuyenChiDaoData = {}; // vanBanId -> array
 let driveFileMapping = null; // folderName/fileName -> Google Drive preview URL
+let suggestedDocs = {}; // vanBanId -> { pgd, chuTri, phoiHop, xemDeBiet } - AI suggestions
+
+// ============================================================
+// AI AUTO-SUGGEST RULES
+// ============================================================
+
+const SUGGEST_RULES = [
+  { keywords: ['thi công', 'hotline', 'liveline', 'phương án thi công', 'sự cố', 'đường dây', 'mang điện'],
+    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'] },
+  { keywords: ['vận hành', 'điều độ', 'phương thức vận hành', 'hệ thống điện'],
+    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'] },
+  { keywords: ['điện kế', 'đo đếm', 'công tơ', 'cấp điện kế'],
+    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Đội Quản lý hệ thống đo đếm'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
+  { keywords: ['năng lượng mặt trời', 'mặt trời mái nhà', 'NLMT', 'điện mặt trời'],
+    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Đội Dịch vụ khách hàng'] },
+  { keywords: ['tuyển dụng', 'nhân sự', 'vị trí chức danh', 'khung năng lực', 'cơ cấu tổ chức'],
+    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tổ chức & Nhân sự'], phoiHop: ['Văn phòng'] },
+  { keywords: ['đào tạo', 'thạc sĩ', 'tuyển sinh', 'sát hạch', 'nghiệp vụ'],
+    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tổ chức & Nhân sự'], phoiHop: ['Văn phòng'] },
+  { keywords: ['phúc lợi', 'kỷ niệm', 'lễ', '50 năm', 'sự kiện'],
+    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tổ chức & Nhân sự'], phoiHop: ['Văn phòng'] },
+  { keywords: ['đầu tư', 'xây dựng', 'tái định cư', 'trạm biến áp', 'hạ tầng kỹ thuật'],
+    pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
+  { keywords: ['pháp lý', 'trụ sở', 'kho bãi', 'phòng biến điện'],
+    pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Văn phòng'] },
+  { keywords: ['cưỡng chế', 'thu hồi đất', 'giải phóng mặt bằng'],
+    pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn', 'Văn phòng'] },
+  { keywords: ['vật tư', 'vận chuyển', 'phụ tùng', 'thiết bị'],
+    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kế hoạch & Vật Tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
+  { keywords: ['kinh doanh', 'khách hàng', 'giá điện', 'tiền điện'],
+    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Đội Dịch vụ khách hàng'] },
+  { keywords: ['tài chính', 'kế toán', 'chi phí', 'ngân sách'],
+    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tài chính Kế toán'], phoiHop: ['Văn phòng'] },
+  { keywords: ['đảng', 'nghị quyết', 'BCH', 'trung ương', 'đảng ủy', 'chi bộ'],
+    pgd: '', chuTri: ['BCH Đảng ủy'], phoiHop: ['Văn phòng'] },
+  { keywords: ['công nghệ thông tin', 'dữ liệu', 'AI', 'khoa học dữ liệu'],
+    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Văn phòng'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
+  { keywords: ['luật', 'pháp luật', 'an ninh dữ liệu', 'dự án luật', 'góp ý'],
+    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Văn phòng'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
+  { keywords: ['giấy mời', 'hội nghị', 'họp'],
+    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Văn phòng'], phoiHop: [] },
+  { keywords: ['công suất phản kháng', 'ranh giới', 'đo ranh'],
+    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'] },
+  { keywords: ['lưới điện', 'quản lý lưới'],
+    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Đội Quản lý lưới điện'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
+];
+
+function suggestAssignment(doc) {
+  const text = ((doc.trichYeu || '') + ' ' + (doc.coQuanBanHanh || '')).toLowerCase();
+  
+  for (const rule of SUGGEST_RULES) {
+    for (const kw of rule.keywords) {
+      if (text.includes(kw.toLowerCase())) {
+        return {
+          pgd: rule.pgd,
+          chuTri: rule.chuTri || [],
+          phoiHop: rule.phoiHop || [],
+          xemDeBiet: [],
+        };
+      }
+    }
+  }
+  // Default
+  return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Văn phòng'], phoiHop: [], xemDeBiet: [] };
+}
+
+function applySuggestion() {
+  if (!selectedDoc) return;
+  const s = suggestAssignment(selectedDoc);
+  suggestedDocs[selectedDoc.id] = s;
+  
+  // Reset all checkboxes
+  document.querySelectorAll('#modalChiDao input[data-group="chutri"]').forEach(cb => cb.checked = false);
+  document.querySelectorAll('#modalChiDao input[data-group="phoihop"]').forEach(cb => cb.checked = false);
+  document.querySelectorAll('#modalChiDao input[data-group="xemdebiet"]').forEach(cb => cb.checked = false);
+  
+  // Apply suggested values with visual class
+  s.chuTri.forEach(name => {
+    const cb = document.querySelector(`#modalChiDao input[data-group="chutri"][value="${name}"]`);
+    if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+  });
+  s.phoiHop.forEach(name => {
+    const cb = document.querySelector(`#modalChiDao input[data-group="phoihop"][value="${name}"]`);
+    if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+  });
+  
+  // Mark all rows as suggested style
+  document.querySelectorAll('#modalChiDao .pb-row').forEach(row => {
+    const anyChecked = row.querySelectorAll('input:checked').length > 0;
+    row.classList.toggle('suggested', anyChecked);
+  });
+  
+  showToast('🤖 Đã đề xuất phân công dựa trên nội dung văn bản', 'info');
+  renderDocumentList(); // Refresh dots
+}
 
 // ============================================================
 // INITIALIZATION
@@ -115,6 +210,10 @@ function initUI() {
   document.getElementById('btnSaveChiDao').addEventListener('click', saveChiDao);
   document.getElementById('btnSaveChuyenChiDao').addEventListener('click', saveChuyenChiDao);
   document.getElementById('btnCCDBack').addEventListener('click', closeChuyenChiDaoModal);
+
+  // Suggest button
+  const btnSuggest = document.getElementById('btnSuggestAI');
+  if (btnSuggest) btnSuggest.addEventListener('click', applySuggestion);
 
   // Close modal on overlay click
   document.getElementById('modalChiDao').addEventListener('click', (e) => {
@@ -373,9 +472,15 @@ function createDocCard(doc, index) {
 
   // Status indicator
   const hasChiDao = chiDaoData[doc.id] && chiDaoData[doc.id].length > 0;
-  const statusDot = hasChiDao 
-    ? '<span class="status-dot done" title="Đã chỉ đạo"></span>' 
-    : '<span class="status-dot pending" title="Chờ xử lý"></span>';
+  const isSuggested = suggestedDocs[doc.id] && !hasChiDao;
+  let statusDot;
+  if (hasChiDao) {
+    statusDot = '<span class="status-dot done" title="Đã chỉ đạo"></span>';
+  } else if (isSuggested) {
+    statusDot = '<span class="status-dot suggested" title="Đề xuất AI"></span>';
+  } else {
+    statusDot = '<span class="status-dot pending" title="Chờ xử lý"></span>';
+  }
 
   card.innerHTML = `
     <div class="doc-card-header">
@@ -659,11 +764,11 @@ function loadExistingChiDao() {
     const latest = existing[existing.length - 1];
     document.getElementById('cdNoiDung').value = latest.noiDung || '';
     
-    // Restore radio selection for chủ trì
+    // Restore checkboxes for chủ trì
     if (latest.chuTri) {
-      const radios = document.querySelectorAll('input[name="cd_chutri"]');
-      radios.forEach(r => {
-        r.checked = r.value === latest.chuTri;
+      const ctList = latest.chuTri.split(',').map(s => s.trim());
+      document.querySelectorAll('input[data-group="chutri"]').forEach(cb => {
+        cb.checked = ctList.includes(cb.value);
       });
     }
 
@@ -715,9 +820,11 @@ async function saveChiDao() {
   const chuyenThuKy = document.getElementById('cdChuyenThuKy').checked;
   const theoDoiVanBan = document.getElementById('cdTheoDoiVB').checked;
 
-  // Get chủ trì (radio)
-  const chuTriRadio = document.querySelector('input[name="cd_chutri"]:checked');
-  const chuTri = chuTriRadio ? chuTriRadio.value : '';
+  // Get chủ trì (checkboxes)
+  const chuTri = [];
+  document.querySelectorAll('input[data-group="chutri"]:checked').forEach(cb => {
+    chuTri.push(cb.value);
+  });
 
   // Get phối hợp (checkboxes)
   const phoiHop = [];
@@ -740,7 +847,7 @@ async function saveChiDao() {
     existingId: existingId,
     vanBanId: selectedDoc.id,
     noiDung,
-    chuTri,
+    chuTri: chuTri.join(', '),
     phoiHop: phoiHop.join(', '),
     xemDeBiet: xemDeBiet.join(', '),
     hanGiaiQuyet,
@@ -771,6 +878,7 @@ async function saveChiDao() {
           if (!chiDaoData[selectedDoc.id]) chiDaoData[selectedDoc.id] = [];
           chiDaoData[selectedDoc.id].push(data);
         }
+        delete suggestedDocs[selectedDoc.id]; // Clear suggested state
         closeChiDaoModal();
         renderDocumentList(); // Update status dots
         return;
@@ -785,6 +893,8 @@ async function saveChiDao() {
     // Save locally (demo mode)
     if (!chiDaoData[selectedDoc.id]) chiDaoData[selectedDoc.id] = [];
     chiDaoData[selectedDoc.id].push(data);
+    // Clear suggested state after saving
+    delete suggestedDocs[selectedDoc.id];
     showToast('Đã lưu chỉ đạo (chế độ offline)', 'success');
     closeChiDaoModal();
     renderDocumentList();
@@ -806,7 +916,6 @@ function openChuyenChiDaoModal() {
 
   // Reset form
   document.getElementById('ccdNoiDung').value = '';
-  document.querySelectorAll('#modalChuyenChiDao input[type="radio"]').forEach(r => r.checked = false);
   document.querySelectorAll('#modalChuyenChiDao input[type="checkbox"]').forEach(cb => cb.checked = false);
 }
 
@@ -820,8 +929,9 @@ async function saveChuyenChiDao() {
 
   const noiDungChuyen = document.getElementById('ccdNoiDung').value.trim();
   
-  const chuTriRadio = document.querySelector('#modalChuyenChiDao input[name="ccd_chutri"]:checked');
-  const chuTri = chuTriRadio ? chuTriRadio.value : '';
+  const ccdChuTri = [];
+  document.querySelectorAll('#modalChuyenChiDao input[data-group="ccd_chutri"]:checked').forEach(cb => ccdChuTri.push(cb.value));
+  const chuTri = ccdChuTri.join(', ');
 
   const xemDeBiet = [];
   document.querySelectorAll('#modalChuyenChiDao input[data-group="ccd_xemdebiet"]:checked').forEach(cb => {
@@ -909,8 +1019,8 @@ function createPBRow(name, isAlt) {
   row.innerHTML = `
     <span class="pb-name">${escapeHtml(name)}</span>
     <div class="pb-cols">
-      <span class="pb-radio-cell">
-        <input type="radio" name="cd_chutri" value="${escapeHtml(name)}">
+      <span class="pb-check-cell">
+        <input type="checkbox" data-group="chutri" value="${escapeHtml(name)}">
       </span>
       <span class="pb-check-cell">
         <input type="checkbox" data-group="phoihop" value="${escapeHtml(name)}">
@@ -920,6 +1030,16 @@ function createPBRow(name, isAlt) {
       </span>
     </div>
   `;
+  // Mutual exclusion per row
+  row.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked) {
+        row.querySelectorAll('input[type="checkbox"]').forEach(other => {
+          if (other !== cb) other.checked = false;
+        });
+      }
+    });
+  });
   return row;
 }
 
@@ -928,13 +1048,23 @@ function createCCDRow(name, isAlt) {
   row.className = 'ccd-row' + (isAlt ? ' alt' : '');
   row.innerHTML = `
     <span class="ccd-name">${escapeHtml(name)}</span>
-    <span class="ccd-radio-cell">
-      <input type="radio" name="ccd_chutri" value="${escapeHtml(name)}">
+    <span class="ccd-check-cell">
+      <input type="checkbox" data-group="ccd_chutri" value="${escapeHtml(name)}">
     </span>
     <span class="ccd-check-cell">
       <input type="checkbox" data-group="ccd_xemdebiet" value="${escapeHtml(name)}">
     </span>
   `;
+  // Mutual exclusion per row
+  row.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      if (cb.checked) {
+        row.querySelectorAll('input[type="checkbox"]').forEach(other => {
+          if (other !== cb) other.checked = false;
+        });
+      }
+    });
+  });
   return row;
 }
 
@@ -1025,7 +1155,7 @@ function populateOverviewTable() {
 
   // Find all documents that have chi dao
   const assignedDocs = allDocuments.filter(doc => 
-    chiDaoData[doc.id] && chiDaoData[doc.id].length > 0
+    (chiDaoData[doc.id] && chiDaoData[doc.id].length > 0) || suggestedDocs[doc.id]
   );
 
   if (assignedDocs.length === 0) {
@@ -1038,21 +1168,26 @@ function populateOverviewTable() {
   emptyMsg.style.display = 'none';
 
   assignedDocs.forEach((doc, idx) => {
-    const cd = chiDaoData[doc.id][0]; // Get first (or only) chi dao
+    const cdArr = chiDaoData[doc.id] || [];
+    const cd = cdArr[0] || suggestedDocs[doc.id] || {}; // fallback to suggestion data
     
     // Get chuyen chi dao info
     const ccdList = chuyenChiDaoData[doc.id] || [];
     const chuyenCD = ccdList.map(c => c.nguoiChuyen || c.phoGiamDoc || '').filter(Boolean).join(', ');
     
+    const isSuggested = suggestedDocs[doc.id] && !(chiDaoData[doc.id]?.length > 0);
     const tr = document.createElement('tr');
     tr.dataset.docId = doc.id;
+    if (isSuggested) tr.classList.add('suggested-row');
+    const displayChuTri = Array.isArray(cd.chuTri) ? cd.chuTri.join(', ') : (cd.chuTri || '—');
+    const displayPhoiHop = Array.isArray(cd.phoiHop) ? cd.phoiHop.join(', ') : (cd.phoiHop || '—');
     tr.innerHTML = `
       <td>${idx + 1}</td>
       <td><span class="overview-so-vb">${escapeHtml(doc.soVanBan)}</span></td>
       <td><div class="overview-trich-yeu">${escapeHtml(doc.trichYeu || 'Không có trích yếu')}</div></td>
       <td>${escapeHtml(chuyenCD || '—')}</td>
-      <td>${escapeHtml(cd.chuTri || '—')}</td>
-      <td>${escapeHtml(cd.phoiHop || '—')}</td>
+      <td>${escapeHtml(displayChuTri)}</td>
+      <td>${escapeHtml(displayPhoiHop)}</td>
     `;
     
     tr.addEventListener('click', () => {

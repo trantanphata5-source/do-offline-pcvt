@@ -500,6 +500,52 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 }
 .status-dot.pending { background: #ff9800; }
 .status-dot.done { background: #4caf50; }
+.status-dot.suggested { background: #9c27b0; animation: pulse-suggest 1.5s infinite; }
+
+@keyframes pulse-suggest {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(156, 39, 176, 0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 4px rgba(156, 39, 176, 0); }
+}
+
+/* Suggest button */
+.btn-suggest {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.btn-suggest:hover {
+  background: linear-gradient(135deg, #ab47bc, #8e24aa);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
+}
+
+/* Suggested row highlight in pb-row */
+.pb-row.suggested {
+  background: rgba(156, 39, 176, 0.08) !important;
+  border-left: 3px solid #9c27b0;
+}
+.pb-row.suggested .pb-name {
+  color: #7b1fa2;
+  font-weight: 600;
+}
+
+/* Overview suggested row */
+.suggested-row {
+  background: rgba(156, 39, 176, 0.06) !important;
+  border-left: 3px solid #9c27b0;
+}
+.suggested-row td {
+  color: #6a1b9a;
+}
 
 /* Filter Dropdown */
 .filter-dropdown {
