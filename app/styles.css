@@ -347,6 +347,19 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   border-color: var(--primary-dark);
 }
 
+.action-btn.suggest-btn {
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+  color: white;
+  border-color: #9c27b0;
+  font-weight: 500;
+}
+.action-btn.suggest-btn:hover {
+  background: linear-gradient(135deg, #ab47bc, #8e24aa);
+  border-color: #ab47bc;
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
+  transform: translateY(-1px);
+}
+
 /* ---- CONTENT BODY (Two columns) ---- */
 .content-body {
   flex: 1;

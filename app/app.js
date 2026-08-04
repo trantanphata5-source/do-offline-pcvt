@@ -139,33 +139,44 @@ function suggestAssignment(doc) {
 }
 
 function applySuggestion() {
-  if (!selectedDoc) return;
-  const s = suggestAssignment(selectedDoc);
-  suggestedDocs[selectedDoc.id] = s;
+  if (allDocuments.length === 0) {
+    showToast('Chưa có văn bản nào để đề xuất', 'error');
+    return;
+  }
   
-  // Reset all checkboxes
-  document.querySelectorAll('#modalChiDao input[data-group="chutri"]').forEach(cb => cb.checked = false);
-  document.querySelectorAll('#modalChiDao input[data-group="phoihop"]').forEach(cb => cb.checked = false);
-  document.querySelectorAll('#modalChiDao input[data-group="xemdebiet"]').forEach(cb => cb.checked = false);
-  
-  // Apply suggested values with visual class
-  s.chuTri.forEach(name => {
-    const cb = document.querySelector(`#modalChiDao input[data-group="chutri"][value="${name}"]`);
-    if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
-  });
-  s.phoiHop.forEach(name => {
-    const cb = document.querySelector(`#modalChiDao input[data-group="phoihop"][value="${name}"]`);
-    if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+  let count = 0;
+  allDocuments.forEach(doc => {
+    // Skip docs that already have chi dao saved
+    if (chiDaoData[doc.id] && chiDaoData[doc.id].length > 0) return;
+    
+    const s = suggestAssignment(doc);
+    suggestedDocs[doc.id] = s;
+    count++;
   });
   
-  // Mark all rows as suggested style
-  document.querySelectorAll('#modalChiDao .pb-row').forEach(row => {
-    const anyChecked = row.querySelectorAll('input:checked').length > 0;
-    row.classList.toggle('suggested', anyChecked);
-  });
-  
-  showToast('🤖 Đã đề xuất phân công dựa trên nội dung văn bản', 'info');
+  showToast(`🤖 Đã đề xuất phân công cho ${count} văn bản`, 'info');
   renderDocumentList(); // Refresh dots
+  
+  // If chi dao modal is open with a selected doc, apply to checkboxes too
+  if (selectedDoc && suggestedDocs[selectedDoc.id]) {
+    const s = suggestedDocs[selectedDoc.id];
+    document.querySelectorAll('#modalChiDao input[data-group="chutri"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('#modalChiDao input[data-group="phoihop"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('#modalChiDao input[data-group="xemdebiet"]').forEach(cb => cb.checked = false);
+    
+    s.chuTri.forEach(name => {
+      const cb = document.querySelector(`#modalChiDao input[data-group="chutri"][value="${name}"]`);
+      if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+    });
+    s.phoiHop.forEach(name => {
+      const cb = document.querySelector(`#modalChiDao input[data-group="phoihop"][value="${name}"]`);
+      if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+    });
+    document.querySelectorAll('#modalChiDao .pb-row').forEach(row => {
+      const anyChecked = row.querySelectorAll('input:checked').length > 0;
+      row.classList.toggle('suggested', anyChecked);
+    });
+  }
 }
 
 // ============================================================
@@ -800,12 +811,26 @@ function loadExistingChiDao() {
   } else {
     // Reset form
     document.getElementById('cdNoiDung').value = '';
-    document.querySelectorAll('input[name="cd_chutri"]').forEach(r => r.checked = false);
+    document.querySelectorAll('input[data-group="chutri"]').forEach(cb => cb.checked = false);
     document.querySelectorAll('input[data-group="phoihop"]').forEach(cb => cb.checked = false);
     document.querySelectorAll('input[data-group="xemdebiet"]').forEach(cb => cb.checked = false);
     document.getElementById('cdYeuCauTraLoi').checked = false;
     document.getElementById('cdChuyenThuKy').checked = false;
     document.getElementById('cdTheoDoiVB').checked = false;
+    document.querySelectorAll('#modalChiDao .pb-row.suggested').forEach(r => r.classList.remove('suggested'));
+    
+    // Auto-fill from AI suggestion if available
+    if (selectedDoc && suggestedDocs[selectedDoc.id]) {
+      const s = suggestedDocs[selectedDoc.id];
+      s.chuTri.forEach(name => {
+        const cb = document.querySelector(`#modalChiDao input[data-group="chutri"][value="${name}"]`);
+        if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+      });
+      s.phoiHop.forEach(name => {
+        const cb = document.querySelector(`#modalChiDao input[data-group="phoihop"][value="${name}"]`);
+        if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+      });
+    }
   }
 }
 
