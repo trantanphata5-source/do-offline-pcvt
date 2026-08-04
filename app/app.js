@@ -287,11 +287,24 @@ async function loadDriveMapping() {
  * Uses Google Drive preview URL if mapping exists, otherwise falls back to local path.
  */
 function getPdfViewUrl(folderName, fileName) {
-  // Try Google Drive mapping first
+  // Try Google Drive mapping with multiple keys
   if (driveFileMapping) {
-    const key = folderName + '/' + fileName;
-    if (driveFileMapping[key]) {
-      return driveFileMapping[key];
+    // Key 1: folderName/fileName (subfolder structure)
+    const key1 = folderName + '/' + fileName;
+    if (driveFileMapping[key1]) return driveFileMapping[key1];
+    
+    // Key 2: fileName directly (flat upload)
+    if (driveFileMapping[fileName]) return driveFileMapping[fileName];
+    
+    // Key 3: Try matching by file basename (without extension)
+    const baseName = fileName.replace(/\.[^.]+$/, '');
+    if (driveFileMapping[baseName]) return driveFileMapping[baseName];
+    
+    // Key 4: Search all keys for partial filename match
+    for (const [mapKey, url] of Object.entries(driveFileMapping)) {
+      if (mapKey.endsWith('/' + fileName) || mapKey === fileName) {
+        return url;
+      }
     }
   }
   // Fallback to local path
