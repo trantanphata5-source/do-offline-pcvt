@@ -509,6 +509,7 @@ function createDocCard(doc, index) {
       <span>${escapeHtml(doc.coQuanBanHanh || '—')}</span>
     </div>
     <div class="doc-card-summary">${escapeHtml(doc.trichYeu || 'Không có trích yếu')}</div>
+    ${doc.ngayTaiLen ? `<div class="doc-card-upload-time"><span class="material-icons-outlined" style="font-size:12px">cloud_upload</span> ${escapeHtml(doc.ngayTaiLen)}</div>` : ''}
   `;
 
   card.addEventListener('click', () => selectDocument(doc));
@@ -889,11 +890,19 @@ function loadExistingChiDao() {
 
 async function saveChiDao() {
   if (!selectedDoc) return;
+  
+  // Prevent double-click
+  const saveBtn = document.getElementById('btnSaveChiDao');
+  if (saveBtn.disabled) return;
+  saveBtn.disabled = true;
+  saveBtn.textContent = 'Đang lưu...';
+
+  try {
 
   // Gather form data
   const noiDung = document.getElementById('cdNoiDung').value.trim();
   const hanGiaiQuyet = document.getElementById('cdHanGiaiQuyet').value;
-  const doKhan = document.getElementById('cdDoKhan').value;
+  const doKhan = document.getElementById('cdDoKhan').value || 'Bình thường';
   const yeuCauTraLoi = document.getElementById('cdYeuCauTraLoi').checked;
   const chuyenThuKy = document.getElementById('cdChuyenThuKy').checked;
   const theoDoiVanBan = document.getElementById('cdTheoDoiVB').checked;
@@ -978,6 +987,12 @@ async function saveChiDao() {
     closeChiDaoModal();
     renderDocumentList();
     if (selectedDoc) updateAssignmentSummary(selectedDoc); // Refresh panel
+  }
+
+  } finally {
+    // Re-enable save button
+    saveBtn.disabled = false;
+    saveBtn.innerHTML = '<span>Lưu</span>';
   }
 }
 

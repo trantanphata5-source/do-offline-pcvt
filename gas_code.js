@@ -40,7 +40,7 @@ function getOrCreateSheet(name, headers) {
 
 var VANBAN_HEADERS = [
   'id', 'soVanBan', 'coQuanBanHanh', 'ngayVanBan', 
-  'trichYeu', 'doKhan', 'doMat', 'files', 'zipName', 'folderName'
+  'trichYeu', 'doKhan', 'doMat', 'files', 'zipName', 'folderName', 'ngayTaiLen'
 ];
 
 var CHIDAO_HEADERS = [
@@ -297,8 +297,17 @@ function reimportFromVercel() {
 
 function saveChiDao(data) {
   var sheet = getOrCreateSheet('ChiDao', CHIDAO_HEADERS);
+  
+  // Check duplicate: if vanBanId already exists, update instead
+  var allData = sheet.getDataRange().getValues();
+  for (var i = 1; i < allData.length; i++) {
+    if (allData[i][1] === data.vanBanId) {
+      return updateChiDao(data); // Redirect to update
+    }
+  }
+  
   var id = 'CD_' + new Date().getTime();
-  var timestamp = new Date().toISOString();
+  var timestamp = formatTimestamp(new Date());
   
   var row = [
     id,
@@ -320,10 +329,19 @@ function saveChiDao(data) {
   return { success: true, id: id, message: 'Đã lưu chỉ đạo' };
 }
 
+function formatTimestamp(d) {
+  var dd = ('0' + d.getDate()).slice(-2);
+  var mm = ('0' + (d.getMonth() + 1)).slice(-2);
+  var yyyy = d.getFullYear();
+  var hh = ('0' + d.getHours()).slice(-2);
+  var mi = ('0' + d.getMinutes()).slice(-2);
+  return dd + '/' + mm + '/' + yyyy + ' ' + hh + ':' + mi;
+}
+
 function updateChiDao(data) {
   var sheet = getOrCreateSheet('ChiDao', CHIDAO_HEADERS);
   var allData = sheet.getDataRange().getValues();
-  var timestamp = new Date().toISOString();
+  var timestamp = formatTimestamp(new Date());
   
   // Find existing row by vanBanId
   var foundRow = -1;
@@ -363,7 +381,7 @@ function updateChiDao(data) {
 function saveChuyenChiDao(data) {
   var sheet = getOrCreateSheet('ChuyenChiDao', CHUYENCHIDAO_HEADERS);
   var id = 'CCD_' + new Date().getTime();
-  var timestamp = new Date().toISOString();
+  var timestamp = formatTimestamp(new Date());
   
   var row = [
     id,
@@ -520,11 +538,12 @@ function importDOGD() {
     ['TB_hoan_thanh','TB-PCVT','Công ty Điện lực Vũng Tàu','25/08/2026','Thông báo hoàn thành','thong bao hoan thanh.pdf']
   ];
   
-  // Build rows: [id, soVanBan, coQuan, ngay, trichYeu, doKhan, doMat, files, zipName, folderName]
+  // Build rows: [id, soVanBan, coQuan, ngay, trichYeu, doKhan, doMat, files, zipName, folderName, ngayTaiLen]
+  var now = formatTimestamp(new Date());
   var rows = [];
   for (var i = 0; i < docs.length; i++) {
     var d = docs[i];
-    rows.push([d[0], d[1], d[2], d[3], d[4], 'Bình thường', 'Bình thường', '["' + d[5] + '"]', '', d[0]]);
+    rows.push([d[0], d[1], d[2], d[3], d[4], 'Bình thường', 'Bình thường', '["' + d[5] + '"]', '', d[0], now]);
   }
   
   if (rows.length > 0) {

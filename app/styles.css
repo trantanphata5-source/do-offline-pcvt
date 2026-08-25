@@ -499,6 +499,15 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   overflow: hidden;
 }
 
+.doc-card-upload-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  margin-top: 4px;
+}
+
 .doc-card-date-status {
   display: inline-flex;
   align-items: center;
