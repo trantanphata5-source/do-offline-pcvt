@@ -509,7 +509,7 @@ function createDocCard(doc, index) {
       <span>${escapeHtml(doc.coQuanBanHanh || '—')}</span>
     </div>
     <div class="doc-card-summary">${escapeHtml(doc.trichYeu || 'Không có trích yếu')}</div>
-    ${doc.ngayTaiLen ? `<div class="doc-card-upload-time"><span class="material-icons-outlined" style="font-size:12px">cloud_upload</span> ${escapeHtml(doc.ngayTaiLen)}</div>` : ''}
+    ${doc.ngayTaiLen ? `<div class="doc-card-upload-time"><span class="material-icons-outlined" style="font-size:12px">cloud_upload</span> ${formatUploadTime(doc.ngayTaiLen)}</div>` : ''}
   `;
 
   card.addEventListener('click', () => selectDocument(doc));
@@ -1239,6 +1239,27 @@ function formatDate(dateStr) {
   } catch (e) {}
   
   return String(dateStr);
+}
+
+function formatUploadTime(val) {
+  if (!val) return '';
+  // Already dd/MM/yyyy HH:mm format
+  if (/^\d{2}\/\d{2}\/\d{4}\s+\d{2}:\d{2}$/.test(val)) return val;
+  // ISO format → parse and format with VN timezone
+  try {
+    const d = new Date(val);
+    if (!isNaN(d.getTime())) {
+      // Adjust to UTC+7
+      const vn = new Date(d.getTime() + 7 * 60 * 60 * 1000);
+      const dd = String(vn.getUTCDate()).padStart(2, '0');
+      const mm = String(vn.getUTCMonth() + 1).padStart(2, '0');
+      const yyyy = vn.getUTCFullYear();
+      const hh = String(vn.getUTCHours()).padStart(2, '0');
+      const mi = String(vn.getUTCMinutes()).padStart(2, '0');
+      return `${dd}/${mm}/${yyyy} ${hh}:${mi}`;
+    }
+  } catch (e) {}
+  return String(val);
 }
 
 // ============================================================
