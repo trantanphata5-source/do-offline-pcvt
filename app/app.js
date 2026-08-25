@@ -1112,6 +1112,73 @@ function populateDynamicForms() {
   ORG_STRUCTURE.dangUyDoanThe.forEach((name, i) => {
     ccdDUDT.appendChild(createCCDRow(name, i % 2 === 1));
   });
+
+  // Wire up group header toggle checkboxes
+  initGroupToggle();
+}
+
+function initGroupToggle() {
+  document.querySelectorAll('input[data-group-toggle]').forEach(headerCb => {
+    headerCb.addEventListener('change', () => {
+      const groupName = headerCb.dataset.groupToggle; // chutri, phoihop, xemdebiet
+      const targetId = headerCb.dataset.target; // pb-bgd, pb-pbdv, etc.
+      const targetBody = document.getElementById(targetId);
+      if (!targetBody) return;
+
+      const isChecked = headerCb.checked;
+
+      if (groupName === 'chutri' && isChecked) {
+        // Chutri: only 1 globally → uncheck all other chutri first
+        document.querySelectorAll('#modalChiDao input[data-group="chutri"]').forEach(cb => {
+          cb.checked = false;
+        });
+        // Also uncheck other group toggle chutri headers
+        document.querySelectorAll('input[data-group-toggle="chutri"]').forEach(other => {
+          if (other !== headerCb) other.checked = false;
+        });
+        // For chutri, only check the FIRST child (can't have multiple chutri)
+        const firstChuTri = targetBody.querySelector('input[data-group="chutri"]');
+        if (firstChuTri) {
+          firstChuTri.checked = true;
+          // Uncheck other groups in that row
+          const row = firstChuTri.closest('.pb-row');
+          if (row) {
+            row.querySelectorAll('input[type="checkbox"]').forEach(other => {
+              if (other !== firstChuTri) other.checked = false;
+            });
+          }
+        }
+      } else {
+        // Phoihop or Xemdebiet: toggle all children
+        targetBody.querySelectorAll(`input[data-group="${groupName}"]`).forEach(cb => {
+          cb.checked = isChecked;
+          if (isChecked) {
+            // Uncheck other groups in same row (mutual exclusion per row)
+            const row = cb.closest('.pb-row');
+            if (row) {
+              row.querySelectorAll('input[type="checkbox"]').forEach(other => {
+                if (other !== cb) other.checked = false;
+              });
+            }
+          }
+        });
+        // Also uncheck other header toggles in same group header (mutual exclusion)
+        if (isChecked) {
+          const headerDiv = headerCb.closest('.pb-cols');
+          if (headerDiv) {
+            headerDiv.querySelectorAll('input[data-group-toggle]').forEach(other => {
+              if (other !== headerCb) other.checked = false;
+            });
+          }
+        }
+      }
+    });
+
+    // Prevent header checkbox click from toggling the group body collapse
+    headerCb.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  });
 }
 
 function createPBRow(name, isAlt) {
