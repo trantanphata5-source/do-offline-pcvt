@@ -564,6 +564,59 @@ function renderPreview(doc) {
   } else {
     previewArea.innerHTML = '<p class="preview-msg">Không có file PDF để xem trước</p>';
   }
+
+  // Update assignment summary panel
+  updateAssignmentSummary(doc);
+}
+
+function updateAssignmentSummary(doc) {
+  const panel = document.getElementById('assignmentSummary');
+  const body = document.getElementById('assignmentBody');
+  
+  const cd = chiDaoData[doc.id] && chiDaoData[doc.id].length > 0 ? chiDaoData[doc.id][0] : null;
+  const suggested = suggestedDocs[doc.id] || null;
+  const source = cd || suggested;
+  
+  if (!source) {
+    panel.style.display = 'none';
+    return;
+  }
+  
+  panel.style.display = 'block';
+  const isSuggested = !cd && suggested;
+  
+  let html = '';
+  
+  // Chủ trì
+  const chuTri = source.chuTri ? (Array.isArray(source.chuTri) ? source.chuTri.join(', ') : source.chuTri) : '';
+  if (chuTri) {
+    html += `<div class="assign-item"><span class="assign-label ct">Chủ trì:</span> <span class="assign-value">${escapeHtml(chuTri)}</span></div>`;
+  }
+  
+  // Phối hợp
+  const phoiHop = source.phoiHop ? (Array.isArray(source.phoiHop) ? source.phoiHop.join(', ') : source.phoiHop) : '';
+  if (phoiHop) {
+    html += `<div class="assign-item"><span class="assign-label ph">Phối hợp:</span> <span class="assign-value">${escapeHtml(phoiHop)}</span></div>`;
+  }
+  
+  // Xem để biết
+  const xdb = source.xemDeBiet ? (Array.isArray(source.xemDeBiet) ? source.xemDeBiet.join(', ') : source.xemDeBiet) : '';
+  if (xdb) {
+    html += `<div class="assign-item"><span class="assign-label xdb">Xem để biết:</span> <span class="assign-value">${escapeHtml(xdb)}</span></div>`;
+  }
+  
+  if (!html) {
+    panel.style.display = 'none';
+    return;
+  }
+  
+  if (isSuggested) {
+    html = '<div class="assign-badge suggested">🤖 Đề xuất AI</div>' + html;
+  } else {
+    html = '<div class="assign-badge saved">✅ Đã phân công</div>' + html;
+  }
+  
+  body.innerHTML = html;
 }
 
 // ============================================================
@@ -906,6 +959,7 @@ async function saveChiDao() {
         delete suggestedDocs[selectedDoc.id]; // Clear suggested state
         closeChiDaoModal();
         renderDocumentList(); // Update status dots
+        if (selectedDoc) updateAssignmentSummary(selectedDoc); // Refresh panel
         return;
       } else {
         showToast('Lỗi: ' + (result.error || 'Không xác định'), 'error');
@@ -923,6 +977,7 @@ async function saveChiDao() {
     showToast('Đã lưu chỉ đạo (chế độ offline)', 'success');
     closeChiDaoModal();
     renderDocumentList();
+    if (selectedDoc) updateAssignmentSummary(selectedDoc); // Refresh panel
   }
 }
 
@@ -1007,6 +1062,12 @@ async function saveChuyenChiDao() {
 // ============================================================
 
 function populateDynamicForms() {
+  // Ban giám đốc (dynamic)
+  const bgdBody = document.getElementById('pb-bgd');
+  ORG_STRUCTURE.banGiamDocCCD.forEach((name, i) => {
+    bgdBody.appendChild(createPBRow(name, i % 2 === 1));
+  });
+
   // Phòng ban đơn vị
   const pbdvBody = document.getElementById('pb-pbdv');
   ORG_STRUCTURE.phongBanDonVi.forEach((name, i) => {
@@ -1055,13 +1116,20 @@ function createPBRow(name, isAlt) {
       </span>
     </div>
   `;
-  // Mutual exclusion per row
+  // Mutual exclusion per row + only 1 chủ trì globally
   row.querySelectorAll('input[type="checkbox"]').forEach(cb => {
     cb.addEventListener('change', () => {
       if (cb.checked) {
+        // Uncheck other groups in same row (mutual exclusion per person)
         row.querySelectorAll('input[type="checkbox"]').forEach(other => {
           if (other !== cb) other.checked = false;
         });
+        // If chutri selected, uncheck all other chutri globally (only 1 chủ trì)
+        if (cb.dataset.group === 'chutri') {
+          document.querySelectorAll('#modalChiDao input[data-group="chutri"]').forEach(other => {
+            if (other !== cb) other.checked = false;
+          });
+        }
       }
     });
   });
