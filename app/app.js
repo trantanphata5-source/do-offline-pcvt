@@ -1454,34 +1454,53 @@ function populateOverviewTable() {
 
   assignedDocs.forEach((doc, idx) => {
     const cdArr = chiDaoData[doc.id] || [];
-    const cd = cdArr[0] || suggestedDocs[doc.id] || {}; // fallback to suggestion data
+    const cd = cdArr[0] || null;
+    const suggest = suggestedDocs[doc.id] || null;
     
-    // Get chuyen chi dao info
+    // Get saved chuyen chi dao info
     const ccdList = chuyenChiDaoData[doc.id] || [];
-    const chuyenCD = ccdList.map(c => c.nguoiChuyen || c.phoGiamDoc || '').filter(Boolean).join(', ');
+    const savedChuyenCD = ccdList.map(c => c.chuTri || '').filter(Boolean).join(', ');
     
-    const isSuggested = suggestedDocs[doc.id] && !(chiDaoData[doc.id]?.length > 0);
+    const isSuggested = suggest && !cd;
     const tr = document.createElement('tr');
     tr.dataset.docId = doc.id;
     if (isSuggested) tr.classList.add('suggested-row');
-    const displayChuTri = Array.isArray(cd.chuTri) ? cd.chuTri.join(', ') : (cd.chuTri || '—');
-    const displayPhoiHop = Array.isArray(cd.phoiHop) ? cd.phoiHop.join(', ') : (cd.phoiHop || '—');
+
+    let displayChuyenCD = savedChuyenCD || '—';
+    let displayChuTri = '—';
+    let displayPhoiHop = '—';
+
+    if (cd) {
+      // Saved chi dao data
+      displayChuTri = cd.chuTri || '—';
+      displayPhoiHop = cd.phoiHop || '—';
+    } else if (suggest) {
+      if (suggest.type === 'chuyenChiDao') {
+        // AI suggests chuyển chỉ đạo → show in Chuyển CĐ column
+        displayChuyenCD = (suggest.ccdChuTri || []).join(', ') || '—';
+        displayPhoiHop = (suggest.ccdXemDeBiet || []).join(', ') || '—';
+        displayChuTri = '—';
+      } else {
+        // AI suggests chỉ đạo thẳng → show in Chủ trì column
+        displayChuTri = (suggest.chuTri || []).join(', ') || '—';
+        displayPhoiHop = (suggest.phoiHop || []).join(', ') || '—';
+      }
+    }
+
     tr.innerHTML = `
       <td>${idx + 1}</td>
       <td><span class="overview-so-vb">${escapeHtml(doc.soVanBan)}</span></td>
       <td><div class="overview-trich-yeu">${escapeHtml(doc.trichYeu || 'Không có trích yếu')}</div></td>
-      <td>${escapeHtml(chuyenCD || '—')}</td>
+      <td>${escapeHtml(displayChuyenCD)}</td>
       <td>${escapeHtml(displayChuTri)}</td>
       <td>${escapeHtml(displayPhoiHop)}</td>
     `;
     
     tr.addEventListener('click', () => {
       closeOverviewModal();
-      // Find and select the document
       const targetDoc = allDocuments.find(d => d.id === doc.id);
       if (targetDoc) {
         selectDocument(targetDoc);
-        // Small delay to let document select, then open chi dao modal
         setTimeout(() => openChiDaoModal(), 200);
       }
     });
