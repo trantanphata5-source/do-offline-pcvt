@@ -311,12 +311,31 @@
 
           <!-- Chuyển chỉ đạo View Content -->
           <div class="modal-tab-content" id="contentChuyenCD">
-            <div class="ccd-view-panel">
-              <div class="ccd-view-empty" id="ccdViewEmpty">
-                <span class="material-icons-outlined" style="font-size:48px;color:var(--gray-300)">swap_horiz</span>
-                <p style="color:var(--gray-400);margin-top:8px">Chưa có chuyển chỉ đạo</p>
+            <div class="form-group">
+              <label class="form-label">Nội dung chuyển</label>
+              <textarea id="tab2CcdNoiDung" placeholder="" rows="3" class="form-textarea"></textarea>
+            </div>
+
+            <div class="ccd-section">
+              <div class="ccd-header">
+                <span class="ccd-title">Lãnh đạo thực hiện</span>
+                <div class="ccd-cols">
+                  <span class="ccd-col-label">Chủ trì</span>
+                  <span class="ccd-col-label">Xem để biết</span>
+                </div>
               </div>
-              <div id="ccdViewContent" style="display:none"></div>
+
+              <!-- Ban giám đốc -->
+              <div class="ccd-group-title">Ban giám đốc</div>
+              <div id="tab2-ccd-bgd-body"></div>
+              
+              <!-- Đảng ủy & Đoàn thể -->
+              <div class="ccd-group-title">Đảng ủy & Đoàn thể</div>
+              <div id="tab2-ccd-dudt-body"></div>
+            </div>
+
+            <div class="form-actions-ccd" style="padding:12px 0 0">
+              <button class="btn btn-primary" id="btnSaveTab2CCD">Lưu chuyển chỉ đạo</button>
             </div>
           </div>
 

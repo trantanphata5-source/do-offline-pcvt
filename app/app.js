@@ -304,12 +304,12 @@ function initUI() {
 
   // Modal tab switching
   document.getElementById('tabChiDaoForm').addEventListener('click', () => switchModalTab('chidao'));
-  document.getElementById('tabChuyenCDView').addEventListener('click', () => { switchModalTab('chuyencd'); populateCCDView(); });
+  document.getElementById('tabChuyenCDView').addEventListener('click', () => { switchModalTab('chuyencd'); loadTab2CCD(); });
   document.getElementById('tabThongTinVB').addEventListener('click', () => switchModalTab('thongtin'));
 
-  // Save buttons
   document.getElementById('btnSaveChiDao').addEventListener('click', saveChiDao);
   document.getElementById('btnSaveChuyenChiDao').addEventListener('click', saveChuyenChiDao);
+  document.getElementById('btnSaveTab2CCD').addEventListener('click', saveTab2CCD);
   document.getElementById('btnCCDBack').addEventListener('click', closeChuyenChiDaoModal);
 
   // Suggest button
@@ -910,51 +910,99 @@ function switchModalTab(tab) {
   document.getElementById('contentThongTin').classList.toggle('active', tab === 'thongtin');
 }
 
-function populateCCDView() {
+function loadTab2CCD() {
   if (!selectedDoc) return;
+  
+  // Reset form
+  document.getElementById('tab2CcdNoiDung').value = '';
+  document.querySelectorAll('#contentChuyenCD input[type="checkbox"]').forEach(cb => cb.checked = false);
+  
+  // Load existing CCD data
   const ccdList = chuyenChiDaoData[selectedDoc.id] || [];
-  const emptyEl = document.getElementById('ccdViewEmpty');
-  const contentEl = document.getElementById('ccdViewContent');
-  
-  // Also check AI suggestion
-  const suggest = suggestedDocs[selectedDoc.id];
-  const hasSuggest = suggest && suggest.type === 'chuyenChiDao' && ccdList.length === 0;
-  
-  if (ccdList.length === 0 && !hasSuggest) {
-    emptyEl.style.display = 'flex';
-    contentEl.style.display = 'none';
-    return;
-  }
-  
-  emptyEl.style.display = 'none';
-  contentEl.style.display = 'block';
-  
-  let html = '';
-  
-  // Show AI suggestion if no saved data
-  if (hasSuggest) {
-    html += `<div class="ccd-view-card suggested">
-      <div class="ccd-view-badge">🤖 Đề xuất AI</div>
-      <div class="ccd-view-row"><span class="ccd-view-label">Chuyển CĐ cho:</span> <span class="ccd-view-value">${escapeHtml((suggest.ccdChuTri || []).join(', '))}</span></div>`;
-    if (suggest.ccdXemDeBiet && suggest.ccdXemDeBiet.length > 0) {
-      html += `<div class="ccd-view-row"><span class="ccd-view-label">Phối hợp:</span> <span class="ccd-view-value">${escapeHtml(suggest.ccdXemDeBiet.join(', '))}</span></div>`;
+  if (ccdList.length > 0) {
+    const latest = ccdList[ccdList.length - 1];
+    document.getElementById('tab2CcdNoiDung').value = latest.noiDungChuyen || '';
+    
+    if (latest.chuTri) {
+      const ctList = latest.chuTri.split(',').map(s => s.trim());
+      document.querySelectorAll('#contentChuyenCD input[data-group="tab2_ccd_chutri"]').forEach(cb => {
+        cb.checked = ctList.includes(cb.value);
+      });
     }
-    html += `</div>`;
+    if (latest.xemDeBiet) {
+      const xdbList = latest.xemDeBiet.split(',').map(s => s.trim());
+      document.querySelectorAll('#contentChuyenCD input[data-group="tab2_ccd_xemdebiet"]').forEach(cb => {
+        cb.checked = xdbList.includes(cb.value);
+      });
+    }
+  } else {
+    // Auto-fill from AI suggestion
+    const suggest = suggestedDocs[selectedDoc.id];
+    if (suggest && suggest.type === 'chuyenChiDao') {
+      (suggest.ccdChuTri || []).forEach(name => {
+        const cb = document.querySelector(`#contentChuyenCD input[data-group="tab2_ccd_chutri"][value="${name}"]`);
+        if (cb) { cb.checked = true; cb.closest('.ccd-row')?.classList.add('suggested'); }
+      });
+      (suggest.ccdXemDeBiet || []).forEach(name => {
+        const cb = document.querySelector(`#contentChuyenCD input[data-group="tab2_ccd_xemdebiet"][value="${name}"]`);
+        if (cb) { cb.checked = true; cb.closest('.ccd-row')?.classList.add('suggested'); }
+      });
+    }
   }
+}
+
+async function saveTab2CCD() {
+  if (!selectedDoc) return;
   
-  // Show saved chuyen chi dao entries
-  ccdList.forEach((ccd, i) => {
-    html += `<div class="ccd-view-card">
-      <div class="ccd-view-badge saved">✅ Lần ${i + 1}</div>`;
-    if (ccd.chuTri) html += `<div class="ccd-view-row"><span class="ccd-view-label">Chủ trì:</span> <span class="ccd-view-value">${escapeHtml(ccd.chuTri)}</span></div>`;
-    if (ccd.xemDeBiet) html += `<div class="ccd-view-row"><span class="ccd-view-label">Xem để biết:</span> <span class="ccd-view-value">${escapeHtml(ccd.xemDeBiet)}</span></div>`;
-    if (ccd.noiDungChuyen) html += `<div class="ccd-view-row"><span class="ccd-view-label">Nội dung:</span> <span class="ccd-view-value">${escapeHtml(ccd.noiDungChuyen)}</span></div>`;
-    if (ccd.nguoiChuyen) html += `<div class="ccd-view-row"><span class="ccd-view-label">Người chuyển:</span> <span class="ccd-view-value">${escapeHtml(ccd.nguoiChuyen)}</span></div>`;
-    if (ccd.timestamp) html += `<div class="ccd-view-row"><span class="ccd-view-label">Thời gian:</span> <span class="ccd-view-value">${escapeHtml(ccd.timestamp)}</span></div>`;
-    html += `</div>`;
-  });
-  
-  contentEl.innerHTML = html;
+  const saveBtn = document.getElementById('btnSaveTab2CCD');
+  if (saveBtn.disabled) return;
+  saveBtn.disabled = true;
+  saveBtn.textContent = 'Đang lưu...';
+
+  try {
+    const noiDungChuyen = document.getElementById('tab2CcdNoiDung').value.trim();
+    
+    const ccdChuTri = [];
+    document.querySelectorAll('#contentChuyenCD input[data-group="tab2_ccd_chutri"]:checked').forEach(cb => ccdChuTri.push(cb.value));
+    const chuTri = ccdChuTri.join(', ');
+
+    const xemDeBiet = [];
+    document.querySelectorAll('#contentChuyenCD input[data-group="tab2_ccd_xemdebiet"]:checked').forEach(cb => xemDeBiet.push(cb.value));
+
+    const data = {
+      action: 'saveChuyenChiDao',
+      vanBanId: selectedDoc.id,
+      noiDungChuyen,
+      chuTri,
+      xemDeBiet: xemDeBiet.join(', '),
+      nguoiChuyen: 'Nguyễn Ngọc Tuyến',
+    };
+
+    if (GAS_URL) {
+      try {
+        await fetch(GAS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
+      } catch (e) { console.warn('Save CCD error:', e); }
+    }
+
+    // Update local data
+    if (!chuyenChiDaoData[selectedDoc.id]) chuyenChiDaoData[selectedDoc.id] = [];
+    const existing = chuyenChiDaoData[selectedDoc.id];
+    if (existing.length > 0) {
+      existing[existing.length - 1] = { ...data, timestamp: new Date().toISOString() };
+    } else {
+      existing.push({ ...data, timestamp: new Date().toISOString() });
+    }
+
+    // Clear AI suggestion for this doc
+    delete suggestedDocs[selectedDoc.id];
+    document.querySelectorAll('#contentChuyenCD .ccd-row.suggested').forEach(r => r.classList.remove('suggested'));
+
+    showToast('✅ Đã lưu chuyển chỉ đạo', 'success');
+    renderDocumentList();
+  } finally {
+    saveBtn.disabled = false;
+    saveBtn.textContent = 'Lưu chuyển chỉ đạo';
+  }
 }
 
 function loadExistingChiDao() {
@@ -1252,6 +1300,18 @@ function populateDynamicForms() {
     ccdDUDT.appendChild(createCCDRow(name, i % 2 === 1));
   });
 
+  // Tab2 CCD - Ban giám đốc (inside chi dao modal)
+  const tab2BGD = document.getElementById('tab2-ccd-bgd-body');
+  ORG_STRUCTURE.banGiamDocCCD.forEach((name, i) => {
+    tab2BGD.appendChild(createCCDRow(name, i % 2 === 1, 'tab2_ccd'));
+  });
+
+  // Tab2 CCD - Đảng ủy & Đoàn thể
+  const tab2DUDT = document.getElementById('tab2-ccd-dudt-body');
+  ORG_STRUCTURE.dangUyDoanThe.forEach((name, i) => {
+    tab2DUDT.appendChild(createCCDRow(name, i % 2 === 1, 'tab2_ccd'));
+  });
+
   // Wire up group header toggle checkboxes
   initGroupToggle();
 }
@@ -1357,16 +1417,16 @@ function createPBRow(name, isAlt) {
   return row;
 }
 
-function createCCDRow(name, isAlt) {
+function createCCDRow(name, isAlt, prefix = 'ccd') {
   const row = document.createElement('div');
   row.className = 'ccd-row' + (isAlt ? ' alt' : '');
   row.innerHTML = `
     <span class="ccd-name">${escapeHtml(name)}</span>
     <span class="ccd-check-cell">
-      <input type="checkbox" data-group="ccd_chutri" value="${escapeHtml(name)}">
+      <input type="checkbox" data-group="${prefix}_chutri" value="${escapeHtml(name)}">
     </span>
     <span class="ccd-check-cell">
-      <input type="checkbox" data-group="ccd_xemdebiet" value="${escapeHtml(name)}">
+      <input type="checkbox" data-group="${prefix}_xemdebiet" value="${escapeHtml(name)}">
     </span>
   `;
   // Mutual exclusion per row
