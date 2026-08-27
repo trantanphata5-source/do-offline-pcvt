@@ -1588,3 +1588,54 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   padding: 40px 20px;
   color: var(--gray-500);
 }
+
+/* ============================================================
+   CCD View Panel (inside chi dao modal)
+   ============================================================ */
+.ccd-view-panel {
+  padding: 16px;
+  overflow-y: auto;
+  max-height: 600px;
+}
+.ccd-view-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+}
+.ccd-view-card {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.ccd-view-card.suggested {
+  background: #fff8e1;
+  border-color: #ffd54f;
+}
+.ccd-view-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+.ccd-view-badge.saved {
+  color: #2e7d32;
+}
+.ccd-view-row {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.85rem;
+}
+.ccd-view-label {
+  font-weight: 600;
+  color: var(--gray-600);
+  min-width: 110px;
+  flex-shrink: 0;
+}
+.ccd-view-value {
+  color: var(--gray-800);
+}

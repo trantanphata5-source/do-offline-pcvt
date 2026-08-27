@@ -304,6 +304,7 @@ function initUI() {
 
   // Modal tab switching
   document.getElementById('tabChiDaoForm').addEventListener('click', () => switchModalTab('chidao'));
+  document.getElementById('tabChuyenCDView').addEventListener('click', () => { switchModalTab('chuyencd'); populateCCDView(); });
   document.getElementById('tabThongTinVB').addEventListener('click', () => switchModalTab('thongtin'));
 
   // Save buttons
@@ -902,9 +903,58 @@ function closeChiDaoModal() {
 
 function switchModalTab(tab) {
   document.getElementById('tabChiDaoForm').classList.toggle('active', tab === 'chidao');
+  document.getElementById('tabChuyenCDView').classList.toggle('active', tab === 'chuyencd');
   document.getElementById('tabThongTinVB').classList.toggle('active', tab === 'thongtin');
   document.getElementById('contentChiDao').classList.toggle('active', tab === 'chidao');
+  document.getElementById('contentChuyenCD').classList.toggle('active', tab === 'chuyencd');
   document.getElementById('contentThongTin').classList.toggle('active', tab === 'thongtin');
+}
+
+function populateCCDView() {
+  if (!selectedDoc) return;
+  const ccdList = chuyenChiDaoData[selectedDoc.id] || [];
+  const emptyEl = document.getElementById('ccdViewEmpty');
+  const contentEl = document.getElementById('ccdViewContent');
+  
+  // Also check AI suggestion
+  const suggest = suggestedDocs[selectedDoc.id];
+  const hasSuggest = suggest && suggest.type === 'chuyenChiDao' && ccdList.length === 0;
+  
+  if (ccdList.length === 0 && !hasSuggest) {
+    emptyEl.style.display = 'flex';
+    contentEl.style.display = 'none';
+    return;
+  }
+  
+  emptyEl.style.display = 'none';
+  contentEl.style.display = 'block';
+  
+  let html = '';
+  
+  // Show AI suggestion if no saved data
+  if (hasSuggest) {
+    html += `<div class="ccd-view-card suggested">
+      <div class="ccd-view-badge">🤖 Đề xuất AI</div>
+      <div class="ccd-view-row"><span class="ccd-view-label">Chuyển CĐ cho:</span> <span class="ccd-view-value">${escapeHtml((suggest.ccdChuTri || []).join(', '))}</span></div>`;
+    if (suggest.ccdXemDeBiet && suggest.ccdXemDeBiet.length > 0) {
+      html += `<div class="ccd-view-row"><span class="ccd-view-label">Phối hợp:</span> <span class="ccd-view-value">${escapeHtml(suggest.ccdXemDeBiet.join(', '))}</span></div>`;
+    }
+    html += `</div>`;
+  }
+  
+  // Show saved chuyen chi dao entries
+  ccdList.forEach((ccd, i) => {
+    html += `<div class="ccd-view-card">
+      <div class="ccd-view-badge saved">✅ Lần ${i + 1}</div>`;
+    if (ccd.chuTri) html += `<div class="ccd-view-row"><span class="ccd-view-label">Chủ trì:</span> <span class="ccd-view-value">${escapeHtml(ccd.chuTri)}</span></div>`;
+    if (ccd.xemDeBiet) html += `<div class="ccd-view-row"><span class="ccd-view-label">Xem để biết:</span> <span class="ccd-view-value">${escapeHtml(ccd.xemDeBiet)}</span></div>`;
+    if (ccd.noiDungChuyen) html += `<div class="ccd-view-row"><span class="ccd-view-label">Nội dung:</span> <span class="ccd-view-value">${escapeHtml(ccd.noiDungChuyen)}</span></div>`;
+    if (ccd.nguoiChuyen) html += `<div class="ccd-view-row"><span class="ccd-view-label">Người chuyển:</span> <span class="ccd-view-value">${escapeHtml(ccd.nguoiChuyen)}</span></div>`;
+    if (ccd.timestamp) html += `<div class="ccd-view-row"><span class="ccd-view-label">Thời gian:</span> <span class="ccd-view-value">${escapeHtml(ccd.timestamp)}</span></div>`;
+    html += `</div>`;
+  });
+  
+  contentEl.innerHTML = html;
 }
 
 function loadExistingChiDao() {

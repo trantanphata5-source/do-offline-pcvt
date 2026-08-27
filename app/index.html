@@ -172,6 +172,9 @@
             <button class="modal-tab active" id="tabChiDaoForm" data-modal-tab="chidao">
               <span class="material-icons-outlined">gavel</span> Chỉ đạo
             </button>
+            <button class="modal-tab" id="tabChuyenCDView" data-modal-tab="chuyencd">
+              <span class="material-icons-outlined">swap_horiz</span> Chuyển CĐ
+            </button>
             <button class="modal-tab" id="tabThongTinVB" data-modal-tab="thongtin">
               <span class="material-icons-outlined">info</span> Thông tin văn bản
             </button>
@@ -303,6 +306,17 @@
               <button class="btn btn-primary" id="btnSaveChiDao">
                 <span>Lưu</span>
               </button>
+            </div>
+          </div>
+
+          <!-- Chuyển chỉ đạo View Content -->
+          <div class="modal-tab-content" id="contentChuyenCD">
+            <div class="ccd-view-panel">
+              <div class="ccd-view-empty" id="ccdViewEmpty">
+                <span class="material-icons-outlined" style="font-size:48px;color:var(--gray-300)">swap_horiz</span>
+                <p style="color:var(--gray-400);margin-top:8px">Chưa có chuyển chỉ đạo</p>
+              </div>
+              <div id="ccdViewContent" style="display:none"></div>
             </div>
           </div>
 
