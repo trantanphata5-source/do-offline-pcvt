@@ -74,68 +74,162 @@ let chuyenChiDaoData = {}; // vanBanId -> array
 let driveFileMapping = null; // folderName/fileName -> Google Drive preview URL
 let suggestedDocs = {}; // vanBanId -> { pgd, chuTri, phoiHop, xemDeBiet } - AI suggestions
 
-// ============================================================
-// AI AUTO-SUGGEST RULES
-// ============================================================
+// Source patterns for document origin detection
+const SOURCE_PATTERNS = {
+  diaPhuong: ['ubnd', 'phường', 'xã', 'thị xã', 'thành phố vũng tàu', 'thành phố bà rịa', 'phú mỹ', 'long điền', 'đất đỏ', 'xuyên mộc', 'châu đức', 'côn đảo', 'phước thắng', 'tam thắng', 'thắng nhất', 'long hương'],
+  dichVuDienLuc: ['dịch vụ điện lực', 'dvđl', 'dvdl'],
+  trungTamDieuDo: ['điều độ', 'đđhtđ', 'trung tâm điều độ'],
+  congAnPCCC: ['công an', 'cảnh sát', 'pccc', 'cnch'],
+};
 
-const SUGGEST_RULES = [
-  { keywords: ['thi công', 'hotline', 'liveline', 'phương án thi công', 'sự cố', 'đường dây', 'mang điện'],
-    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'] },
-  { keywords: ['vận hành', 'điều độ', 'phương thức vận hành', 'hệ thống điện'],
-    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'] },
-  { keywords: ['điện kế', 'đo đếm', 'công tơ', 'cấp điện kế'],
-    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Đội Quản lý hệ thống đo đếm'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
-  { keywords: ['năng lượng mặt trời', 'mặt trời mái nhà', 'NLMT', 'điện mặt trời'],
-    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Đội Dịch vụ khách hàng'] },
-  { keywords: ['tuyển dụng', 'nhân sự', 'vị trí chức danh', 'khung năng lực', 'cơ cấu tổ chức'],
-    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tổ chức & Nhân sự'], phoiHop: ['Văn phòng'] },
-  { keywords: ['đào tạo', 'thạc sĩ', 'tuyển sinh', 'sát hạch', 'nghiệp vụ'],
-    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tổ chức & Nhân sự'], phoiHop: ['Văn phòng'] },
-  { keywords: ['phúc lợi', 'kỷ niệm', 'lễ', '50 năm', 'sự kiện'],
-    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tổ chức & Nhân sự'], phoiHop: ['Văn phòng'] },
-  { keywords: ['đầu tư', 'xây dựng', 'tái định cư', 'trạm biến áp', 'hạ tầng kỹ thuật'],
-    pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
-  { keywords: ['pháp lý', 'trụ sở', 'kho bãi', 'phòng biến điện'],
-    pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Văn phòng'] },
-  { keywords: ['cưỡng chế', 'thu hồi đất', 'giải phóng mặt bằng'],
-    pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn', 'Văn phòng'] },
-  { keywords: ['vật tư', 'vận chuyển', 'phụ tùng', 'thiết bị'],
-    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kế hoạch & Vật Tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
-  { keywords: ['kinh doanh', 'khách hàng', 'giá điện', 'tiền điện'],
-    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Đội Dịch vụ khách hàng'] },
-  { keywords: ['tài chính', 'kế toán', 'chi phí', 'ngân sách'],
-    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tài chính Kế toán'], phoiHop: ['Văn phòng'] },
-  { keywords: ['đảng', 'nghị quyết', 'BCH', 'trung ương', 'đảng ủy', 'chi bộ'],
-    pgd: '', chuTri: ['BCH Đảng ủy'], phoiHop: ['Văn phòng'] },
-  { keywords: ['công nghệ thông tin', 'dữ liệu', 'AI', 'khoa học dữ liệu'],
-    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Văn phòng'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
-  { keywords: ['luật', 'pháp luật', 'an ninh dữ liệu', 'dự án luật', 'góp ý'],
-    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Văn phòng'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
-  { keywords: ['giấy mời', 'hội nghị', 'họp'],
-    pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Văn phòng'], phoiHop: [] },
-  { keywords: ['công suất phản kháng', 'ranh giới', 'đo ranh'],
-    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'] },
-  { keywords: ['lưới điện', 'quản lý lưới'],
-    pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Đội Quản lý lưới điện'], phoiHop: ['Phòng Kỹ thuật & An Toàn'] },
-];
+// Content keyword groups
+const CONTENT_KEYWORDS = {
+  cuongChe: ['cưỡng chế', 'thu hồi đất', 'giải phóng mặt bằng', 'phương án cưỡng chế'],
+  dienMatTroi: ['năng lượng mặt trời', 'mặt trời mái nhà', 'nlmt', 'điện mặt trời', 'solar', 'tự sản xuất', 'tự tiêu thụ', 'đấu nối với hệ thống điện quốc gia'],
+  giaoThong: ['giao thông', 'đồng bộ giao thông', 'đường', 'di dời', 'lê quang định', 'bình giã'],
+  cungCapDien: ['cung cấp điện', 'cấp điện', 'đề nghị cấp điện', 'khôi phục điện', 'phối hợp cung cấp điện'],
+  tuyenTruyen: ['tuyên truyền', 'tuyên truyền điện'],
+  hotline: ['hotline', 'liveline', 'thi công đường dây', 'mang điện', 'phương án thi công', 'sự cố', 'xlsc'],
+  vanHanh: ['vận hành', 'phương thức vận hành', 'hệ thống điện', 'cắt điện', 'sa thải', 'relay', 'f81', 'đánh số thiết bị', 'trạm biến thế'],
+  phuongAnCCD: ['phương án đảm bảo', 'phương án cung cấp điện', 'cung cấp điện tháng', 'cung cấp điện phục vụ lễ', 'quốc khánh'],
+  keHoach: ['kế hoạch cắt điện', 'kế hoạch bảo dưỡng', 'sửa chữa', 'bảo dưỡng'],
+  congSuatDMTMN: ['công suất tối đa', 'đmtmn', 'phân bổ công suất'],
+  dauTuXD: ['đầu tư', 'xây dựng', 'tái định cư', 'hạ tầng kỹ thuật', 'gói thầu', 'khối lượng vật tư thu hồi'],
+  phatTrienLuoi: ['phát triển lưới', 'tăng cường công suất', 'trạm biến áp', 'nâng cấp lưới', 'mở rộng lưới'],
+  conDao: ['côn đảo', 'đặc khu côn đảo'],
+  keHoachVatTu: ['kế hoạch', 'vật tư', 'vận chuyển', 'phụ tùng'],
+  kinhDoanh: ['kinh doanh', 'khách hàng', 'giá điện', 'tiền điện', 'mua bán điện', 'nghị định 243', 'nd-cp'],
+  keToan: ['tài chính', 'kế toán', 'chi phí', 'ngân sách', 'phúc lợi'],
+  nhanSu: ['tuyển dụng', 'nhân sự', 'vị trí chức danh', 'khung năng lực', 'cơ cấu tổ chức', 'nâng bậc', 'giữ bậc', 'đào tạo', 'thạc sĩ', 'tuyển sinh', 'sát hạch'],
+  dangUy: ['đảng', 'nghị quyết', 'bch', 'trung ương', 'đảng ủy', 'chi bộ', 'quán triệt'],
+  anToan: ['an toàn', 'an toàn lao động', 'tai nạn lao động', 'phòng thủ dân sự'],
+  phapLy: ['luật', 'pháp luật', 'an ninh dữ liệu', 'dự án luật', 'góp ý'],
+  thietTri: ['thiết trí', 'đấu nối nhánh dây', 'mắc điện khách hàng', 'chuẩn hoá'],
+  giayMoi: ['giấy mời', 'hội nghị', 'họp'],
+};
+
+function matchKeywords(text, kwGroup) {
+  return kwGroup.some(kw => text.includes(kw.toLowerCase()));
+}
+
+function detectSource(text) {
+  for (const [src, patterns] of Object.entries(SOURCE_PATTERNS)) {
+    if (patterns.some(p => text.includes(p.toLowerCase()))) return src;
+  }
+  return 'other';
+}
 
 function suggestAssignment(doc) {
   const text = ((doc.trichYeu || '') + ' ' + (doc.coQuanBanHanh || '')).toLowerCase();
-  
-  for (const rule of SUGGEST_RULES) {
-    for (const kw of rule.keywords) {
-      if (text.includes(kw.toLowerCase())) {
-        return {
-          pgd: rule.pgd,
-          chuTri: rule.chuTri || [],
-          phoiHop: rule.phoiHop || [],
-          xemDeBiet: [],
-        };
+  const source = detectSource(text);
+
+  // === 1. VB địa phương (Phường, UBND, Thị xã...) ===
+  if (source === 'diaPhuong') {
+    if (matchKeywords(text, CONTENT_KEYWORDS.cuongChe)) {
+      return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Phòng Quản lý đầu tư'], xemDeBiet: [] };
+    }
+    if (matchKeywords(text, CONTENT_KEYWORDS.dienMatTroi)) {
+      return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+    }
+    if (matchKeywords(text, CONTENT_KEYWORDS.giaoThong)) {
+      const hasLargeScope = matchKeywords(text, ['gói thầu', 'khối lượng', 'giai đoạn', 'dự án', 'hạ tầng']);
+      if (hasLargeScope) {
+        return { pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+      } else {
+        return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Phòng Quản lý đầu tư'], xemDeBiet: [] };
       }
     }
+    if (matchKeywords(text, CONTENT_KEYWORDS.cungCapDien)) {
+      return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+    }
+    if (matchKeywords(text, CONTENT_KEYWORDS.tuyenTruyen)) {
+      return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Phòng Kinh doanh'], xemDeBiet: [] };
+    }
+    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Văn phòng'], phoiHop: [], xemDeBiet: [] };
   }
-  // Default
-  return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Văn phòng'], phoiHop: [], xemDeBiet: [] };
+
+  // === 2. VB Công ty Dịch vụ Điện lực ===
+  if (source === 'dichVuDienLuc') {
+    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'], xemDeBiet: [] };
+  }
+
+  // === 3. VB Trung tâm Điều độ ===
+  if (source === 'trungTamDieuDo') {
+    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'], xemDeBiet: [] };
+  }
+
+  // === 4. VB Công an/PCCC ===
+  if (source === 'congAnPCCC') {
+    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Phòng Kinh doanh'], xemDeBiet: [] };
+  }
+
+  // === 5. Đầu tư xây dựng ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.dauTuXD)) {
+    return { pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+  }
+
+  // === 6. Phát triển lưới → Phòng KTAT thẳng ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.phatTrienLuoi)) {
+    return { pgd: '', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'], xemDeBiet: [] };
+  }
+
+  // === 7. Thiết trí, đấu nối ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.thietTri)) {
+    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Quản lý lưới điện'], xemDeBiet: [] };
+  }
+
+  // === 8. An toàn lao động ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.anToan)) {
+    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Văn phòng'], xemDeBiet: [] };
+  }
+
+  // === 9. Côn Đảo → ĐL Côn Đảo thẳng ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.conDao)) {
+    return { pgd: '', chuTri: ['Điện lực Đặc khu Côn Đảo'], phoiHop: [], xemDeBiet: [] };
+  }
+
+  // === 10. Kế hoạch & Vật tư → thẳng ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.keHoachVatTu)) {
+    return { pgd: '', chuTri: ['Phòng Kế hoạch & Vật Tư'], phoiHop: [], xemDeBiet: [] };
+  }
+
+  // === 11. Kinh doanh → thẳng ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.kinhDoanh)) {
+    return { pgd: '', chuTri: ['Phòng Kinh doanh'], phoiHop: [], xemDeBiet: [] };
+  }
+
+  // === 12. Kế toán → thẳng ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.keToan)) {
+    return { pgd: '', chuTri: ['Phòng Tài chính Kế toán'], phoiHop: [], xemDeBiet: [] };
+  }
+
+  // === 13. Nhân sự ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.nhanSu)) {
+    return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tổ chức & Nhân sự'], phoiHop: ['Văn phòng'], xemDeBiet: [] };
+  }
+
+  // === 14. Đảng ủy ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.dangUy)) {
+    return { pgd: '', chuTri: ['BCH Đảng ủy'], phoiHop: ['Văn phòng'], xemDeBiet: [] };
+  }
+
+  // === 15. Pháp luật, góp ý ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.phapLy)) {
+    return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Văn phòng'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+  }
+
+  // === 16. Điện mặt trời (generic) ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.dienMatTroi)) {
+    return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+  }
+
+  // === 17. Hotline/Liveline (generic) ===
+  if (matchKeywords(text, CONTENT_KEYWORDS.hotline)) {
+    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'], xemDeBiet: [] };
+  }
+
+  // === DEFAULT: VB khác, giấy mời → PGĐ KT ===
+  return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Văn phòng'], phoiHop: [], xemDeBiet: [] };
 }
 
 function applySuggestion() {
