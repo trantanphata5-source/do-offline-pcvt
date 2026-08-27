@@ -123,113 +123,93 @@ function suggestAssignment(doc) {
   const text = ((doc.trichYeu || '') + ' ' + (doc.coQuanBanHanh || '')).toLowerCase();
   const source = detectSource(text);
 
-  // === 1. VB địa phương (Phường, UBND, Thị xã...) ===
+  // === 1. VB địa phương ===
   if (source === 'diaPhuong') {
     if (matchKeywords(text, CONTENT_KEYWORDS.cuongChe)) {
-      return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Phòng Quản lý đầu tư'], xemDeBiet: [] };
+      return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KD - Đặng Quang Trung'], ccdXemDeBiet: [] };
     }
     if (matchKeywords(text, CONTENT_KEYWORDS.dienMatTroi)) {
-      return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+      return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KD - Đặng Quang Trung'], ccdXemDeBiet: ['PGĐ KT - Trần Thanh Hải'] };
     }
     if (matchKeywords(text, CONTENT_KEYWORDS.giaoThong)) {
       const hasLargeScope = matchKeywords(text, ['gói thầu', 'khối lượng', 'giai đoạn', 'dự án', 'hạ tầng']);
       if (hasLargeScope) {
-        return { pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+        return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ ĐTXD - Lại Xuân Phương'], ccdXemDeBiet: ['PGĐ KT - Trần Thanh Hải'] };
       } else {
-        return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Phòng Quản lý đầu tư'], xemDeBiet: [] };
+        return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KT - Trần Thanh Hải'], ccdXemDeBiet: ['PGĐ ĐTXD - Lại Xuân Phương'] };
       }
     }
     if (matchKeywords(text, CONTENT_KEYWORDS.cungCapDien)) {
-      return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+      return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KD - Đặng Quang Trung'], ccdXemDeBiet: ['PGĐ KT - Trần Thanh Hải'] };
     }
     if (matchKeywords(text, CONTENT_KEYWORDS.tuyenTruyen)) {
-      return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Phòng Kinh doanh'], xemDeBiet: [] };
+      return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KT - Trần Thanh Hải'], ccdXemDeBiet: ['PGĐ KD - Đặng Quang Trung'] };
     }
-    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Văn phòng'], phoiHop: [], xemDeBiet: [] };
+    return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KT - Trần Thanh Hải'], ccdXemDeBiet: [] };
   }
 
-  // === 2. VB Công ty Dịch vụ Điện lực ===
+  // === 2. VB Dịch vụ Điện lực (Hotline) ===
   if (source === 'dichVuDienLuc') {
-    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'], xemDeBiet: [] };
+    return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KT - Trần Thanh Hải'], ccdXemDeBiet: [] };
   }
 
   // === 3. VB Trung tâm Điều độ ===
   if (source === 'trungTamDieuDo') {
-    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'], xemDeBiet: [] };
+    return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KT - Trần Thanh Hải'], ccdXemDeBiet: [] };
   }
 
   // === 4. VB Công an/PCCC ===
   if (source === 'congAnPCCC') {
-    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Phòng Kinh doanh'], xemDeBiet: [] };
+    return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KT - Trần Thanh Hải'], ccdXemDeBiet: [] };
   }
 
   // === 5. Đầu tư xây dựng ===
   if (matchKeywords(text, CONTENT_KEYWORDS.dauTuXD)) {
-    return { pgd: 'PGĐ ĐTXD - Lại Xuân Phương', chuTri: ['Phòng Quản lý đầu tư'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+    return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ ĐTXD - Lại Xuân Phương'], ccdXemDeBiet: [] };
   }
 
-  // === 6. Phát triển lưới → Phòng KTAT thẳng ===
+  // === 6. Phát triển lưới, trạm điện → Chỉ đạo thẳng P.KTAT ===
   if (matchKeywords(text, CONTENT_KEYWORDS.phatTrienLuoi)) {
-    return { pgd: '', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'], xemDeBiet: [] };
+    return { type: 'chiDaoThang', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: [], xemDeBiet: [] };
   }
 
-  // === 7. Thiết trí, đấu nối ===
-  if (matchKeywords(text, CONTENT_KEYWORDS.thietTri)) {
-    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Quản lý lưới điện'], xemDeBiet: [] };
-  }
-
-  // === 8. An toàn lao động ===
-  if (matchKeywords(text, CONTENT_KEYWORDS.anToan)) {
-    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Văn phòng'], xemDeBiet: [] };
-  }
-
-  // === 9. Côn Đảo → ĐL Côn Đảo thẳng ===
+  // === 7. Côn Đảo → Chỉ đạo thẳng ===
   if (matchKeywords(text, CONTENT_KEYWORDS.conDao)) {
-    return { pgd: '', chuTri: ['Điện lực Đặc khu Côn Đảo'], phoiHop: [], xemDeBiet: [] };
+    return { type: 'chiDaoThang', chuTri: ['Điện lực Đặc khu Côn Đảo'], phoiHop: [], xemDeBiet: [] };
   }
 
-  // === 10. Kế hoạch & Vật tư → thẳng ===
+  // === 8. Kế hoạch & Vật tư → Chỉ đạo thẳng ===
   if (matchKeywords(text, CONTENT_KEYWORDS.keHoachVatTu)) {
-    return { pgd: '', chuTri: ['Phòng Kế hoạch & Vật Tư'], phoiHop: [], xemDeBiet: [] };
+    return { type: 'chiDaoThang', chuTri: ['Phòng Kế hoạch & Vật Tư'], phoiHop: [], xemDeBiet: [] };
   }
 
-  // === 11. Kinh doanh → thẳng ===
+  // === 9. Kinh doanh → Chỉ đạo thẳng ===
   if (matchKeywords(text, CONTENT_KEYWORDS.kinhDoanh)) {
-    return { pgd: '', chuTri: ['Phòng Kinh doanh'], phoiHop: [], xemDeBiet: [] };
+    return { type: 'chiDaoThang', chuTri: ['Phòng Kinh doanh'], phoiHop: [], xemDeBiet: [] };
   }
 
-  // === 12. Kế toán → thẳng ===
+  // === 10. Kế toán → Chỉ đạo thẳng ===
   if (matchKeywords(text, CONTENT_KEYWORDS.keToan)) {
-    return { pgd: '', chuTri: ['Phòng Tài chính Kế toán'], phoiHop: [], xemDeBiet: [] };
+    return { type: 'chiDaoThang', chuTri: ['Phòng Tài chính Kế toán'], phoiHop: [], xemDeBiet: [] };
   }
 
-  // === 13. Nhân sự ===
-  if (matchKeywords(text, CONTENT_KEYWORDS.nhanSu)) {
-    return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Tổ chức & Nhân sự'], phoiHop: ['Văn phòng'], xemDeBiet: [] };
-  }
-
-  // === 14. Đảng ủy ===
+  // === 11. Đảng ủy → Chỉ đạo thẳng ===
   if (matchKeywords(text, CONTENT_KEYWORDS.dangUy)) {
-    return { pgd: '', chuTri: ['BCH Đảng ủy'], phoiHop: ['Văn phòng'], xemDeBiet: [] };
+    return { type: 'chiDaoThang', chuTri: ['BCH Đảng ủy'], phoiHop: [], xemDeBiet: [] };
   }
 
-  // === 15. Pháp luật, góp ý ===
-  if (matchKeywords(text, CONTENT_KEYWORDS.phapLy)) {
-    return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Văn phòng'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
-  }
-
-  // === 16. Điện mặt trời (generic) ===
+  // === 12. Điện mặt trời (generic) ===
   if (matchKeywords(text, CONTENT_KEYWORDS.dienMatTroi)) {
-    return { pgd: 'PGĐ KD - Đặng Quang Trung', chuTri: ['Phòng Kinh doanh'], phoiHop: ['Phòng Kỹ thuật & An Toàn'], xemDeBiet: [] };
+    return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KD - Đặng Quang Trung'], ccdXemDeBiet: ['PGĐ KT - Trần Thanh Hải'] };
   }
 
-  // === 17. Hotline/Liveline (generic) ===
+  // === 13. Hotline/Liveline (generic) ===
   if (matchKeywords(text, CONTENT_KEYWORDS.hotline)) {
-    return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Phòng Kỹ thuật & An Toàn'], phoiHop: ['Đội Vận hành lưới điện'], xemDeBiet: [] };
+    return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KT - Trần Thanh Hải'], ccdXemDeBiet: [] };
   }
 
-  // === DEFAULT: VB khác, giấy mời → PGĐ KT ===
-  return { pgd: 'PGĐ KT - Trần Thanh Hải', chuTri: ['Văn phòng'], phoiHop: [], xemDeBiet: [] };
+  // === DEFAULT: VB khác, giấy mời → Chuyển CĐ PGĐ KT ===
+  return { type: 'chuyenChiDao', ccdChuTri: ['PGĐ KT - Trần Thanh Hải'], ccdXemDeBiet: [] };
 }
 
 function applySuggestion() {
@@ -251,26 +231,41 @@ function applySuggestion() {
   showToast(`🤖 Đã đề xuất phân công cho ${count} văn bản`, 'info');
   renderDocumentList(); // Refresh dots
   
-  // If chi dao modal is open with a selected doc, apply to checkboxes too
+  // If chi dao modal is open with a selected doc, apply checkboxes
   if (selectedDoc && suggestedDocs[selectedDoc.id]) {
     const s = suggestedDocs[selectedDoc.id];
-    document.querySelectorAll('#modalChiDao input[data-group="chutri"]').forEach(cb => cb.checked = false);
-    document.querySelectorAll('#modalChiDao input[data-group="phoihop"]').forEach(cb => cb.checked = false);
-    document.querySelectorAll('#modalChiDao input[data-group="xemdebiet"]').forEach(cb => cb.checked = false);
-    
-    s.chuTri.forEach(name => {
-      const cb = document.querySelector(`#modalChiDao input[data-group="chutri"][value="${name}"]`);
-      if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
-    });
-    s.phoiHop.forEach(name => {
-      const cb = document.querySelector(`#modalChiDao input[data-group="phoihop"][value="${name}"]`);
-      if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
-    });
-    document.querySelectorAll('#modalChiDao .pb-row').forEach(row => {
-      const anyChecked = row.querySelectorAll('input:checked').length > 0;
-      row.classList.toggle('suggested', anyChecked);
-    });
+    if (s.type === 'chiDaoThang') {
+      applySuggestionToChiDaoModal(s);
+    }
   }
+}
+
+function applySuggestionToChiDaoModal(s) {
+  document.querySelectorAll('#modalChiDao input[data-group="chutri"]').forEach(cb => cb.checked = false);
+  document.querySelectorAll('#modalChiDao input[data-group="phoihop"]').forEach(cb => cb.checked = false);
+  document.querySelectorAll('#modalChiDao input[data-group="xemdebiet"]').forEach(cb => cb.checked = false);
+  
+  (s.chuTri || []).forEach(name => {
+    const cb = document.querySelector(`#modalChiDao input[data-group="chutri"][value="${name}"]`);
+    if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+  });
+  (s.phoiHop || []).forEach(name => {
+    const cb = document.querySelector(`#modalChiDao input[data-group="phoihop"][value="${name}"]`);
+    if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
+  });
+}
+
+function applySuggestionToCCDModal(s) {
+  document.querySelectorAll('#modalChuyenChiDao input[type="checkbox"]').forEach(cb => cb.checked = false);
+  
+  (s.ccdChuTri || []).forEach(name => {
+    const cb = document.querySelector(`#modalChuyenChiDao input[data-group="ccd_chutri"][value="${name}"]`);
+    if (cb) { cb.checked = true; cb.closest('.ccd-row')?.classList.add('suggested'); }
+  });
+  (s.ccdXemDeBiet || []).forEach(name => {
+    const cb = document.querySelector(`#modalChuyenChiDao input[data-group="ccd_xemdebiet"][value="${name}"]`);
+    if (cb) { cb.checked = true; cb.closest('.ccd-row')?.classList.add('suggested'); }
+  });
 }
 
 // ============================================================
@@ -670,45 +665,41 @@ function updateAssignmentSummary(doc) {
   
   const cd = chiDaoData[doc.id] && chiDaoData[doc.id].length > 0 ? chiDaoData[doc.id][0] : null;
   const suggested = suggestedDocs[doc.id] || null;
-  const source = cd || suggested;
   
-  if (!source) {
+  if (!cd && !suggested) {
     panel.style.display = 'none';
     return;
   }
   
   panel.style.display = 'block';
   const isSuggested = !cd && suggested;
-  
   let html = '';
   
-  // Chủ trì
-  const chuTri = source.chuTri ? (Array.isArray(source.chuTri) ? source.chuTri.join(', ') : source.chuTri) : '';
-  if (chuTri) {
-    html += `<div class="assign-item"><span class="assign-label ct">Chủ trì:</span> <span class="assign-value">${escapeHtml(chuTri)}</span></div>`;
-  }
-  
-  // Phối hợp
-  const phoiHop = source.phoiHop ? (Array.isArray(source.phoiHop) ? source.phoiHop.join(', ') : source.phoiHop) : '';
-  if (phoiHop) {
-    html += `<div class="assign-item"><span class="assign-label ph">Phối hợp:</span> <span class="assign-value">${escapeHtml(phoiHop)}</span></div>`;
-  }
-  
-  // Xem để biết
-  const xdb = source.xemDeBiet ? (Array.isArray(source.xemDeBiet) ? source.xemDeBiet.join(', ') : source.xemDeBiet) : '';
-  if (xdb) {
-    html += `<div class="assign-item"><span class="assign-label xdb">Xem để biết:</span> <span class="assign-value">${escapeHtml(xdb)}</span></div>`;
+  if (cd) {
+    // Show saved chi dao data
+    const chuTri = cd.chuTri || '';
+    if (chuTri) html += `<div class="assign-item"><span class="assign-label ct">Chủ trì:</span> <span class="assign-value">${escapeHtml(chuTri)}</span></div>`;
+    const phoiHop = cd.phoiHop || '';
+    if (phoiHop) html += `<div class="assign-item"><span class="assign-label ph">Phối hợp:</span> <span class="assign-value">${escapeHtml(phoiHop)}</span></div>`;
+    const xdb = cd.xemDeBiet || '';
+    if (xdb) html += `<div class="assign-item"><span class="assign-label xdb">Xem để biết:</span> <span class="assign-value">${escapeHtml(xdb)}</span></div>`;
+    html = '<div class="assign-badge saved">✅ Đã phân công</div>' + html;
+  } else if (suggested) {
+    if (suggested.type === 'chuyenChiDao') {
+      const ccdCT = (suggested.ccdChuTri || []).join(', ');
+      if (ccdCT) html += `<div class="assign-item"><span class="assign-label ct">Chuyển CĐ:</span> <span class="assign-value">${escapeHtml(ccdCT)}</span></div>`;
+      const ccdXDB = (suggested.ccdXemDeBiet || []).join(', ');
+      if (ccdXDB) html += `<div class="assign-item"><span class="assign-label ph">Phối hợp:</span> <span class="assign-value">${escapeHtml(ccdXDB)}</span></div>`;
+    } else {
+      const chuTri = (suggested.chuTri || []).join(', ');
+      if (chuTri) html += `<div class="assign-item"><span class="assign-label ct">CĐ thẳng:</span> <span class="assign-value">${escapeHtml(chuTri)}</span></div>`;
+    }
+    html = '<div class="assign-badge suggested">🤖 Đề xuất AI</div>' + html;
   }
   
   if (!html) {
     panel.style.display = 'none';
     return;
-  }
-  
-  if (isSuggested) {
-    html = '<div class="assign-badge suggested">🤖 Đề xuất AI</div>' + html;
-  } else {
-    html = '<div class="assign-badge saved">✅ Đã phân công</div>' + html;
   }
   
   body.innerHTML = html;
@@ -967,17 +958,12 @@ function loadExistingChiDao() {
     document.getElementById('cdTheoDoiVB').checked = false;
     document.querySelectorAll('#modalChiDao .pb-row.suggested').forEach(r => r.classList.remove('suggested'));
     
-    // Auto-fill from AI suggestion if available
+    // Auto-fill from AI suggestion if available (chiDaoThang only)
     if (selectedDoc && suggestedDocs[selectedDoc.id]) {
       const s = suggestedDocs[selectedDoc.id];
-      s.chuTri.forEach(name => {
-        const cb = document.querySelector(`#modalChiDao input[data-group="chutri"][value="${name}"]`);
-        if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
-      });
-      s.phoiHop.forEach(name => {
-        const cb = document.querySelector(`#modalChiDao input[data-group="phoihop"][value="${name}"]`);
-        if (cb) { cb.checked = true; cb.closest('.pb-row')?.classList.add('suggested'); }
-      });
+      if (s.type === 'chiDaoThang') {
+        applySuggestionToChiDaoModal(s);
+      }
     }
   }
 }
@@ -1106,6 +1092,15 @@ function openChuyenChiDaoModal() {
   // Reset form
   document.getElementById('ccdNoiDung').value = '';
   document.querySelectorAll('#modalChuyenChiDao input[type="checkbox"]').forEach(cb => cb.checked = false);
+  document.querySelectorAll('#modalChuyenChiDao .ccd-row.suggested').forEach(r => r.classList.remove('suggested'));
+
+  // Auto-fill from AI suggestion if available (chuyenChiDao only)
+  if (selectedDoc && suggestedDocs[selectedDoc.id]) {
+    const s = suggestedDocs[selectedDoc.id];
+    if (s.type === 'chuyenChiDao') {
+      applySuggestionToCCDModal(s);
+    }
+  }
 }
 
 function closeChuyenChiDaoModal() {
