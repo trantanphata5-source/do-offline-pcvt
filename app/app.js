@@ -1644,56 +1644,67 @@ async function loadXDBDocuments() {
 
 function renderXDBList() {
   const container = document.getElementById('xdbList');
-  const loading = document.getElementById('xdbListLoading');
-  // Remove old items but keep loading
-  container.querySelectorAll('.doc-item').forEach(el => el.remove());
+  // Remove old cards
+  container.querySelectorAll('.doc-card').forEach(el => el.remove());
   
   xdbDocuments.forEach(doc => {
-    const div = document.createElement('div');
-    div.className = 'doc-item';
-    if (selectedXDBDoc && selectedXDBDoc.id === doc.id) div.classList.add('active');
+    const card = document.createElement('div');
+    card.className = 'doc-card';
+    card.dataset.id = doc.id;
+    if (selectedXDBDoc && selectedXDBDoc.id === doc.id) card.classList.add('active');
     
     const trichYeu = doc.trichYeu || 'Không có trích yếu';
     // Clean trichYeu: remove inline chi dao text
     const cleanTY = trichYeu.replace(/\s+(Trần Thanh Hải|Đặng Quang Trung|Lại Xuân Phương|Nguyễn Ngọc Tuyến)\s*-\s*\d{2}\/\d{2}\/\d{4}.*$/i, '');
     
-    div.innerHTML = `
-      <div class="doc-item-header">
-        <span class="doc-so-vb">${escapeHtml(doc.soKyHieu)}</span>
-        <span class="doc-date">${doc.ngayDen || ''}</span>
+    card.innerHTML = `
+      <div class="doc-card-header">
+        <div class="doc-card-flag">
+          <span class="doc-card-so">${escapeHtml(doc.soKyHieu)}</span>
+        </div>
+        <div class="doc-card-date-status">
+          <span class="doc-card-date">${doc.ngayDen || ''}</span>
+        </div>
       </div>
-      <div class="doc-cqbh">${escapeHtml(doc.coQuanBanHanh)}</div>
-      <div class="doc-trich-yeu">${escapeHtml(cleanTY.substring(0, 120))}${cleanTY.length > 120 ? '...' : ''}</div>
+      <div class="doc-card-org">
+        <span>${escapeHtml(doc.coQuanBanHanh || '—')}</span>
+        <span class="doc-card-org-date">${doc.ngayVanBan || ''}</span>
+      </div>
+      <div class="doc-card-summary">${escapeHtml(cleanTY)}</div>
     `;
     
-    div.addEventListener('click', () => selectXDBDocument(doc));
-    container.appendChild(div);
+    card.addEventListener('click', () => selectXDBDocument(doc));
+    container.appendChild(card);
   });
   
-  if (loading) loading.style.display = 'none';
+  document.getElementById('xdbListLoading').style.display = 'none';
 }
 
 function selectXDBDocument(doc) {
   selectedXDBDoc = doc;
   
   // Update list active state
-  document.querySelectorAll('#xdbList .doc-item').forEach(el => el.classList.remove('active'));
-  event?.target?.closest('.doc-item')?.classList.add('active');
+  document.querySelectorAll('#xdbList .doc-card').forEach(el => el.classList.remove('active'));
+  const activeCard = document.querySelector(`#xdbList .doc-card[data-id="${doc.id}"]`);
+  if (activeCard) activeCard.classList.add('active');
   
   // Show preview
   document.getElementById('xdbPreviewPlaceholder').style.display = 'none';
-  document.getElementById('xdbPreviewContent').style.display = 'block';
+  const previewContent = document.getElementById('xdbPreviewContent');
+  previewContent.style.display = 'flex';
+  previewContent.style.flexDirection = 'column';
+  previewContent.style.flex = '1';
+  previewContent.style.overflow = 'hidden';
   
   // Title & meta
-  document.getElementById('xdbPreviewTitle').textContent = doc.soKyHieu;
-  
   const cleanTY = (doc.trichYeu || '').replace(/\s+(Trần Thanh Hải|Đặng Quang Trung|Lại Xuân Phương|Nguyễn Ngọc Tuyến)\s*-\s*\d{2}\/\d{2}\/\d{4}.*$/i, '');
+  document.getElementById('xdbPreviewTitle').textContent = doc.soKyHieu;
   document.getElementById('xdbPreviewMeta').innerHTML = `
     <div>${escapeHtml(doc.coQuanBanHanh)} · ${doc.ngayVanBan}</div>
     <div style="color:var(--gray-600);margin-top:4px">${escapeHtml(cleanTY)}</div>
   `;
   
-  // File list
+  // File bar (like DOffice: "File văn bản: filename.pdf")
   const fileList = document.getElementById('xdbFileList');
   fileList.innerHTML = '';
   if (doc.files && doc.files.length > 0) {
@@ -1703,11 +1714,10 @@ function selectXDBDocument(doc) {
       link.className = 'file-link';
       link.href = pdfUrl;
       link.target = '_blank';
-      link.innerHTML = `<span class="material-icons-outlined">picture_as_pdf</span>${truncateFilename(file, 35)}`;
+      link.innerHTML = `<span class="material-icons-outlined" style="font-size:14px">picture_as_pdf</span> ${escapeHtml(file)}`;
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        const viewer = document.getElementById('xdbFileViewer');
-        viewer.innerHTML = `<iframe src="${pdfUrl}" title="PDF" style="width:100%;height:100%;border:none"></iframe>`;
+        document.getElementById('xdbFileViewer').innerHTML = `<iframe src="${pdfUrl}" title="PDF" style="width:100%;height:100%;border:none"></iframe>`;
       });
       fileList.appendChild(link);
     });
@@ -1720,9 +1730,6 @@ function selectXDBDocument(doc) {
         `<iframe src="${autoUrl}" title="PDF" style="width:100%;height:100%;border:none"></iframe>`;
     }
   }
-  
-  // Re-render list to update active state
-  renderXDBList();
 }
 
 function openQuaTrinhXLModal() {

@@ -102,8 +102,14 @@
 
       <!-- ===== XEM ĐỂ BIẾT SECTION ===== -->
       <div class="page-section" id="sectionXDB" style="display:none">
-        <div class="content-toolbar">
+        <div class="content-toolbar xdb-toolbar">
           <h1 class="page-title">Văn bản đến - Xem để biết</h1>
+          <div class="toolbar-actions-always">
+            <button class="action-btn" id="btnQuaTrinhXL" title="Quá trình xử lý">
+              <span class="material-icons-outlined">history</span>
+              <span>Quá trình xử lý</span>
+            </button>
+          </div>
         </div>
         <div class="content-body">
           <div class="doc-list-panel" id="xdbListPanel">
@@ -120,17 +126,16 @@
               <p style="color:var(--gray-400)">Chọn văn bản để xem</p>
             </div>
             <div class="preview-content" id="xdbPreviewContent" style="display:none">
-              <div class="preview-header">
-                <div class="preview-title" id="xdbPreviewTitle"></div>
-                <div class="preview-meta" id="xdbPreviewMeta"></div>
-                <div class="preview-actions-xdb">
-                  <button class="action-btn" id="btnQuaTrinhXL" title="Quá trình xử lý">
-                    <span class="material-icons-outlined">history</span>
-                    <span>Quá trình xử lý</span>
-                  </button>
+              <div class="xdb-preview-header">
+                <div class="xdb-preview-info">
+                  <div class="preview-title" id="xdbPreviewTitle"></div>
+                  <div class="preview-meta" id="xdbPreviewMeta"></div>
                 </div>
               </div>
-              <div class="preview-file-list" id="xdbFileList"></div>
+              <div class="xdb-file-bar">
+                <span class="xdb-file-label">File văn bản:</span>
+                <div class="xdb-file-links" id="xdbFileList"></div>
+              </div>
               <div class="preview-viewer" id="xdbFileViewer"></div>
             </div>
           </div>
