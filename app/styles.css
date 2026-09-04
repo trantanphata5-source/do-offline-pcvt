@@ -1674,6 +1674,12 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 .page-sub-tab .material-icons-outlined { font-size: 18px; }
 
 /* XDB Section */
+#sectionXDB {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
 #sectionXDB .content-body {
   display: flex;
   flex: 1;
@@ -1686,6 +1692,16 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+}
+#sectionXDB .doc-preview-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#sectionXDB .preview-viewer {
+  flex: 1;
+  min-height: 0;
 }
 .preview-actions-xdb {
   display: flex;
