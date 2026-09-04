@@ -1636,6 +1636,8 @@ async function loadXDBDocuments() {
     xdbDocuments = await resp.json();
     renderXDBList();
     document.getElementById('xdbListLoading').style.display = 'none';
+    // Update tab count
+    document.getElementById('xdbCount').textContent = `(${xdbDocuments.length})`;
   } catch (e) {
     console.error('Error loading XDB docs:', e);
     document.getElementById('xdbListLoading').innerHTML = '<p style="color:var(--gray-400);text-align:center">Không tải được dữ liệu XDB</p>';
@@ -1869,4 +1871,9 @@ function initXDB() {
       tab.classList.add('active');
     });
   });
+  
+  // Preload XDB count (fetch count without rendering)
+  fetch(XDB_JSON_PATH).then(r => r.json()).then(data => {
+    document.getElementById('xdbCount').textContent = `(${data.length})`;
+  }).catch(() => {});
 }

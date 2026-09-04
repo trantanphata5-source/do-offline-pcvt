@@ -1672,6 +1672,14 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   font-weight: 600;
 }
 .page-sub-tab .material-icons-outlined { font-size: 18px; }
+.sub-tab-count {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gray-500);
+}
+.page-sub-tab.active .sub-tab-count {
+  color: var(--primary);
+}
 
 /* XDB Section */
 #sectionXDB {
