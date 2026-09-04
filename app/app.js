@@ -700,25 +700,19 @@ function updateAssignmentSummary(doc) {
 // ============================================================
 
 function filterDocuments(query) {
-  if (!query) {
-    filteredDocuments = [...allDocuments];
-  } else {
-    const q = query.toLowerCase();
-    filteredDocuments = allDocuments.filter(doc => {
-      return (doc.soVanBan && doc.soVanBan.toLowerCase().includes(q))
-        || (doc.trichYeu && doc.trichYeu.toLowerCase().includes(q))
-        || (doc.coQuanBanHanh && doc.coQuanBanHanh.toLowerCase().includes(q));
-    });
-  }
-  renderDocumentList();
-  updateCounts();
+  // Search + tab + filter mode all handled by applyFilterMode
+  applyFilterMode();
 }
 
 let currentFilterMode = 'all'; // 'all', 'assigned', 'unassigned'
 
+let currentTab = 'chutri';
+
 function switchTab(tab) {
+  currentTab = tab;
   document.getElementById('tabChuTri').classList.toggle('active', tab === 'chutri');
   document.getElementById('tabPhoiHop').classList.toggle('active', tab === 'phoihop');
+  applyFilterMode();
 }
 
 function toggleFilterDropdown() {
@@ -771,6 +765,13 @@ function applyFilterMode() {
   const query = document.getElementById('searchInput') ? document.getElementById('searchInput').value.trim().toLowerCase() : '';
   let docs = [...allDocuments];
   
+  // Apply tab filter (Chủ trì / Phối hợp)
+  if (currentTab === 'chutri') {
+    docs = docs.filter(d => !d.loaiVB || d.loaiVB === 'Chủ trì');
+  } else if (currentTab === 'phoihop') {
+    docs = docs.filter(d => d.loaiVB === 'Phối hợp');
+  }
+  
   // Apply search filter
   if (query) {
     docs = docs.filter(doc => {
@@ -793,8 +794,10 @@ function applyFilterMode() {
 }
 
 function updateCounts() {
-  document.getElementById('countChuTri').textContent = filteredDocuments.length;
-  document.getElementById('countPhoiHop').textContent = '0';
+  const chuTriDocs = allDocuments.filter(d => !d.loaiVB || d.loaiVB === 'Chủ trì');
+  const phoiHopDocs = allDocuments.filter(d => d.loaiVB === 'Phối hợp');
+  document.getElementById('countChuTri').textContent = chuTriDocs.length;
+  document.getElementById('countPhoiHop').textContent = phoiHopDocs.length;
 }
 
 // ============================================================
