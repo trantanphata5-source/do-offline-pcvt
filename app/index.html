@@ -71,34 +71,86 @@
         </button>
       </div>
 
-      <!-- TOP TOOLBAR (Chờ xử lý) -->
-      <div class="content-toolbar" id="toolbarChoXuLy">
-        <h1 class="page-title">Văn bản đến - Chờ xử lý</h1>
-        <div class="toolbar-actions-always">
-          <button class="action-btn suggest-btn" id="btnSuggestAI" title="Đề xuất phân công tự động cho tất cả văn bản">
-            <span class="material-icons-outlined">smart_toy</span>
-            <span>Đề xuất</span>
-          </button>
-          <button class="action-btn overview-btn" id="btnOverview" title="Tổng quan giao việc">
-            <span class="material-icons-outlined">dashboard</span>
-            <span>Overview</span>
-          </button>
+      <!-- ===== CHỜ XỬ LÝ SECTION ===== -->
+      <div class="page-section" id="sectionChoXuLy">
+        <!-- TOP TOOLBAR (Chờ xử lý) -->
+        <div class="content-toolbar" id="toolbarChoXuLy">
+          <h1 class="page-title">Văn bản đến - Chờ xử lý</h1>
+          <div class="toolbar-actions-always">
+            <button class="action-btn suggest-btn" id="btnSuggestAI" title="Đề xuất phân công tự động cho tất cả văn bản">
+              <span class="material-icons-outlined">smart_toy</span>
+              <span>Đề xuất</span>
+            </button>
+            <button class="action-btn overview-btn" id="btnOverview" title="Tổng quan giao việc">
+              <span class="material-icons-outlined">dashboard</span>
+              <span>Overview</span>
+            </button>
+          </div>
+          <div class="toolbar-actions" id="toolbarActions" style="display:none;">
+            <button class="action-btn primary" id="btnChiDao" title="Chỉ đạo">
+              <span class="material-icons-outlined">gavel</span>
+              <span>Chỉ đạo</span>
+            </button>
+            <button class="action-btn" id="btnChuyenChiDao" title="Chuyển chỉ đạo">
+              <span class="material-icons-outlined">forward</span>
+              <span>Chuyển chỉ đạo</span>
+            </button>
+            <button class="action-btn" id="btnThongTin" title="Thông tin">
+              <span class="material-icons-outlined">info</span>
+              <span>Thông tin</span>
+            </button>
+          </div>
         </div>
-        <div class="toolbar-actions" id="toolbarActions" style="display:none;">
-          <button class="action-btn primary" id="btnChiDao" title="Chỉ đạo">
-            <span class="material-icons-outlined">gavel</span>
-            <span>Chỉ đạo</span>
-          </button>
-          <button class="action-btn" id="btnChuyenChiDao" title="Chuyển chỉ đạo">
-            <span class="material-icons-outlined">forward</span>
-            <span>Chuyển chỉ đạo</span>
-          </button>
-          <button class="action-btn" id="btnThongTin" title="Thông tin">
-            <span class="material-icons-outlined">info</span>
-            <span>Thông tin</span>
-          </button>
+
+        <div class="content-body" id="bodyChoXuLy">
+          <!-- LEFT: Document List -->
+          <div class="doc-list-panel" id="docListPanel">
+            <div class="doc-tabs">
+              <button class="doc-tab active" id="tabChuTri" data-tab="chutri">
+                Chủ trì (<span id="countChuTri">0</span>)
+              </button>
+              <button class="doc-tab" id="tabPhoiHop" data-tab="phoihop">
+                Phối hợp (<span id="countPhoiHop">0</span>)
+              </button>
+              <button class="doc-tab-filter" id="tabFilter" title="Lọc">
+                <span class="material-icons-outlined">filter_list</span>
+              </button>
+            </div>
+            <div class="doc-list" id="docList">
+              <!-- Documents will be rendered here -->
+              <div class="doc-list-loading" id="docListLoading">
+                <div class="spinner"></div>
+                <p>Đang tải văn bản...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Document Preview -->
+          <div class="doc-preview-panel" id="docPreviewPanel">
+            <div class="preview-placeholder" id="previewPlaceholder">
+              <span class="material-icons-outlined" style="font-size:64px;color:var(--gray-300)">description</span>
+              <p>Chọn một văn bản để xem</p>
+            </div>
+            <div class="preview-content" id="previewContent" style="display:none;">
+              <div class="preview-file-info" id="previewFileInfo">
+                <span class="file-label">File văn bản:</span>
+                <div class="file-links" id="previewFileLinks"></div>
+              </div>
+              <div class="preview-file-area" id="previewFileArea">
+                <p class="preview-msg">Chọn file để xem trước nội dung (PDF)</p>
+              </div>
+              <!-- Assignment summary panel -->
+              <div class="assignment-summary" id="assignmentSummary" style="display:none;">
+                <div class="assignment-header">
+                  <span class="material-icons-outlined" style="font-size:16px">assignment_ind</span>
+                  <span>Phân công</span>
+                </div>
+                <div class="assignment-body" id="assignmentBody"></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </div> <!-- end sectionChoXuLy -->
 
       <!-- ===== XEM ĐỂ BIẾT SECTION ===== -->
       <div class="page-section" id="sectionXDB" style="display:none">
@@ -126,12 +178,6 @@
               <p style="color:var(--gray-400)">Chọn văn bản để xem</p>
             </div>
             <div class="preview-content" id="xdbPreviewContent" style="display:none">
-              <div class="xdb-preview-header">
-                <div class="xdb-preview-info">
-                  <div class="preview-title" id="xdbPreviewTitle"></div>
-                  <div class="preview-meta" id="xdbPreviewMeta"></div>
-                </div>
-              </div>
               <div class="xdb-file-bar">
                 <span class="xdb-file-label">File văn bản:</span>
                 <div class="xdb-file-links" id="xdbFileList"></div>
@@ -141,56 +187,6 @@
           </div>
         </div>
       </div> <!-- end sectionXDB -->
-
-      <!-- Existing content-body for Chờ xử lý (must be inside sectionChoXuLy but restructured to avoid breaking existing code) -->
-      
-        <!-- LEFT: Document List -->
-        <div class="doc-list-panel" id="docListPanel">
-          <div class="doc-tabs">
-            <button class="doc-tab active" id="tabChuTri" data-tab="chutri">
-              Chủ trì (<span id="countChuTri">0</span>)
-            </button>
-            <button class="doc-tab" id="tabPhoiHop" data-tab="phoihop">
-              Phối hợp (<span id="countPhoiHop">0</span>)
-            </button>
-            <button class="doc-tab-filter" id="tabFilter" title="Lọc">
-              <span class="material-icons-outlined">filter_list</span>
-            </button>
-          </div>
-          <div class="doc-list" id="docList">
-            <!-- Documents will be rendered here -->
-            <div class="doc-list-loading" id="docListLoading">
-              <div class="spinner"></div>
-              <p>Đang tải văn bản...</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- RIGHT: Document Preview -->
-        <div class="doc-preview-panel" id="docPreviewPanel">
-          <div class="preview-placeholder" id="previewPlaceholder">
-            <span class="material-icons-outlined" style="font-size:64px;color:var(--gray-300)">description</span>
-            <p>Chọn một văn bản để xem</p>
-          </div>
-          <div class="preview-content" id="previewContent" style="display:none;">
-            <div class="preview-file-info" id="previewFileInfo">
-              <span class="file-label">File văn bản:</span>
-              <div class="file-links" id="previewFileLinks"></div>
-            </div>
-            <div class="preview-file-area" id="previewFileArea">
-              <p class="preview-msg">Chọn file để xem trước nội dung (PDF)</p>
-            </div>
-            <!-- Assignment summary panel -->
-            <div class="assignment-summary" id="assignmentSummary" style="display:none;">
-              <div class="assignment-header">
-                <span class="material-icons-outlined" style="font-size:16px">assignment_ind</span>
-                <span>Phân công</span>
-              </div>
-              <div class="assignment-body" id="assignmentBody"></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
   </div>
 

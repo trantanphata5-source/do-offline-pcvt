@@ -1689,14 +1689,6 @@ function selectXDBDocument(doc) {
   previewContent.style.flex = '1';
   previewContent.style.overflow = 'hidden';
   
-  // Title & meta
-  const cleanTY = (doc.trichYeu || '').replace(/\s+(Trần Thanh Hải|Đặng Quang Trung|Lại Xuân Phương|Nguyễn Ngọc Tuyến)\s*-\s*\d{2}\/\d{2}\/\d{4}.*$/i, '');
-  document.getElementById('xdbPreviewTitle').textContent = doc.soKyHieu;
-  document.getElementById('xdbPreviewMeta').innerHTML = `
-    <div>${escapeHtml(doc.coQuanBanHanh)} · ${doc.ngayVanBan}</div>
-    <div style="color:var(--gray-600);margin-top:4px">${escapeHtml(cleanTY)}</div>
-  `;
-  
   // File bar (like DOffice: "File văn bản: filename.pdf")
   const fileList = document.getElementById('xdbFileList');
   fileList.innerHTML = '';
@@ -1817,25 +1809,19 @@ function switchSubTab(tab) {
   document.getElementById('subTabChoXuLy').classList.toggle('active', tab === 'choxuly');
   document.getElementById('subTabXDB').classList.toggle('active', tab === 'xemdebiet');
   
-  // Toggle Chờ xử lý elements
-  const toolbar = document.getElementById('toolbarChoXuLy');
-  const docList = document.getElementById('docListPanel');
-  const docPreview = document.getElementById('docPreviewPanel');
+  // Toggle sections
+  const sectionChoXuLy = document.getElementById('sectionChoXuLy');
+  const sectionXDB = document.getElementById('sectionXDB');
   const toolbarActions = document.getElementById('toolbarActions');
   
   if (tab === 'choxuly') {
-    toolbar.style.display = '';
-    docList.style.display = '';
-    docPreview.style.display = '';
+    if (sectionChoXuLy) sectionChoXuLy.style.display = 'flex';
+    if (sectionXDB) sectionXDB.style.display = 'none';
   } else {
-    toolbar.style.display = 'none';
-    docList.style.display = 'none';
-    docPreview.style.display = 'none';
+    if (sectionChoXuLy) sectionChoXuLy.style.display = 'none';
+    if (sectionXDB) sectionXDB.style.display = 'flex';
     if (toolbarActions) toolbarActions.style.display = 'none';
   }
-  
-  // Toggle XDB section
-  document.getElementById('sectionXDB').style.display = tab === 'xemdebiet' ? '' : 'none';
   
   // Load XDB data if not loaded
   if (tab === 'xemdebiet' && xdbDocuments.length === 0) {
