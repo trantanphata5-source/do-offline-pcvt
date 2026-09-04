@@ -277,6 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadDocuments();
   loadDriveMapping();
   populateDynamicForms();
+  initXDB();
 });
 
 function initUI() {
@@ -1616,5 +1617,249 @@ function populateOverviewTable() {
     });
     
     tbody.appendChild(tr);
+  });
+}
+
+// ============================================================
+// XEM ĐỂ BIẾT (XDB) MODULE
+// ============================================================
+
+const XDB_JSON_PATH = 'xdb_documents.json';
+const XDB_FILES_BASE = '../DO-GĐ/SOURCE-DOGĐ/Xem để biết/';
+let xdbDocuments = [];
+let selectedXDBDoc = null;
+
+async function loadXDBDocuments() {
+  try {
+    const resp = await fetch(XDB_JSON_PATH);
+    if (!resp.ok) throw new Error('Failed to load XDB documents');
+    xdbDocuments = await resp.json();
+    renderXDBList();
+    document.getElementById('xdbListLoading').style.display = 'none';
+  } catch (e) {
+    console.error('Error loading XDB docs:', e);
+    document.getElementById('xdbListLoading').innerHTML = '<p style="color:var(--gray-400);text-align:center">Không tải được dữ liệu XDB</p>';
+  }
+}
+
+function renderXDBList() {
+  const container = document.getElementById('xdbList');
+  const loading = document.getElementById('xdbListLoading');
+  // Remove old items but keep loading
+  container.querySelectorAll('.doc-item').forEach(el => el.remove());
+  
+  xdbDocuments.forEach(doc => {
+    const div = document.createElement('div');
+    div.className = 'doc-item';
+    if (selectedXDBDoc && selectedXDBDoc.id === doc.id) div.classList.add('active');
+    
+    const trichYeu = doc.trichYeu || 'Không có trích yếu';
+    // Clean trichYeu: remove inline chi dao text
+    const cleanTY = trichYeu.replace(/\s+(Trần Thanh Hải|Đặng Quang Trung|Lại Xuân Phương|Nguyễn Ngọc Tuyến)\s*-\s*\d{2}\/\d{2}\/\d{4}.*$/i, '');
+    
+    div.innerHTML = `
+      <div class="doc-item-header">
+        <span class="doc-so-vb">${escapeHtml(doc.soKyHieu)}</span>
+        <span class="doc-date">${doc.ngayDen || ''}</span>
+      </div>
+      <div class="doc-cqbh">${escapeHtml(doc.coQuanBanHanh)}</div>
+      <div class="doc-trich-yeu">${escapeHtml(cleanTY.substring(0, 120))}${cleanTY.length > 120 ? '...' : ''}</div>
+    `;
+    
+    div.addEventListener('click', () => selectXDBDocument(doc));
+    container.appendChild(div);
+  });
+  
+  if (loading) loading.style.display = 'none';
+}
+
+function selectXDBDocument(doc) {
+  selectedXDBDoc = doc;
+  
+  // Update list active state
+  document.querySelectorAll('#xdbList .doc-item').forEach(el => el.classList.remove('active'));
+  event?.target?.closest('.doc-item')?.classList.add('active');
+  
+  // Show preview
+  document.getElementById('xdbPreviewPlaceholder').style.display = 'none';
+  document.getElementById('xdbPreviewContent').style.display = 'block';
+  
+  // Title & meta
+  document.getElementById('xdbPreviewTitle').textContent = doc.soKyHieu;
+  
+  const cleanTY = (doc.trichYeu || '').replace(/\s+(Trần Thanh Hải|Đặng Quang Trung|Lại Xuân Phương|Nguyễn Ngọc Tuyến)\s*-\s*\d{2}\/\d{2}\/\d{4}.*$/i, '');
+  document.getElementById('xdbPreviewMeta').innerHTML = `
+    <div>${escapeHtml(doc.coQuanBanHanh)} · ${doc.ngayVanBan}</div>
+    <div style="color:var(--gray-600);margin-top:4px">${escapeHtml(cleanTY)}</div>
+  `;
+  
+  // File list
+  const fileList = document.getElementById('xdbFileList');
+  fileList.innerHTML = '';
+  if (doc.files && doc.files.length > 0) {
+    doc.files.forEach(file => {
+      const pdfUrl = getPdfViewUrl('Xem để biết', file);
+      const link = document.createElement('a');
+      link.className = 'file-link';
+      link.href = pdfUrl;
+      link.target = '_blank';
+      link.innerHTML = `<span class="material-icons-outlined">picture_as_pdf</span>${truncateFilename(file, 35)}`;
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const viewer = document.getElementById('xdbFileViewer');
+        viewer.innerHTML = `<iframe src="${pdfUrl}" title="PDF" style="width:100%;height:100%;border:none"></iframe>`;
+      });
+      fileList.appendChild(link);
+    });
+    
+    // Auto-load first PDF
+    const pdfFile = doc.files.find(f => f.toLowerCase().endsWith('.pdf'));
+    if (pdfFile) {
+      const autoUrl = getPdfViewUrl('Xem để biết', pdfFile);
+      document.getElementById('xdbFileViewer').innerHTML = 
+        `<iframe src="${autoUrl}" title="PDF" style="width:100%;height:100%;border:none"></iframe>`;
+    }
+  }
+  
+  // Re-render list to update active state
+  renderXDBList();
+}
+
+function openQuaTrinhXLModal() {
+  if (!selectedXDBDoc) {
+    showToast('Vui lòng chọn một văn bản', 'error');
+    return;
+  }
+  
+  const modal = document.getElementById('modalQuaTrinhXL');
+  modal.style.display = 'flex';
+  
+  renderChiDaoChain(selectedXDBDoc.chiDaoChain || []);
+}
+
+function closeQuaTrinhXLModal() {
+  document.getElementById('modalQuaTrinhXL').style.display = 'none';
+}
+
+function renderChiDaoChain(chain) {
+  const body = document.getElementById('qtxlBody');
+  
+  if (chain.length === 0) {
+    body.innerHTML = '<p style="text-align:center;color:var(--gray-400);padding:40px">Chưa có thông tin chỉ đạo</p>';
+    return;
+  }
+  
+  let html = '';
+  chain.forEach(step => {
+    const initials = getInitials(step.nguoiChiDao);
+    const bgColor = getAvatarColor(step.nguoiChiDao);
+    
+    html += `<div class="chain-card">
+      <div class="chain-card-header">
+        <div class="chain-person">
+          <div class="chain-avatar" style="background:${bgColor}">${initials}</div>
+          <div>
+            <div class="chain-name">${escapeHtml(step.nguoiChiDao)}</div>
+            ${step.timestamp ? `<div class="chain-timestamp">${escapeHtml(step.nguoiChiDao.split(' - ')[0] || '')} - ${escapeHtml(step.timestamp)}</div>` : ''}
+          </div>
+        </div>
+        <div class="chain-date">${escapeHtml(step.ngayGiao || '')}</div>
+      </div>`;
+    
+    if (step.noiDung) {
+      html += `<div class="chain-noidung">${escapeHtml(step.noiDung)}</div>`;
+    }
+    
+    html += `<div class="chain-fields">`;
+    html += `<div class="chain-field">
+      <span class="chain-field-icon material-icons-outlined" style="font-size:16px">arrow_circle_right</span>
+      <span class="chain-field-label">Chủ trì</span>
+      <span class="chain-field-value">${escapeHtml(step.chuTri || '')}</span>
+    </div>`;
+    html += `<div class="chain-field">
+      <span class="chain-field-icon material-icons-outlined" style="font-size:16px">group</span>
+      <span class="chain-field-label">Phối hợp</span>
+      <span class="chain-field-value">${escapeHtml(step.phoiHop || '')}</span>
+    </div>`;
+    html += `<div class="chain-field">
+      <span class="chain-field-icon material-icons-outlined" style="font-size:16px">visibility</span>
+      <span class="chain-field-label">Xem để biết</span>
+      <span class="chain-field-value">${escapeHtml(step.xemDeBiet || '')}</span>
+    </div>`;
+    html += `<div class="chain-field">
+      <span class="chain-field-icon material-icons-outlined" style="font-size:16px">event</span>
+      <span class="chain-field-label">Hạn xử lý</span>
+      <span class="chain-field-value deadline">${escapeHtml(step.hanXuLy || '')}</span>
+    </div>`;
+    html += `</div></div>`;
+  });
+  
+  body.innerHTML = html;
+}
+
+function getInitials(name) {
+  if (!name) return '?';
+  const parts = name.split(/[\s-]+/).filter(Boolean);
+  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  return name.substring(0, 2).toUpperCase();
+}
+
+function getAvatarColor(name) {
+  const colors = ['#1565C0','#C62828','#2E7D32','#E65100','#4527A0','#00838F','#AD1457','#37474F'];
+  let hash = 0;
+  for (let i = 0; i < (name || '').length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  return colors[Math.abs(hash) % colors.length];
+}
+
+// Sub-tab switching
+function switchSubTab(tab) {
+  // Update tab buttons
+  document.getElementById('subTabChoXuLy').classList.toggle('active', tab === 'choxuly');
+  document.getElementById('subTabXDB').classList.toggle('active', tab === 'xemdebiet');
+  
+  // Toggle Chờ xử lý elements
+  const toolbar = document.getElementById('toolbarChoXuLy');
+  const docList = document.getElementById('docListPanel');
+  const docPreview = document.getElementById('docPreviewPanel');
+  const toolbarActions = document.getElementById('toolbarActions');
+  
+  if (tab === 'choxuly') {
+    toolbar.style.display = '';
+    docList.style.display = '';
+    docPreview.style.display = '';
+  } else {
+    toolbar.style.display = 'none';
+    docList.style.display = 'none';
+    docPreview.style.display = 'none';
+    if (toolbarActions) toolbarActions.style.display = 'none';
+  }
+  
+  // Toggle XDB section
+  document.getElementById('sectionXDB').style.display = tab === 'xemdebiet' ? '' : 'none';
+  
+  // Load XDB data if not loaded
+  if (tab === 'xemdebiet' && xdbDocuments.length === 0) {
+    loadXDBDocuments();
+  }
+}
+
+function initXDB() {
+  // Sub-tab events
+  document.getElementById('subTabChoXuLy').addEventListener('click', () => switchSubTab('choxuly'));
+  document.getElementById('subTabXDB').addEventListener('click', () => switchSubTab('xemdebiet'));
+  
+  // QTXL modal events
+  document.getElementById('btnQuaTrinhXL').addEventListener('click', openQuaTrinhXLModal);
+  document.getElementById('closeQuaTrinhXL').addEventListener('click', closeQuaTrinhXLModal);
+  document.getElementById('modalQuaTrinhXL').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closeQuaTrinhXLModal();
+  });
+  
+  // QTXL tab switching (dummy for now - only "Chỉ đạo và giao việc" has content)
+  document.querySelectorAll('.qtxl-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.qtxl-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
   });
 }

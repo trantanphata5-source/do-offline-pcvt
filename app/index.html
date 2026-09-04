@@ -61,8 +61,18 @@
 
     <!-- CONTENT AREA -->
     <main class="content-area" id="contentArea">
-      <!-- TOP TOOLBAR -->
-      <div class="content-toolbar">
+      <!-- SUB TABS -->
+      <div class="page-sub-tabs">
+        <button class="page-sub-tab active" id="subTabChoXuLy" data-subtab="choxuly">
+          <span class="material-icons-outlined">pending_actions</span> Chờ xử lý
+        </button>
+        <button class="page-sub-tab" id="subTabXDB" data-subtab="xemdebiet">
+          <span class="material-icons-outlined">visibility</span> Xem để biết
+        </button>
+      </div>
+
+      <!-- TOP TOOLBAR (Chờ xử lý) -->
+      <div class="content-toolbar" id="toolbarChoXuLy">
         <h1 class="page-title">Văn bản đến - Chờ xử lý</h1>
         <div class="toolbar-actions-always">
           <button class="action-btn suggest-btn" id="btnSuggestAI" title="Đề xuất phân công tự động cho tất cả văn bản">
@@ -90,8 +100,45 @@
         </div>
       </div>
 
-      <!-- TWO COLUMN LAYOUT -->
-      <div class="content-body">
+      <!-- ===== XEM ĐỂ BIẾT SECTION ===== -->
+      <div class="page-section" id="sectionXDB" style="display:none">
+        <div class="content-toolbar">
+          <h1 class="page-title">Văn bản đến - Xem để biết</h1>
+        </div>
+        <div class="content-body">
+          <div class="doc-list-panel" id="xdbListPanel">
+            <div class="doc-list" id="xdbList">
+              <div class="doc-list-loading" id="xdbListLoading">
+                <div class="spinner"></div>
+                <p>Đang tải văn bản...</p>
+              </div>
+            </div>
+          </div>
+          <div class="doc-preview-panel" id="xdbPreviewPanel">
+            <div class="preview-placeholder" id="xdbPreviewPlaceholder">
+              <span class="material-icons-outlined" style="font-size:64px;color:var(--gray-300)">visibility</span>
+              <p style="color:var(--gray-400)">Chọn văn bản để xem</p>
+            </div>
+            <div class="preview-content" id="xdbPreviewContent" style="display:none">
+              <div class="preview-header">
+                <div class="preview-title" id="xdbPreviewTitle"></div>
+                <div class="preview-meta" id="xdbPreviewMeta"></div>
+                <div class="preview-actions-xdb">
+                  <button class="action-btn" id="btnQuaTrinhXL" title="Quá trình xử lý">
+                    <span class="material-icons-outlined">history</span>
+                    <span>Quá trình xử lý</span>
+                  </button>
+                </div>
+              </div>
+              <div class="preview-file-list" id="xdbFileList"></div>
+              <div class="preview-viewer" id="xdbFileViewer"></div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end sectionXDB -->
+
+      <!-- Existing content-body for Chờ xử lý (must be inside sectionChoXuLy but restructured to avoid breaking existing code) -->
+      
         <!-- LEFT: Document List -->
         <div class="doc-list-panel" id="docListPanel">
           <div class="doc-tabs">
@@ -424,6 +471,24 @@
           <button class="btn btn-outline" id="btnCCDBack">Quay lại</button>
           <button class="btn btn-primary" id="btnSaveChuyenChiDao">Lưu</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL: QUÁ TRÌNH XỬ LÝ ============ -->
+  <div class="modal-overlay" id="modalQuaTrinhXL" style="display:none">
+    <div class="modal-container qtxl-modal">
+      <div class="modal-header">
+        <h2>Quá trình xử lý</h2>
+        <button class="modal-close" id="closeQuaTrinhXL">&times;</button>
+      </div>
+      <div class="qtxl-tabs">
+        <button class="qtxl-tab active" data-qtab="chidao">Chỉ đạo và giao việc</button>
+        <button class="qtxl-tab" data-qtab="quatrinh">Quá trình xử lý</button>
+        <button class="qtxl-tab" data-qtab="ketqua">Kết quả thực hiện</button>
+      </div>
+      <div class="qtxl-body" id="qtxlBody">
+        <!-- Chi dao chain will be rendered here -->
       </div>
     </div>
   </div>
