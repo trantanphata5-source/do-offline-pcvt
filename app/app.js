@@ -386,25 +386,13 @@ async function loadDocuments() {
   loading.style.display = 'flex';
 
   try {
-    // Try Google Sheets first, fallback to local JSON
+    // Always load documents from documents.json (source of truth)
+    await loadFromJSON();
+    
+    // Load chi dao data from GAS (if available)
     if (GAS_URL) {
-      try {
-        const resp = await fetch(`${GAS_URL}?action=getDocuments`, { redirect: 'follow' });
-        const text = await resp.text();
-        const result = JSON.parse(text);
-        if (result.success && result.data && result.data.length > 0) {
-          allDocuments = result.data;
-          // Also try to load chi dao data
-          loadChiDaoFromSheets();
-        } else {
-          await loadFromJSON();
-        }
-      } catch (e) {
-        console.warn('GAS fetch failed, falling back to local JSON:', e);
-        await loadFromJSON();
-      }
-    } else {
-      await loadFromJSON();
+      loadChiDaoFromSheets();
+      loadDriveMapping();
     }
 
     filteredDocuments = [...allDocuments];
